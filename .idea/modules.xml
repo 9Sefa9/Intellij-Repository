@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/1.Semester/1.Semester.iml" filepath="$PROJECT_DIR$/1.Semester/1.Semester.iml" />
+      <module fileurl="file://$PROJECT_DIR$/2.Semester/2.Semester.iml" filepath="$PROJECT_DIR$/2.Semester/2.Semester.iml" />
+      <module fileurl="file://$PROJECT_DIR$/3.Semester/3.Semester.iml" filepath="$PROJECT_DIR$/3.Semester/3.Semester.iml" />
       <module fileurl="file://$PROJECT_DIR$/4.Semester/4.Semester.iml" filepath="$PROJECT_DIR$/4.Semester/4.Semester.iml" />
       <module fileurl="file://$PROJECT_DIR$/Intellij-Repository.iml" filepath="$PROJECT_DIR$/Intellij-Repository.iml" />
     </modules>
