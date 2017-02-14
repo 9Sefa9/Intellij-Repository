@@ -1,0 +1,3 @@
+StdIn.readInt();
+StdIn.isEmpty();
+StdIn.readString();
