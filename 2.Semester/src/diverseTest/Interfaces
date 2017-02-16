@@ -1,8 +1,0 @@
-DIe von mir bekannten interfaces sind : 
-Iterable 
-Comparable
-Collection
-List
-
-Abstract list hat folgende methoden:
-add remove get set iterator(muss iterable implementieren) size
