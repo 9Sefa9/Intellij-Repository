@@ -5,34 +5,54 @@ import java.util.*;
 
 public class Server extends Thread {
     private ArrayList<Object> clientlist = new ArrayList<Object>();
+    private Scanner eingabe = new Scanner(System.in);
     private String msg = null;
 
-    public static void main(String[] args) throws IOException {
-            new Server().start();
+    public static void main(String[] args){
+        new Server().start();
     }
 
     public void run() {
-        ServerSocket anschluss = null;
+        ServerSocket anschluss;
+        try {
+            anschluss = new ServerSocket(8080);
 
-            try {
-                anschluss = new ServerSocket(8080);
-
-                Socket eavesdropping = anschluss.accept();
-
-                clientlist.add(eavesdropping);
-
-                InputStreamReader portreader = new InputStreamReader(eavesdropping.getInputStream());
-                BufferedReader input = new BufferedReader(portreader);
+            Socket eavesdropping = anschluss.accept();
+            PrintWriter writer = new PrintWriter(new OutputStreamWriter(eavesdropping.getOutputStream()));
+            BufferedReader reader = new BufferedReader(new InputStreamReader(eavesdropping.getInputStream()));
 
 
-                while(true) {
+            clientlist.add(eavesdropping);
+            System.out.println("A Client has Logged in on port: " + eavesdropping.getPort());
 
-                    msg = input.readLine();
-                    System.out.println("" + msg);
-                    System.out.println("");
-                }
-            } catch (IOException i) {
-                i.printStackTrace();
+            receiveFromClient(reader);
+            sendToClient(writer);
+
+        } catch (IOException i) {
+            i.printStackTrace();
+        }
+    }
+
+    public void receiveFromClient(BufferedReader br) {
+        try {
+            msg = br.readLine();
+            System.out.println("" + msg);
+            System.out.println("");
+            msg = null;
+        } catch (IOException i) {
+            System.out.println("Reading from a Client not possible...");
+            new Server().start();
+        }
+
+    }
+
+    public void sendToClient(PrintWriter writer) {
+        try {
+            writer.println("" + eingabe.nextLine());
+            System.out.println("");
+            writer.flush();
+        } catch (Exception e) {
+            System.out.println("sending to client failed...");
         }
     }
 }
