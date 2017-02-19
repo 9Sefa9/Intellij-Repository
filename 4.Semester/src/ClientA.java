@@ -4,53 +4,74 @@ import java.net.*;
 import java.io.*;
 import java.util.Scanner;
 
-public class ClientA extends Thread {
+public class ClientA{
     public Scanner eingabe = new Scanner(System.in);
     public String msg = null;
-    public static PrintWriter writer = null;
-    public static void main(String[] a) {
-        new ClientA().start();
+
+    public Socket Anschluss;
+
+    private BufferedReader reader = null;
+    private PrintWriter writer = null;
+
+    public static void main(String[] args) {
+
+        new ClientA().run();
 
     }
-    public void run() {
+    public ClientA() {
         try {
-            Socket Anschluss = new Socket("localhost", 8080);
-            writer = new PrintWriter(new OutputStreamWriter(Anschluss.getOutputStream()));
-            BufferedReader reader = new BufferedReader(new InputStreamReader(Anschluss.getInputStream()));
-
-
-            while(true) {
-                sendMsgToServer(writer);
-            }
-
-        } catch (Exception e) {
-            System.out.println("Error in run(); method...");
-            e.printStackTrace();
-        }
-    }
-
-    //sendet die eingabe an den Server
-    public void sendMsgToServer(PrintWriter writer) {
-        try {
-            writer.println("Client A:> " + eingabe.nextLine());
-            System.out.println("");
-            writer.flush();
-        } catch (Exception i) {
-            System.out.println("Sending Message to Server failed...");
-
-        }
-    }
-
-    //empfängt msg aus dem Server
-    public void receiveMsgFromServer(BufferedReader br) {
-        try {
-            msg = br.readLine();
-            System.out.println("" + msg);
-            System.out.println("");
-            msg = null;
+            Anschluss = new Socket("localhost", 8080);
         } catch (IOException i) {
-            System.out.println("Receiving Message from Server failed...");
+            i.printStackTrace();
         }
     }
+    public void run(){
+    new Send().start();
+    new Receive().start();
+    }
+
+
+    public class Send extends Thread {
+
+        public Send() {
+            try {
+                writer = new PrintWriter(new OutputStreamWriter(Anschluss.getOutputStream()));
+            }catch(IOException i){
+                System.out.print("send constructor error...");
+            }
+        }
+        public void run() {
+            try {
+                writer.println("Client A:> " + eingabe.nextLine());
+                System.out.println("");
+                writer.flush();
+            } catch (Exception i) {
+                System.out.println("Sending Message to Server failed...");
+
+            }
+        }
+    }
+
+    public class Receive extends Thread {
+
+        public Receive() {
+            try {
+                reader = new BufferedReader(new InputStreamReader(Anschluss.getInputStream()));
+            }catch(IOException i){
+                System.out.print("error while receiving...");
+            }
+        }
+        public void run() {
+            try {
+                msg = reader.readLine();
+                System.out.println("" + msg);
+                System.out.println("");
+                msg = null;
+            } catch (IOException i) {
+                System.out.println("Receiving Message from Server failed...");
+            }
+        }
+    }
+
 
 }
