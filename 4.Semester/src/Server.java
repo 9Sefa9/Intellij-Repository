@@ -26,10 +26,10 @@ public class Server extends Thread {
             clientlist.add(eavesdropping);
             System.out.println("A Client has Logged in on port: " + eavesdropping.getPort());
 
-            while(!Anschluss.isClosed()) {
+            while(true) {
                 receiveFromClient(reader);
-                sendToClient(writer);
             }
+
         } catch (IOException i) {
             i.printStackTrace();
         }

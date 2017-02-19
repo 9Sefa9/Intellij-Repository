@@ -1,3 +1,5 @@
+import com.sun.deploy.util.SessionState;
+
 import java.net.*;
 import java.io.*;
 import java.util.Scanner;
@@ -5,23 +7,21 @@ import java.util.Scanner;
 public class ClientA extends Thread {
     public Scanner eingabe = new Scanner(System.in);
     public String msg = null;
-
+    public static PrintWriter writer = null;
     public static void main(String[] a) {
         new ClientA().start();
+
     }
     public void run() {
         try {
             Socket Anschluss = new Socket("localhost", 8080);
-            PrintWriter writer = new PrintWriter(new OutputStreamWriter(Anschluss.getOutputStream()));
+            writer = new PrintWriter(new OutputStreamWriter(Anschluss.getOutputStream()));
             BufferedReader reader = new BufferedReader(new InputStreamReader(Anschluss.getInputStream()));
 
-            while(Anschluss.isConnected()) {
+
+            while(true) {
                 sendMsgToServer(writer);
-                receiveMsgFromServer(reader);
             }
-
-
-
 
         } catch (Exception e) {
             System.out.println("Error in run(); method...");
