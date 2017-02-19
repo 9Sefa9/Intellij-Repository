@@ -15,9 +15,12 @@ public class ClientA extends Thread {
             PrintWriter writer = new PrintWriter(new OutputStreamWriter(Anschluss.getOutputStream()));
             BufferedReader reader = new BufferedReader(new InputStreamReader(Anschluss.getInputStream()));
 
+            while(Anschluss.isConnected()) {
+                sendMsgToServer(writer);
+                receiveMsgFromServer(reader);
+            }
 
-            sendMsgToServer(writer);
-            receiveMsgFromServer(reader);
+
 
 
         } catch (Exception e) {

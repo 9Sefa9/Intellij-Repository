@@ -9,15 +9,16 @@ public class Server extends Thread {
     private String msg = null;
 
     public static void main(String[] args){
+
         new Server().start();
     }
 
     public void run() {
-        ServerSocket anschluss;
+        ServerSocket Anschluss;
         try {
-            anschluss = new ServerSocket(8080);
+            Anschluss = new ServerSocket(8080);
 
-            Socket eavesdropping = anschluss.accept();
+            Socket eavesdropping = Anschluss.accept();
             PrintWriter writer = new PrintWriter(new OutputStreamWriter(eavesdropping.getOutputStream()));
             BufferedReader reader = new BufferedReader(new InputStreamReader(eavesdropping.getInputStream()));
 
@@ -25,9 +26,10 @@ public class Server extends Thread {
             clientlist.add(eavesdropping);
             System.out.println("A Client has Logged in on port: " + eavesdropping.getPort());
 
-            receiveFromClient(reader);
-            sendToClient(writer);
-
+            while(!Anschluss.isClosed()) {
+                receiveFromClient(reader);
+                sendToClient(writer);
+            }
         } catch (IOException i) {
             i.printStackTrace();
         }
