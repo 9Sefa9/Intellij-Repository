@@ -9,7 +9,6 @@ public class ClientA extends Thread {
     public static void main(String[] a) {
         new ClientA().start();
     }
-
     public void run() {
         try {
             Socket Anschluss = new Socket("localhost", 8080);
