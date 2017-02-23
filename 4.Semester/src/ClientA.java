@@ -47,7 +47,7 @@ public class ClientA{
                 writer.flush();
             } catch (Exception i) {
                 System.out.println("Sending Message to Server failed...");
-
+                    //alles ok.
             }
         }
     }
