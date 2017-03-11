@@ -1,3 +1,5 @@
+import com.sun.xml.internal.messaging.saaj.util.ByteOutputStream;
+
 import java.util.*;
 import java.io.*;
 
@@ -18,6 +20,7 @@ public class ByteStream {
 
         //create array till that byte
         byte[] buffer = new byte[numbytes];
+
         //store every byte in the buffer(byte array), start at given offset, maximum number of bytes to read.
         bis.read(buffer,0,numbytes);
 
