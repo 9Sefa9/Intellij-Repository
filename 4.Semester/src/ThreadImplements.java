@@ -1,4 +1,4 @@
-
+//Kapitel: Threads
 public class ThreadImplements implements Runnable {
 /*
     public static void main(String[] args) {

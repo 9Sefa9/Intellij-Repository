@@ -1,4 +1,4 @@
-
+//Kapitel: Threads
 public class ThreadExtends extends Thread{
 
     @Override

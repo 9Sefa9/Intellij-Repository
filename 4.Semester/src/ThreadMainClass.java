@@ -1,6 +1,4 @@
-/**
- * Created by Progamer on 18.03.2017.
- */
+//Kapitel: Threads
 public class ThreadMainClass {
     public static void main(String[] ar) {
 
