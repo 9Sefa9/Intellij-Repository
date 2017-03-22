@@ -1,7 +1,9 @@
 package JavaFX;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.application.Application;
 import javafx.scene.control.*;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 /* The main window corresponds to a Stage,
@@ -13,7 +15,7 @@ The scene graph is a tree of UI nodes.
 //scene: die Szene(was im fenster drinne sein soll)
 //layout: vorlage
 //parent: anorndung der Buttons etc.auf richtige weise
-public class test extends Application {
+public class FensterVorlage extends Application{
     public static void main (String [] args){
         launch(args);
     }
@@ -50,13 +52,11 @@ public class test extends Application {
         textarea.setText("TextArea");
         parent.getChildren().add(textarea);
 
-
-
-
         stage.setScene(scene);
 
         stage.show();
     }
+
 
 }
 
