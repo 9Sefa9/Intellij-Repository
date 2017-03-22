@@ -8,8 +8,10 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 
-public class ButtonHandler extends Application implements EventHandler<ActionEvent>{
+
+public class ButtonHandler extends Application{
     Button button;
     public static void main(String[]args){
         launch(args);
@@ -26,8 +28,9 @@ public class ButtonHandler extends Application implements EventHandler<ActionEve
         button = new Button();
         button.setText("Klick Mich");
 
-        //when ever they klick this button, the code that this handle this is in this class look in this class to find the handle method
-        button.setOnAction(this);
+        //when ever they klick this button,
+        // //the code that this handle look in this class to find the handle method
+        button.setOnAction((event) -> {button.setText("Geklickt!");});
 
         layout.getChildren().add(button);
 
@@ -35,11 +38,4 @@ public class ButtonHandler extends Application implements EventHandler<ActionEve
         primaryStage.show();
     }
 
-    @Override
-    //wird aufgerufen, sobald ein event stattfindet
-    public void handle(ActionEvent event) {
-        if(event.getSource() == button)
-            System.out.println("ein Button wurde geklickt!");
-
-    }
 }
