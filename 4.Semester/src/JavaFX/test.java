@@ -34,12 +34,14 @@ public class test extends Application {
         //erstellt einen Button
         Button button = new Button();
         button.setText("Ein Knopf");
+
         parent.getChildren().add(button);
 
         //TextField: erstellt textfelder
         TextField textfield = new TextField();
         textfield.setText("textfeld");
         parent.getChildren().add(textfield);
+
 
         //Slider, recht simple zu verstehen
         Slider slider = new Slider();
