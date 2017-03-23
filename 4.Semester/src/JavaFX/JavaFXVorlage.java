@@ -13,7 +13,7 @@ The scene graph is a tree of UI nodes.
 //scene: die Szene(was im fenster drinne sein soll)
 //layout: vorlage
 //parent: anorndung der Buttons etc.auf richtige weise
-public class test extends Application {
+public class JavaFXVorlage extends Application {
     public static void main (String [] args){
         launch(args);
     }
