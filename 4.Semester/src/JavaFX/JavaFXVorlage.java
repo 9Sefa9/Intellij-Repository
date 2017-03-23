@@ -52,8 +52,9 @@ public class JavaFXVorlage extends Application {
         textarea.setText("TextArea");
         parent.getChildren().add(textarea);
 
-
-
+        //erstellt einen AlterBox ( sollte aber an einen Button gebunden sein!!)
+       // AlertBox.display("ein Title","ein Message");
+        button.setOnAction(action -> AlertBox.display("Ein Title","Ein Message"));
 
         stage.setScene(scene);
 
