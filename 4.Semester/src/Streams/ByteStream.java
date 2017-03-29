@@ -1,6 +1,5 @@
-import com.sun.xml.internal.messaging.saaj.util.ByteOutputStream;
+package Streams;
 
-import java.util.*;
 import java.io.*;
 
 public class ByteStream {
@@ -8,7 +7,7 @@ public class ByteStream {
     private byte[] buf = new byte[848029];
 
     public static void main(String[] a) throws IOException{
-       // new ByteStream().readFromFile();
+       // new Streams.ByteStream().readFromFile();
         new ByteStream().copyFile("G:/users/Progamer/Desktop/Bilder/..jpg","G:/users/Progamer/Desktop/Bilder/aaa.jpg");
     }
     public void copyFile(String from, String to)throws IOException{

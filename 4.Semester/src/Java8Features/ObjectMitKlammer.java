@@ -1,3 +1,5 @@
+package Java8Features;
+
 //Kapitel: Anonyme Klassen
 public class ObjectMitKlammer {
     public static void main(String[] args){

@@ -1,3 +1,5 @@
+package Streams;
+
 import java.io.*;
 public class StreamUebung{
     public static void main(String[] args){

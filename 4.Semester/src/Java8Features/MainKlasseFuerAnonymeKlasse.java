@@ -1,3 +1,4 @@
+package Java8Features;
 
 public class MainKlasseFuerAnonymeKlasse {
     public static void main(String[] args){

@@ -1,8 +1,10 @@
+package Thread;
+
 //Kapitel: Threads
 public class ThreadImplements implements Runnable {
 /*
     public static void main(String[] args) {
-       Thread t = new Thread(new ThreadImplements());
+       Thread t = new Thread(new Thread.ThreadImplements());
        t.start();
     }
 */

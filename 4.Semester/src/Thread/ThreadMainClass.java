@@ -1,3 +1,5 @@
+package Thread;
+
 //Kapitel: Threads
 public class ThreadMainClass {
     public static void main(String[] ar) {

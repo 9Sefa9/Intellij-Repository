@@ -1,3 +1,5 @@
+package Thread;
+
 //Kapitel: Threads
 public class ThreadExtends extends Thread{
 
