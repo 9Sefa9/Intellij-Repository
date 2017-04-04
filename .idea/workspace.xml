@@ -2,18 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7ccd73f-d4cb-4a73-a286-db25cef6a558" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/4.Semester/ByteStream.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/4.Semester/InterfaceFuerAnonymeKlasse.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/4.Semester/ListUebung.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/4.Semester/MainKlasseFuerAnonymeKlasse$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/4.Semester/MainKlasseFuerAnonymeKlasse.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/4.Semester/ObjectMitKlammer$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/4.Semester/ObjectMitKlammer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/4.Semester/StreamUebung.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/4.Semester/ThreadExtends.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/4.Semester/ThreadImplements.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/4.Semester/ThreadMainClass.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/4.Semester/obj.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -30,9 +18,11 @@
       <file leaf-file-name="NumberFormattingTut.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/4.Semester/src/Tests/NumberFormattingTut.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="5" column="30" lean-forward="true" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
-              <folding />
+            <state relative-caret-position="672">
+              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -440,7 +430,14 @@
       <option name="project" value="LOCAL" />
       <updated>1490793971340</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="-">
+      <created>1491344969825</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1491344969825</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -483,7 +480,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="communicatin between Windows was added to the git repository" />
     <MESSAGE value="numberformat wurde gelernt" />
-    <option name="LAST_COMMIT_MESSAGE" value="numberformat wurde gelernt" />
+    <MESSAGE value="-" />
+    <option name="LAST_COMMIT_MESSAGE" value="-" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -500,7 +498,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -508,7 +508,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -598,9 +600,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/4.Semester/src/Tests/NumberFormattingTut.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="5" column="30" lean-forward="true" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
-          <folding />
+        <state relative-caret-position="672">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
