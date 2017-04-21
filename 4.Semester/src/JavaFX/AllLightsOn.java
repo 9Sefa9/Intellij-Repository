@@ -10,6 +10,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 
@@ -37,11 +38,13 @@ public class AllLightsOn extends Application {
         vbox = new VBox();
         blueText = new Text();
         yellowText = new Text();
-        yellowValue = 0;
-        blueValue = 0;
+
         scene = new Scene(root, 600, 500);
 
         buttons = new Button[25];
+
+        blueText.setTextAlignment(TextAlignment.LEFT);
+        yellowText.setTextAlignment(TextAlignment.LEFT);
 
         for (int i = 0; i < 25; i++) {
             final int j = i;
@@ -53,9 +56,10 @@ public class AllLightsOn extends Application {
 
             grid.add(buttons[i], i % 5, i / 5);
             buttons[i].setOnAction(e -> {onClick(j);});
+            blueValue++;
 
-
-
+            blueText.setText("BLUE: " + blueValue);
+            yellowText.setText("YELLOW: " + yellowValue);
         }
 
 
@@ -80,47 +84,58 @@ public class AllLightsOn extends Application {
 
         if (i % 5 != 4) {
             changeColor(buttons[i + 1]);
-            countBlueAndYellowButtons(buttons[i + 1]);
+
         }
             if (i % 5 != 0) {
                 changeColor(buttons[i - 1]);
-                countBlueAndYellowButtons(buttons[i - 1]);
+
             }
         if (i / 5 != 4) {
             changeColor((buttons[i + 5]));
-            countBlueAndYellowButtons(buttons[i +5]);
+
         }
         if (i / 5 != 0) {
             changeColor(buttons[i - 5]);
-            countBlueAndYellowButtons(buttons[i - 5]);
+
         }
     }
 
     public void changeColor(Button button) {
         String style = button.getStyle().equals("-fx-base:blue") ? "-fx-base:yellow" : "-fx-base:blue";
+        if(style.equals("-fx-base:blue")) {
+            blueValue++;
+            yellowValue--;
+        }
+        else if(style.equals("-fx-base:yellow")){
+            yellowValue++;
+            blueValue--;
+        }
+        blueText.setText("BLUE: " + blueValue);
+        yellowText.setText("YELLOW: " + yellowValue);
         button.setStyle(style);
 
     }
 
     public void resetGame(Button[] reset){
-        for(Button b: reset)
-        b.setStyle("-fx-base:blue");
+
     }
     public void resetGame(){
+
+
         Button r = new Button();
         r.setText("RESET");
         r.setMinSize(100,50);
         vbox.getChildren().addAll(r);
-        r.setOnAction(e ->{resetGame(buttons);});
-    }
-    public void countBlueAndYellowButtons(Button b){
-        for (int i = 0; i < 25; i++) {
-            blueValue = b.getStyle().equals("-fx-base:blue") ? blueValue++ : yellowValue--;
-            yellowValue = b.getStyle().equals("-fx-base:yellow") ? yellowValue++ : blueValue--;
+        r.setOnAction(e ->{
+            yellowValue = 0;
+            blueValue = 25;
 
-            blueText.setText("" + blueValue);
-            yellowText.setText("" + yellowValue);
-        }
-        }
+            blueText.setText("BLUE: " + blueValue);
+            yellowText.setText("YELLOW: " + yellowValue);
+
+            for(Button b: buttons)
+            b.setStyle("-fx-base:blue");});
+
+    }
 
 }
