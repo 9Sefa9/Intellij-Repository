@@ -4,10 +4,8 @@ import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
@@ -15,22 +13,18 @@ import javafx.stage.Stage;
 
 
 public class AllLightsOn extends Application {
-    Button buttons[];
-    BorderPane root;
-    GridPane grid;
-    VBox vbox;
-    Scene scene;
-    Text yellowText;
-    Text blueText;
-    int yellowValue,blueValue;
+    private  Button buttons[];
+    private BorderPane root;
+    private GridPane grid;
+    private VBox vbox;
+    private Scene scene;
+    private Text yellowText;
+    private Text blueText;
+    private int yellowValue,blueValue;
 
     public static void main(String[] ar) {
         launch(ar);
-
-
     }
-
-
     @Override
     public void start(Stage primaryStage) throws Exception {
         root = new BorderPane();
