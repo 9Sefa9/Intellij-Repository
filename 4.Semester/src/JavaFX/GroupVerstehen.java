@@ -26,7 +26,6 @@ public class GroupVerstehen extends Application {
         test.setPadding(new Insets(20));
         test.setText("TEEST");
 
-
         g.getChildren().addAll(sp,test);
         primaryStage.setScene(scene1);
         primaryStage.show();

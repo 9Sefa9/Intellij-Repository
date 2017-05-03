@@ -12,7 +12,7 @@ public class Server extends Thread {
     ServerSocket server;
     Scanner eingabe = null;
 
-    static Thread t1;
+    static Thread t1,t2;
     String typingmsg,incomingmsg;
 
 
@@ -27,6 +27,9 @@ public class Server extends Thread {
 
             t1 = new Thread(new Server(8080));
             t1.start();
+
+            t2 = new Thread(new Server(8080));
+            t2.start();
 
         } catch (Exception e) {
             System.out.println("Waiting to connect1...");
