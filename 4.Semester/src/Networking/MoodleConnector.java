@@ -1,10 +1,14 @@
 package Networking;
 
 import com.gargoylesoftware.htmlunit.BrowserVersion;
+import com.gargoylesoftware.htmlunit.ElementNotFoundException;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.*;
 import org.apache.commons.logging.LogFactory;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 import java.util.logging.Level;
 
 public class MoodleConnector {
@@ -42,9 +46,36 @@ public class MoodleConnector {
         listAllCourses();
         close();
     }
+    //show all course titles. and store them to access..
     public void listAllCourses() {
-        //show all course titles. and store them to access..
+        System.out.println("===================================COURSES===================================");
+        ArrayList<HtmlAnchor> allCourses = new ArrayList();
+        for(int i = 0;i<= 20000; i++) {
+            try {
+                HtmlAnchor anchor = page.getAnchorByHref("https://moodle.uni-due.de/course/view.php?id=" + i);
 
+                if(anchor.isDisplayed()){
+                    allCourses.add(anchor);
+                }
+                else{
+                    continue;
+                }
+            }catch(ElementNotFoundException e){
+                continue;
+            }
+
+        }
+        for(int i= 0; i<=allCourses.size(); i++){
+            System.out.println(i+"."+allCourses.get(i).getAttribute("title"));
+        }
+        String decision = decision();
+
+
+    }
+    public String decision(){
+        Scanner eingabe = new Scanner(System.in);
+        System.out.println("::=> ");
+        return eingabe.nextLine();
     }
     public void windowTitle(){
         System.out.println("Window Title: "+page.getTitleText());
