@@ -6,6 +6,7 @@ import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.*;
 import org.apache.commons.logging.LogFactory;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -44,10 +45,10 @@ public class MoodleConnector {
         windowTitle();
 
         listAllCourses();
-        close();
+
     }
     //show all course titles. and store them to access..
-    public void listAllCourses() {
+    public void listAllCourses() throws InterruptedException {
         System.out.println("===================================COURSES===================================");
         ArrayList<HtmlAnchor> allCourses = new ArrayList();
         for(int i = 0;i<= 20000; i++) {
@@ -63,19 +64,31 @@ public class MoodleConnector {
             }catch(ElementNotFoundException e){
                 continue;
             }
-
         }
-        for(int i= 0; i<=allCourses.size(); i++){
+        for(int i= 0; i<allCourses.size(); i++){
             System.out.println(i+"."+allCourses.get(i).getAttribute("title"));
         }
-        String decision = decision();
+        int dec = decision();
+
+        Thread.sleep(1000);
+        System.out.println("SELECTED:  "+allCourses.get(dec).getAttribute("title"));
+        selectCourse(allCourses.get(dec));
 
 
     }
-    public String decision(){
+    public void selectCourse(HtmlAnchor course){
+        try {
+            page = course.click();
+            windowTitle();
+
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+    public int decision(){
         Scanner eingabe = new Scanner(System.in);
-        System.out.println("::=> ");
-        return eingabe.nextLine();
+        System.out.print("::=> ");
+        return eingabe.nextInt();
     }
     public void windowTitle(){
         System.out.println("Window Title: "+page.getTitleText());
