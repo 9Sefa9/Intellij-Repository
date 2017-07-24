@@ -1,4 +1,4 @@
-package Networking;
+package MoodleConnector;
 
 import java.util.Scanner;
 
@@ -16,7 +16,7 @@ public class MoodleConnectorMain {
             case "1": {
                 System.out.print("USERNAME: ");
                 username = input.nextLine();
-                System.out.print("PASSWORD ");
+                System.out.print("PASSWORD: ");
                 password = input.nextLine();
                 System.out.println("loading...");
                 MoodleConnector http = new MoodleConnector();

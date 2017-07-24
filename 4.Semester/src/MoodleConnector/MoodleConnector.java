@@ -1,14 +1,10 @@
-package Networking;
+package MoodleConnector;
 
 import com.gargoylesoftware.htmlunit.BrowserVersion;
-import com.gargoylesoftware.htmlunit.ElementNotFoundException;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.*;
 import org.apache.commons.logging.LogFactory;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Level;
 
@@ -44,47 +40,11 @@ public class MoodleConnector {
         page = (HtmlPage)submitbutton.click();
         windowTitle();
 
-        listAllCourses();
+        MoodleCourseAnalyzer an = new MoodleCourseAnalyzer(page,decision());
+        an.listAllCourses();
 
     }
-    //show all course titles. and store them to access..
-    public void listAllCourses() throws InterruptedException {
-        System.out.println("===================================COURSES===================================");
-        ArrayList<HtmlAnchor> allCourses = new ArrayList();
-        for(int i = 0;i<= 20000; i++) {
-            try {
-                HtmlAnchor anchor = page.getAnchorByHref("https://moodle.uni-due.de/course/view.php?id=" + i);
 
-                if(anchor.isDisplayed()){
-                    allCourses.add(anchor);
-                }
-                else{
-                    continue;
-                }
-            }catch(ElementNotFoundException e){
-                continue;
-            }
-        }
-        for(int i= 0; i<allCourses.size(); i++){
-            System.out.println(i+"."+allCourses.get(i).getAttribute("title"));
-        }
-        int dec = decision();
-
-        Thread.sleep(1000);
-        System.out.println("SELECTED:  "+allCourses.get(dec).getAttribute("title"));
-        selectCourse(allCourses.get(dec));
-
-
-    }
-    public void selectCourse(HtmlAnchor course){
-        try {
-            page = course.click();
-            windowTitle();
-
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-    }
     public int decision(){
         Scanner eingabe = new Scanner(System.in);
         System.out.print("::=> ");
