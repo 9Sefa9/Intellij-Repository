@@ -2,6 +2,7 @@ package MoodleConnector;
 
 import com.gargoylesoftware.htmlunit.ElementNotFoundException;
 import com.gargoylesoftware.htmlunit.html.HtmlAnchor;
+import com.gargoylesoftware.htmlunit.html.HtmlElement;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
 
 import java.util.ArrayList;
@@ -15,21 +16,20 @@ public class MoodleCourseAnalyzer {
     public MoodleCourseAnalyzer(HtmlPage page){
         this.page = page;
         this.decision = decision;
-        allCourses = new ArrayList();
     }
 
-    //show all course titles. and store them to access..
-    public void listAllCourses() throws InterruptedException {
+    //show all course titles. and store them for access..
+    public void listAllCourses(String href) throws InterruptedException {
+        allCourses = new ArrayList<>();
         System.out.println("===================================COURSES===================================");
-        for(int i = 0;i<= 20000; i++) {
-            try {
-                HtmlAnchor anchor = page.getAnchorByHref("https://moodle.uni-due.de/course/view.php?id=" + i);
-                if(anchor.isDisplayed()){
+        for(int i = 0;i< 100000; i++) {
+            try{
+                HtmlAnchor anchor = page.getAnchorByHref(href + i);
+                if(anchor.isDisplayed())
                     allCourses.add(anchor);
-                }
-                else{
-                    continue;
-                }
+
+                else continue;
+
             }catch(ElementNotFoundException e){
                 continue;
             }
@@ -39,21 +39,64 @@ public class MoodleCourseAnalyzer {
         }
 
         this.decision = decision();
-        Thread.sleep(1000);
+
         System.out.println("SELECTED:  "+allCourses.get(this.decision).getAttribute("title"));
         selectCourse(allCourses.get(this.decision));
+        determineWebsiteType();
 
     }
     public void selectCourse(HtmlAnchor course){
         try {
+            System.out.println("Click ==>");
             page = course.click();
             windowTitle();
+            Thread.sleep(1000);
         }catch(Exception e){
             e.printStackTrace();
         }
     }
     public void determineWebsiteType(){
+        System.out.println(page.getAnchors().contains("resource"));
 
+       if(page.getAnchors().contains("resource")) {
+           System.out.println("Type: Resource");
+           for (int i = 0; i < 1000000; i++) {
+               try {
+                   HtmlAnchor anchor = page.getAnchorByHref("https://moodle.uni-due.de/mod/resource/view.php?id=" + i);
+                   if (anchor.isDisplayed()) {
+                        allCourses.add(anchor);
+                   } else {
+                       continue;
+                   }
+               } catch (ElementNotFoundException e) {
+                   continue;
+               }
+           }try {
+               listAllCourses("https://moodle.uni-due.de/mod/resource/view.php?id=");
+           }catch(Exception e){
+               e.printStackTrace();
+           }
+       }
+       else if(page.getAnchors().contains("assign")){
+            allCourses = new ArrayList<>();
+
+           for (int i = 0; i < 1000000; i++) {
+               try {
+                   HtmlAnchor anchor = page.getAnchorByHref("https://moodle.uni-due.de/mod/assign/view.php?id=" + i);
+                   if (anchor.isDisplayed()) {
+                       allCourses.add(anchor);
+                   } else {
+                       continue;
+                   }
+               } catch (ElementNotFoundException e) {
+                   continue;
+               }
+           }try {
+               listAllCourses("https://moodle.uni-due.de/mod/assign/view.php?id=");
+           }catch(Exception e){
+               e.printStackTrace();
+           }
+       }
     }
     public void windowTitle(){
         System.out.println("Window Title: "+page.getTitleText());

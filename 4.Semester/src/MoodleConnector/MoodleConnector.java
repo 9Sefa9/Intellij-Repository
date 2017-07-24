@@ -41,7 +41,7 @@ public class MoodleConnector implements Connectable  {
         windowTitle();
 
         MoodleCourseAnalyzer analyze = new MoodleCourseAnalyzer(page);
-        analyze.listAllCourses();
+        analyze.listAllCourses("https://moodle.uni-due.de/course/view.php?id=");
     }
     public int decision(){
         Scanner eingabe = new Scanner(System.in);
