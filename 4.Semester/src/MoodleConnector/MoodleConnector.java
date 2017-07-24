@@ -8,7 +8,7 @@ import org.apache.commons.logging.LogFactory;
 import java.util.Scanner;
 import java.util.logging.Level;
 
-public class MoodleConnector {
+public class MoodleConnector implements Connectable  {
 
     final protected WebClient webClient;
     protected HtmlPage page;
@@ -37,18 +37,17 @@ public class MoodleConnector {
         passwordField.setText(password);
 
         System.out.println("Logged in!");
-        page = (HtmlPage)submitbutton.click();
+        page = submitbutton.click();
         windowTitle();
 
-        MoodleCourseAnalyzer an = new MoodleCourseAnalyzer(page,decision());
-        an.listAllCourses();
-
+        MoodleCourseAnalyzer analyze = new MoodleCourseAnalyzer(page);
+        analyze.listAllCourses();
     }
-
     public int decision(){
         Scanner eingabe = new Scanner(System.in);
         System.out.print("::=> ");
-        return eingabe.nextInt();
+        int s = eingabe.nextInt();
+        return s;
     }
     public void windowTitle(){
         System.out.println("Window Title: "+page.getTitleText());
