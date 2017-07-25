@@ -41,11 +41,11 @@ public class MoodleCourseAnalyzer {
         this.decision = decision();
 
         System.out.println("SELECTED:  "+allCourses.get(this.decision).getAttribute("title"));
-        selectCourse(allCourses.get(this.decision));
+        clickAndNavigateToCourse(allCourses.get(this.decision));
         determineWebsiteType();
 
     }
-    public void selectCourse(HtmlAnchor course){
+    public void clickAndNavigateToCourse(HtmlAnchor course){
         try {
             System.out.println("Click ==>");
             page = course.click();
@@ -56,9 +56,10 @@ public class MoodleCourseAnalyzer {
         }
     }
     public void determineWebsiteType(){
-        System.out.println(page.getAnchors().contains("resource"));
-
-       if(page.getAnchors().contains("resource")) {
+        //GIBT FALSCHEN LINK RAUS ! ==> IMPROVISIEREN!
+        //select randomly a href from the courselist to determine which Type the Website is.
+        System.out.println(this.allCourses.get(allCourses.size()-1).getHrefAttribute());
+       if(this.allCourses.get(allCourses.size()-1).getHrefAttribute().contains("resource")) {
            System.out.println("Type: Resource");
            for (int i = 0; i < 1000000; i++) {
                try {
@@ -77,7 +78,7 @@ public class MoodleCourseAnalyzer {
                e.printStackTrace();
            }
        }
-       else if(page.getAnchors().contains("assign")){
+       else if(this.allCourses.get(allCourses.size()-1).getHrefAttribute().contains("assign")){
             allCourses = new ArrayList<>();
 
            for (int i = 0; i < 1000000; i++) {
