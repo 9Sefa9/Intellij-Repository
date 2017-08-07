@@ -8,12 +8,12 @@ import org.apache.commons.logging.LogFactory;
 import java.util.Scanner;
 import java.util.logging.Level;
 
-public class MoodleConnector implements Connectable  {
+public class Login extends Container  implements Connectable {
 
     final protected WebClient webClient;
     protected HtmlPage page;
 
-    public MoodleConnector(){
+    public Login() {
         //create browser
         ignoreLogs();
         webClient = new WebClient(BrowserVersion.CHROME);
@@ -24,12 +24,13 @@ public class MoodleConnector implements Connectable  {
         page = webClient.getPage(loginpage);
         windowTitle();
     }
+
     //login to Website
-    public void loginToWebsite(String username,String password) throws Exception{
+    public void loginToWebsite(String username, String password) throws Exception {
         final HtmlForm form = page.getFirstByXPath("//form[@action='https://moodle.uni-due.de/login/index.php']");
         final HtmlSubmitInput submitbutton = form.getFirstByXPath("//input[@id='loginbtn']");
-        final HtmlTextInput usernameField =form.getFirstByXPath("//input[@name='username']");
-        final HtmlPasswordInput passwordField =form.getFirstByXPath("//input[@name='password']");
+        final HtmlTextInput usernameField = form.getFirstByXPath("//input[@name='username']");
+        final HtmlPasswordInput passwordField = form.getFirstByXPath("//input[@name='password']");
 
         System.out.println("Logging in...");
 
@@ -40,21 +41,22 @@ public class MoodleConnector implements Connectable  {
         page = submitbutton.click();
         windowTitle();
 
-        MoodleCourseAnalyzer analyze = new MoodleCourseAnalyzer(page);
-        analyze.listAllCourses("https://moodle.uni-due.de/course/view.php?id=");
+        Analysis analyze = new Analysis(page);
+        analyze.content("https://moodle.uni-due.de/course/view.php?id=");
     }
-    public int decision(){
-        Scanner eingabe = new Scanner(System.in);
-        System.out.print("::=> ");
-        int s = eingabe.nextInt();
-        return s;
+    @Override
+    public int userAction() {
+        return super.userAction();
     }
-    public void windowTitle(){
-        System.out.println("Window Title: "+page.getTitleText());
+
+    public void windowTitle() {
+        System.out.println("Window Title: " + page.getTitleText());
     }
-    public void close(){
+
+    public void close() {
         webClient.close();
     }
+
     public void ignoreLogs() {
         LogFactory.getFactory().setAttribute("org.apache.commons.logging.Log", "org.apache.commons.logging.impl.NoOpLog");
 
@@ -62,5 +64,4 @@ public class MoodleConnector implements Connectable  {
         java.util.logging.Logger.getLogger("org.apache.commons.httpclient").setLevel(Level.OFF);
 
     }
-
 }

@@ -2,7 +2,7 @@ package MoodleConnector;
 
 import java.util.Scanner;
 
-public class MoodleConnectorMain {
+public class Main {
     public static void main(String[] a) throws Exception {
         Scanner input = new Scanner(System.in);
         String decision,password,username;
@@ -19,7 +19,7 @@ public class MoodleConnectorMain {
                 System.out.print("PASSWORD: ");
                 password = input.nextLine();
                 System.out.println("loading...");
-                MoodleConnector http = new MoodleConnector();
+                Login http = new Login();
                 http.createWebsite("https://moodle.uni-due.de/login/");
                 http.loginToWebsite(username,password);
                 input.close();
