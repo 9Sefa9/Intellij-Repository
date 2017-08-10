@@ -67,38 +67,46 @@ public class Splitsort {
         firsthalf  =  list.length/2;
         secondhalf =  list.length/2;
 
-        while ((secondhalf % list.length)!=0) {
+        while (secondhalf<=list.length/2 && secondhalf>0) {
 
-            if (this.list[secondhalf] == this.list[secondhalf - 1]) {
-                secondhalf -= 1;
+            if ((this.list[secondhalf] == this.list[secondhalf - 1]) && secondhalf>0) {
+                secondhalf -=1;
                 continue;
             }
-            if (this.list[secondhalf] < this.list[secondhalf - 1]) {
+            else if ((this.list[secondhalf] < this.list[secondhalf - 1]) && secondhalf>0) {
                 swap(list, secondhalf, secondhalf - 1);
-                secondhalf -= 1;
+                secondhalf += 1;
+
                 continue;
             }
-            if (this.list[secondhalf] > this.list[secondhalf - 1]) {
-                secondhalf -= 1;
+            else if ((this.list[secondhalf] > this.list[secondhalf - 1])&& secondhalf>0){
+                secondhalf -=1;
                 continue;
             }
+            break;
         }
-        while ((firsthalf % list.length) != 0) {
-            if (this.list[firsthalf] == this.list[firsthalf + 1]) {
+        while (true) {
+            //abbruchbedingung
+            if(firsthalf+1 == list.length){
+                break;
+            }
+            else if ((this.list[firsthalf] == this.list[firsthalf + 1]) && firsthalf <list.length-1) {
                 firsthalf += 1;
                 continue;
             }
-            if (this.list[firsthalf] <= this.list[firsthalf + 1]) {
-                firsthalf += 1;
-                continue;
-            }
-            if (this.list[firsthalf] > this.list[firsthalf + 1]) {
+            else if ((this.list[firsthalf] > this.list[firsthalf + 1]) && firsthalf <list.length-1) {
                 swap(list, firsthalf, firsthalf+1);
+                firsthalf -= 1;
+
+                continue;
+            }
+            else if ((this.list[firsthalf] < this.list[firsthalf + 1]) && firsthalf <list.length-1) {
                 firsthalf += 1;
                 continue;
             }
-            firsthalf += 1;
+            break;
         }
+
     }
 
     public void swap(int[] l,int i, int k){
