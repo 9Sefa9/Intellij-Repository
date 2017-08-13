@@ -2,13 +2,14 @@ package Algorithms;
 
 public class OneMillionArray {
     public static void main(String[] a){
-        int[] mil = new int[1000000];
+        int[] mil = new int[1000];
         for(int i = 0; i<mil.length;i++){
             mil[i] = (int)Math.round(Math.random() * (1000000 - 0)+0); // Liefert Zahlen von 25 - 49
         }
-        Splitsort s = new Splitsort(mil);
-     //   sort(mil);
-        for(int t:mil){
+     //   Splitsort s = new Splitsort(mil);
+      //  s.split();
+        //sort(mil);
+        for(Comparable t:mil){
             System.out.println(t);
         }
     }
