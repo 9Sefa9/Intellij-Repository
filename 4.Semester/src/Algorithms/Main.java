@@ -11,7 +11,7 @@ public class Main {
         System.out.println();
         int b = 1;
 
-               s.alternateSplitSort();
+               s.split();
                for (Integer i : test) {
                    System.out.print(i + ", ");
                }
