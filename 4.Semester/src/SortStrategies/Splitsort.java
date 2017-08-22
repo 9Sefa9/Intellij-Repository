@@ -1,24 +1,20 @@
-package Algorithms;
-
-import org.jetbrains.annotations.NotNull;
-
+package SortStrategies;
 /**
  * Splitsort Algorithm
  */
-public class Splitsort<type extends Comparable<? super type>> {
+public class Splitsort implements Sortable {
 
     private int firsthalf,secondhalf;
-    /**
-     * Splits the list in pieces
-     */
-    public void split(type[] list) {
+
+    @Override
+    public void sort(Comparable[] list) {
         firsthalf = list.length / 2;
         secondhalf = list.length / 2;
 
         while (secondhalf - 1 >= 0 && secondhalf < list.length) {
 
             if ((list[secondhalf].compareTo(list[secondhalf - 1]) ) < 0 && secondhalf > 0) {
-                swap(list, secondhalf, secondhalf - 1);
+                exch(list, secondhalf, secondhalf - 1);
 
                 if (secondhalf < list.length / 2)
                     secondhalf += 1;
@@ -35,7 +31,7 @@ public class Splitsort<type extends Comparable<? super type>> {
             if (firsthalf + 1 == list.length) {
                 break;
             } else if ((list[firsthalf].compareTo(list[firsthalf + 1]) ) >0 && firsthalf < list.length - 1) {
-                swap(list, firsthalf, firsthalf + 1);
+                exch(list, firsthalf, firsthalf + 1);
 
                 if (firsthalf > 0)
                     firsthalf -= 1;
@@ -48,9 +44,17 @@ public class Splitsort<type extends Comparable<? super type>> {
             break;
         }
     }
-    public void swap(Comparable[] l,int i, int k){
+
+    @Override
+    public boolean less(Comparable v, Comparable w) {
+        return false;
+    }
+
+    @Override
+    public void exch(Comparable[] l,int i, int k){
         Comparable temp = l[i];
         l[i] = l[k];
         l[k] = temp;
     }
+
 }

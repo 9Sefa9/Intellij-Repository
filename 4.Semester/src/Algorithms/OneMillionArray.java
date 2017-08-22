@@ -1,45 +1,23 @@
 package Algorithms;
+import SortStrategies.*;
 
 public class OneMillionArray {
     public static void main(String[] a){
-        int[] mil = new int[1000];
+        Comparable[] mil = new Comparable[100000];
         for(int i = 0; i<mil.length;i++){
-            mil[i] = (int)Math.round(Math.random() * (1000000 - 0)+0); // Liefert Zahlen von 25 - 49
+           mil[i] = (int)Math.round(Math.random() * (1000000 - 0)+0); // Liefert Zahlen von 25 - 49
+           // mil[i] = i+1;
         }
-     //   Splitsort s = new Splitsort(mil);
-      //  s.split();
-        //sort(mil);
+
+        Sortable s = new Splitsort();
+        long eins = System.currentTimeMillis();
+        s.sort(mil);
+        long zwei = (System.currentTimeMillis() - eins) / 1000;
+        System.out.println("Es hat: "+zwei+" sekunden gedauert um eine Liste mit der länge "+mil.length+" zu sortieren!");
+        System.out.println();
         for(Comparable t:mil){
             System.out.println(t);
         }
     }
-    private static void merge(Comparable[] a, Comparable[] aux,
-                              int lo, int mid, int hi)
-    {
-        for (int k = lo; k <= hi; k++)
-            aux[k] = a[k];
-        int i = lo, j = mid+1;
-        for (int k = lo; k <= hi; k++) {
-            if (i > mid) a[k] = aux[j++];
-            else if (j > hi) a[k] = aux[i++];
-            else if (less(aux[j], aux[i])) a[k] = aux[j++];
-            else a[k] = aux[i++];
-        }
-    }
-    private static void sort(Comparable[] a, Comparable[] aux, int lo, int hi)
-    {
-        if (hi <= lo) return;
-        int mid = lo + (hi - lo) / 2;
-        sort(a, aux, lo, mid);
-        sort(a, aux, mid+1, hi);
-        merge(a, aux, lo, mid, hi);
-    }
-    public static void sort(Comparable[] a)
-    {
-        Comparable[] aux = new Comparable[a.length];
-        sort(a, aux, 0, a.length - 1);
-    }
-    public static boolean less(Comparable a, Comparable b){
-        return a.compareTo(b)<0;
-    }
+
 }
