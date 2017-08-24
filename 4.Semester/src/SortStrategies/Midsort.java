@@ -1,8 +1,8 @@
 package SortStrategies;
 /**
- * Splitsort Algorithm
+ * Midsort Algorithm
  */
-public class Splitsort implements Sortable {
+public class Midsort implements Sortable {
 
     private int firsthalf,secondhalf;
 
