@@ -1,6 +1,20 @@
 package SortStrategies;
 
+import com.sun.scenario.effect.Merge;
+
+import java.util.concurrent.Callable;
+import java.util.function.Supplier;
+
 public class Mergesort implements Sortable {
+
+    private Comparable[] array;
+    public Mergesort(Comparable[] array){
+        this.array = array;
+        sort(this.array);
+    }
+    public Mergesort(){
+
+    }
     public void merge(Comparable[] a, Comparable[] aux,
                               int lo, int mid, int hi)
     {
@@ -35,4 +49,8 @@ public class Mergesort implements Sortable {
     public void exch(Comparable[] a, int i, int j) {
 
     }
+    public String toString(){
+        return "Fertig";
+    }
+
 }
