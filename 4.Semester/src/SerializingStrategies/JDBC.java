@@ -8,6 +8,8 @@ import java.sql.*;
 public class JDBC {
     Connection con;
     Statement st;
+    PreparedStatement ps;
+    CallableStatement cs;
     ResultSet rs;
     public void DriverLoading(){
         try{
@@ -28,7 +30,11 @@ public class JDBC {
         try{
             con = DriverManager.getConnection("ddd");
             st = con.createStatement();
-            st.executeUpdate("sql");
+            ps = con.prepareStatement("SQL BEFEHLE ? ");
+            ps.setFloat(1,31213);
+            ps.executeUpdate();
+            st.executeQuery("");
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

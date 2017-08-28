@@ -38,6 +38,7 @@ public class Mergesort implements Sortable {
     }
     public  void sort(Comparable[] a)
     {
+       // this.array = a;
         Comparable[] aux = new Comparable[a.length];
         sort(a, aux, 0, a.length - 1);
     }
@@ -49,8 +50,10 @@ public class Mergesort implements Sortable {
     public void exch(Comparable[] a, int i, int j) {
 
     }
-    public String toString(){
-        return "Fertig";
-    }
+   public void printArray(){
+       for(Comparable i: this.array){
+           System.out.println(i);
+       }
+   }
 
 }
