@@ -25,6 +25,7 @@ public class JDBC {
         }catch(SQLException e){
             e.printStackTrace();
         }
+
     }
     public void createAndSendStatement(){
         try{

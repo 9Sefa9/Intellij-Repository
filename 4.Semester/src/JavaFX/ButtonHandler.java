@@ -28,8 +28,6 @@ public class ButtonHandler extends Application{
         button = new Button();
         button.setText("Klick Mich");
 
-        //when ever they klick this button,
-        // //the code that this handle look in this class to find the handle method
         button.setOnAction((event) -> {button.setText("Geklickt!");});
 
         layout.getChildren().add(button);

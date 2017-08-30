@@ -11,6 +11,9 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
+import java.util.Observable;
+import java.util.Observer;
+
 
 public class AllLightsOn extends Application {
     private  Button buttons[];

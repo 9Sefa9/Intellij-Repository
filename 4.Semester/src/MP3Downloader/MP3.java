@@ -25,7 +25,9 @@ public class MP3 {
         //create browser
         ignoreLogs();
         webClient = new WebClient(BrowserVersion.CHROME);
+
         webClient.getOptions().setThrowExceptionOnScriptError(false);
+        webClient.getOptions().setCssEnabled(false);
     }
 
     //create Websiteframe
@@ -37,38 +39,36 @@ public class MP3 {
         final HtmlForm form = page.getFirstByXPath("//form[@action='index.php?p=convert']");
         final HtmlTextInput urlField = form.getFirstByXPath("//input[@name='url']");
         final HtmlButton convertButton= form.getFirstByXPath("//button[@type='submit']");
-        System.out.println("pasting Youtube link...");
+        System.out.println("Accessing Youtube link...");
         urlField.setText(this.urlYoutube);
-        System.out.println("clicking 'convert' Button...");
-        System.out.println("Downloading MP3 on Server...");
+        System.out.println("Converting to mp3...");
+        System.out.println("Preparing mp3 file for download...");
         page = convertButton.click();
-        //Später Zeit einstllen
-        Thread.sleep(5000);
-        final HtmlButton continueButton = form.getFirstByXPath("//button[@type='submit']");
+
+        windowTitle();
+
+        final HtmlAnchor continueButton = page.getFirstByXPath("//a[@class='btn']");
         page = continueButton.click();
+
         windowTitle();
 
     }
-    public void downloadMp3FromServer(){
+    public void downloadMp3FromServer() throws IOException {
         HtmlAnchor downloadAnchor = page.getFirstByXPath("//a[@class='btn btn-success btn-large']");
         InputStream reader = null;
         OutputStream os = null;
         WebResponse response = null;
+        HtmlPage downloadSession;
         try {
-            HtmlPage page2 = downloadAnchor.click();
-        response = page2.getWebResponse();
-        reader = response.getContentAsStream();
-
+            reader = downloadAnchor.click().getWebResponse().getContentAsStream();
             os = new FileOutputStream(this.savepath);
 
-            byte[] buffer = new byte[4096];
-            int read =0;
-
+            byte[] buffer = new byte[8192];
+            int read;
             while((read = reader.read(buffer)) != -1){
                 os.write(buffer,0,read);
            }
-
-            System.out.println("Done!");
+            System.out.println("Download done! Please check your path: "+this.savepath);
 
         }catch (Exception i){
                 i.printStackTrace();
@@ -84,7 +84,8 @@ public class MP3 {
                     e.printStackTrace();
             }
         }
-    }
+
+        }
 
     public void ignoreLogs() {
         LogFactory.getFactory().setAttribute("org.apache.commons.logging.Log", "org.apache.commons.logging.impl.NoOpLog");
