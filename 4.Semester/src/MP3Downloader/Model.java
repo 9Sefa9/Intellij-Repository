@@ -7,11 +7,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.File;
-import java.nio.file.DirectoryStream;
-import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
 
 public class Model {
 
@@ -19,7 +15,7 @@ public class Model {
     private FileChooser fileChooser;
     private File file,fileSave;
     private Path path;
-    private String choosenPath;
+    private String choosenPath = new String();
 
     //attached to paste
     public void ctrlv(TextField urlfield){
@@ -37,28 +33,32 @@ public class Model {
     }
     public void savePath(){
             try{
-                fileChooser = new FileChooser();
+                dirChooser = new DirectoryChooser();
 
                 //zeigt ein bevorzugtes format an , nämlich *.pl
              //   FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("*.pl", ".pl");
              //   fileChooser.getExtensionFilters().add(extFilter);
 
                 //zeigt den "save" Fenster
-                fileSave =fileChooser.showSaveDialog(new Stage());
 
-                if(fileSave != null)
-                    fileChooser.getInitialDirectory().getPath();
-             //   fileChooser.setTitle("Saving incoming MP3's in" +fileSave.getPath());
+                fileSave =dirChooser.showDialog(new Stage());
 
                 //solange fenster offen
-                if(fileSave!=null)
-                    //speichere die Dateien mit dem extension "*.mp3" in path
+                if(fileSave!=null) {
+                    //speichere den Ordner ab
                     this.choosenPath = fileSave.getPath();
+
+                }
             }
             catch(Exception e) {
                 e.printStackTrace();
             }
 
+    }
+    public void processDownloadFromList(){
+        if(this.choosenPath != null && !this.choosenPath.equals("")){
+
+        }
     }
 
 }
