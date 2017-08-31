@@ -8,22 +8,22 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 
 public class View extends BorderPane{
-    private ListView<String> listviewsong,listviewplaylist;
-    private Button addsongs,deletesong, download;
-    private GridPane upperframe,downframe,rightframe;
-    private TextField title,interpret;
-    private Text titleText;
-    private Text intepretText;
-    private TextField insertUrl;
-    private Button paste,convert;
-    private Text tutorial;
-    private Button goToPath;
+    ListView<String> listviewdownloadlist,listviewplaylist;
+    Button addsongs,deletesong, download;
+    GridPane upperframe,downframe,rightframe;
+    TextField title,interpret;
+    Text titleText;
+    Text intepretText;
+    TextField insertUrl;
+    Button paste,convert;
+    Text tutorial;
+    Button goToPath;
     public View(){
         setMaxSize(1024,1024);
 
         //instanziierungen
-        listviewsong = new ListView<>();
-        listviewsong.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        listviewdownloadlist = new ListView<>();
+        listviewdownloadlist.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         listviewplaylist = new ListView<>();
         rightframe = new GridPane();
 
@@ -102,7 +102,7 @@ public class View extends BorderPane{
         setBottom(downframe);
         setTop(upperframe);
         setCenter(listviewplaylist);
-        setLeft(listviewsong);
+        setLeft(listviewdownloadlist);
 
     }
 }
