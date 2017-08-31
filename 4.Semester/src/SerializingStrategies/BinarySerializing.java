@@ -3,6 +3,8 @@ package SerializingStrategies;
 import java.io.*;
 
 public class BinarySerializing implements Saveable,Serializable{
+
+
     private static final long serialVersionUID = 34128347L;
     @Override
     public void write(String path,Object msg) {

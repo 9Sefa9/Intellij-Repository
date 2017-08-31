@@ -2,12 +2,7 @@ package Thread;
 
 //Kapitel: Threads
 public class ThreadImplements implements Runnable {
-/*
-    public static void main(String[] args) {
-       Thread t = new Thread(new Thread.ThreadImplements());
-       t.start();
-    }
-*/
+
     @Override
     public void run() {
         for(int i = 0;i<=10; i++)
