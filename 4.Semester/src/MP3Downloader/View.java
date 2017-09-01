@@ -1,19 +1,22 @@
 package MP3Downloader;
 
 import javafx.geometry.Insets;
+import javafx.geometry.Orientation;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 
 public class View extends BorderPane{
     ListView<String> listViewConvertList, listViewDownloadList;
     Button addsongs,deletesong, download;
-    GridPane upperframe,downframe,rightframe;
+    GridPane upperframe,downframe,rightframe,midframe;
     TextField title,interpret;
     Text titleText;
     Text intepretText;
+    Text titleForConvertList,titleForDownloadList;
     TextField insertUrl;
     Button paste,convert;
     Text tutorial;
@@ -21,16 +24,33 @@ public class View extends BorderPane{
     public View(){
         setMaxSize(1024,1024);
 
-        //instanziierungen
+        //Mid
+        midframe = new GridPane();
+        midframe.setVgap(30);
+        midframe.setHgap(30);
+
+        titleForConvertList = new Text("        MP3 Download List");
+        titleForConvertList.setFont(new Font("Verdana",15));
+        midframe.add(titleForConvertList,0,1);
+
+        titleForDownloadList = new Text("       Finished Downloads");
+        titleForDownloadList.setFont(new Font("Verdana",15));
+        midframe.add(titleForDownloadList,1,1);
+
         listViewConvertList = new ListView<>();
         listViewConvertList.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-        listViewDownloadList = new ListView<>();
-        rightframe = new GridPane();
+        listViewConvertList.setPrefHeight(500);
+        listViewConvertList.setStyle("-fx-font: 14px Verdana");
+        midframe.add(listViewConvertList,0,2);
 
-        upperframe = new GridPane();
-        downframe = new GridPane();
+        listViewDownloadList = new ListView<>();
+        listViewDownloadList.setPrefHeight(500);
+        listViewDownloadList.setStyle("-fx-font: 14px Verdana");
+        midframe.add(listViewDownloadList,1,2);
+
 
         //downframe
+        downframe = new GridPane();
         downframe.setVgap(30);
         downframe.setHgap(30);
 
@@ -40,24 +60,27 @@ public class View extends BorderPane{
 
         goToPath = new Button("Open Download Path");
         goToPath.setPadding(new Insets(10,10,10,10));
-        downframe.add(goToPath,7,0);
+        downframe.add(goToPath,8,0);
 
         //upperframe
+        upperframe = new GridPane();
         insertUrl = new TextField();
         insertUrl.setPromptText("Copy/paste your Youtube link here...");
         insertUrl.setPadding(new Insets(10,10,10,10));
         insertUrl.setPrefWidth(500);
+        insertUrl.setStyle("-fx-prompt-text-fill: darkorange");
         upperframe.add(insertUrl,0,2);
 
         paste = new Button("Paste");
         paste.setPadding(new Insets(10,10,10,10));
         upperframe.add(paste,1,2);
 
-        convert = new Button("Add to MP3 download list");
+        convert = new Button("Add to MP3 Download List");
         convert.setPadding(new Insets(10,20,10,10));
         upperframe.add(convert,2,2);
 
         //rightframe
+        rightframe = new GridPane();
         rightframe.setMinSize(200,500);
 
         titleText = new Text("Title");
@@ -102,8 +125,9 @@ public class View extends BorderPane{
         setRight(rightframe);
         setBottom(downframe);
         setTop(upperframe);
-        setCenter(listViewDownloadList);
-        setLeft(listViewConvertList);
+        setCenter(midframe);
+      //  setCenter(listViewDownloadList);
+      //  setLeft(listViewConvertList);
 
     }
 }

@@ -2,6 +2,7 @@ package MP3Downloader;
 
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -22,14 +23,17 @@ public class Model {
         urlfield.setText(null);
         urlfield.paste();
 
+
         if(!urlfield.getText().startsWith("https://www.youtube")) {
             urlfield.setText(null);
+            urlfield.setStyle("-fx-prompt-text-fill: red");
             urlfield.setPromptText("Copied URL is not a valid Youtube link !");
         }
     }
     public void setUrlToList(String url,ListView<String> downloadList){
         if(!url.isEmpty() && url != null && url.startsWith("https://www.youtube"))
           downloadList.getItems().add(url);
+
     }
     public void savePath(){
             try{
@@ -55,9 +59,17 @@ public class Model {
             }
 
     }
-    public void processDownloadFromList(){
+    public void processDownloadFromList(ListView<String> convertList, ListView<String> downloadList){
         if(this.choosenPath != null && !this.choosenPath.equals("")){
+            for(int i = 0; i<convertList.getItems().size(); i++){
+                downloadList.getItems().add(convertList.getItems().get(i));
+            }
 
+            // MP3 mp3library = new MP3("",this.savePath())
+
+        }else{
+            savePath();
+            processDownloadFromList(convertList,downloadList);
         }
     }
 
