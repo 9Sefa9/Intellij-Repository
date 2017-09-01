@@ -8,6 +8,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.IOException;
 import java.nio.file.Path;
 
 public class Model {
@@ -46,11 +47,10 @@ public class Model {
                 //zeigt den "save" Fenster
 
                 fileSave =dirChooser.showDialog(new Stage());
-
                 //solange fenster offen
                 if(fileSave!=null) {
                     //speichere den Ordner ab
-                    this.choosenPath = fileSave.getPath();
+                    this.choosenPath = fileSave.getAbsolutePath();
 
                 }
             }
@@ -71,6 +71,14 @@ public class Model {
             savePath();
             processDownloadFromList(convertList,downloadList);
         }
+    }
+    public void openSavepathExplorer(){
+        try {
+            Runtime.getRuntime().exec("explorer.exe " + this.choosenPath);
+        }catch(IOException i){
+            i.printStackTrace();
+        }
+
     }
 
 }
