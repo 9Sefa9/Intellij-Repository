@@ -14,11 +14,14 @@ import java.nio.file.Path;
 public class Model {
 
     private DirectoryChooser dirChooser;
-    private FileChooser fileChooser;
-    private File file,fileSave;
-    private Path path;
+    private File fileSave;
     private String choosenPath = new String();
+    private MP3 mp3Library;
 
+    public Model(){
+
+        //mp3 initialisierung... eventuell mit Thread arbeiten
+    }
     //attached to paste
     public void ctrlv(TextField urlfield){
         urlfield.setText(null);
@@ -32,8 +35,9 @@ public class Model {
         }
     }
     public void setUrlToList(String url,ListView<String> downloadList){
-        if(!url.isEmpty() && url != null && url.startsWith("https://www.youtube"))
+        if(!url.isEmpty() && url.startsWith("https://www.youtube"))
           downloadList.getItems().add(url);
+
 
     }
     public void savePath(){
@@ -64,7 +68,7 @@ public class Model {
             for(int i = 0; i<convertList.getItems().size(); i++){
                 downloadList.getItems().add(convertList.getItems().get(i));
             }
-
+            mp3Library = new MP3("",this.choosenPath);
             // MP3 mp3library = new MP3("",this.savePath())
 
         }else{
