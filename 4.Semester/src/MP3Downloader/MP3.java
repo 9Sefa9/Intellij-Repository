@@ -4,19 +4,16 @@ import com.gargoylesoftware.htmlunit.BrowserVersion;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.WebResponse;
 import com.gargoylesoftware.htmlunit.html.*;
-import com.sun.xml.internal.messaging.saaj.util.ByteInputStream;
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 import org.apache.commons.logging.LogFactory;
 
 import java.io.*;
-import java.util.List;
-import java.util.Random;
 import java.util.logging.Level;
 
 public class MP3 {
     private String urlYoutube,savepath;
     final private WebClient webClient;
-    private HtmlPage page;
+    private HtmlPage converterPage;
+    private String author;
 
     public MP3(String urlYoutube, String savepath){
         this.urlYoutube = urlYoutube;
@@ -29,32 +26,62 @@ public class MP3 {
         webClient.getOptions().setThrowExceptionOnScriptError(false);
         webClient.getOptions().setCssEnabled(false);
     }
+    public MP3(String urlYoutube){
+        this.urlYoutube = urlYoutube;
+        //create browser
+        ignoreLogs();
+        webClient = new WebClient(BrowserVersion.CHROME);
+
+        webClient.getOptions().setThrowExceptionOnScriptError(false);
+        webClient.getOptions().setCssEnabled(false);
+    }
+    public MP3(){
+        //create browser
+        ignoreLogs();
+        webClient = new WebClient(BrowserVersion.CHROME);
+
+        webClient.getOptions().setThrowExceptionOnScriptError(false);
+        webClient.getOptions().setCssEnabled(false);
+    }
 
     //create Websiteframe
-    public void createWebsite(String page) throws Exception {
-        this.page = webClient.getPage(page);
+    public void createWebsite() throws Exception {
+        converterPage = webClient.getPage("http://convert2mp3.net/");
         windowTitle();
     }
-    public void processYoutubeLink() throws IOException, InterruptedException {
-        final HtmlForm form = page.getFirstByXPath("//form[@action='index.php?p=convert']");
+    /*
+    public String determineAuthorFrom(String ytblink) throws Exception{
+        createWebsite();
+        final HtmlForm form = converterPage.getFirstByXPath("//form[@action='index.php?p=convert']");
+        final HtmlTextInput urlField = form.getFirstByXPath("//input[@name='url']");
+        final HtmlButton convertButton= form.getFirstByXPath("//button[@type='submit']");
+        urlField.setText(ytblink);
+        converterPage = convertButton.click();
+        String s = converterPage.getFirstChild().getLocalName();
+        System.out.println(s);
+        return s;
+    }
+    */
+    public void processYoutubeLink(String ytblink) throws IOException, InterruptedException {
+        final HtmlForm form = converterPage.getFirstByXPath("//form[@action='index.php?p=convert']");
         final HtmlTextInput urlField = form.getFirstByXPath("//input[@name='url']");
         final HtmlButton convertButton= form.getFirstByXPath("//button[@type='submit']");
         System.out.println("Accessing Youtube link...");
-        urlField.setText(this.urlYoutube);
+        urlField.setText(ytblink);
         System.out.println("Converting to mp3...");
         System.out.println("Preparing mp3 file for download...");
-        page = convertButton.click();
+        converterPage = convertButton.click();
 
         windowTitle();
 
-        final HtmlAnchor continueButton = page.getFirstByXPath("//a[@class='btn']");
-        page = continueButton.click();
+        final HtmlAnchor continueButton = converterPage.getFirstByXPath("//a[@class='btn']");
+        converterPage = continueButton.click();
 
         windowTitle();
 
     }
     public void downloadMp3FromServer() throws IOException {
-        HtmlAnchor downloadAnchor = page.getFirstByXPath("//a[@class='btn btn-success btn-large']");
+        HtmlAnchor downloadAnchor = converterPage.getFirstByXPath("//a[@class='btn btn-success btn-large']");
         InputStream reader = null;
         OutputStream os = null;
         WebResponse response = null;
@@ -95,6 +122,6 @@ public class MP3 {
 
     }
     public void windowTitle() {
-        System.out.println("Window Url: " + this.page.getUrl());
+        System.out.println("Window Url: " + this.converterPage.getUrl());
     }
 }
