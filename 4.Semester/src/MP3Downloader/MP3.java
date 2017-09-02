@@ -14,7 +14,7 @@ import java.util.logging.Level;
 public class MP3 implements Runnable{
     private String urlYoutube,path,name;
     final private WebClient webClient;
-    private HtmlPage converterPage;
+    private HtmlPage converterPage,ytpage;
 
     public MP3(String urlYoutube,String path, String name){
         this.urlYoutube = urlYoutube;
@@ -88,7 +88,9 @@ public class MP3 implements Runnable{
 
     }
     public void downloadMp3FromServer() throws IOException {
-        //TODO HTMLSelectElement hse = converterPage.get
+        HtmlDivision hd = converterPage.getFirstByXPath("//div[class='alert alert-success']");
+        System.out.println(hd.getF//TODO !!!
+
         HtmlAnchor downloadAnchor = converterPage.getFirstByXPath("//a[@class='btn btn-success btn-large']");
         InputStream reader = null;
         OutputStream os = null;
