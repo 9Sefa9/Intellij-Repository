@@ -4,44 +4,51 @@ import com.gargoylesoftware.htmlunit.BrowserVersion;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.WebResponse;
 import com.gargoylesoftware.htmlunit.html.*;
+import com.gargoylesoftware.htmlunit.javascript.host.html.HTMLSelectElement;
 import org.apache.commons.logging.LogFactory;
+import org.w3c.dom.html.HTMLOptionElement;
 
 import java.io.*;
 import java.util.logging.Level;
 
-public class MP3 {
-    private String urlYoutube,savepath;
+public class MP3 implements Runnable{
+    private String urlYoutube,path,name;
     final private WebClient webClient;
     private HtmlPage converterPage;
-    private String author;
 
-    public MP3(String urlYoutube, String savepath){
+    public MP3(String urlYoutube,String path, String name){
         this.urlYoutube = urlYoutube;
-        this.savepath = savepath;
+        this.name= name;
+        this.path = path;
 
         //create browser
         ignoreLogs();
         webClient = new WebClient(BrowserVersion.CHROME);
-
         webClient.getOptions().setThrowExceptionOnScriptError(false);
         webClient.getOptions().setCssEnabled(false);
+        webClient.getOptions().setUseInsecureSSL(true);
+        webClient.getOptions().setJavaScriptEnabled(true);
     }
     public MP3(String urlYoutube){
         this.urlYoutube = urlYoutube;
         //create browser
         ignoreLogs();
         webClient = new WebClient(BrowserVersion.CHROME);
-
         webClient.getOptions().setThrowExceptionOnScriptError(false);
         webClient.getOptions().setCssEnabled(false);
+        webClient.getOptions().setUseInsecureSSL(true);
+        webClient.getOptions().setRedirectEnabled(true);
+        webClient.getOptions().setJavaScriptEnabled(false);
     }
     public MP3(){
         //create browser
         ignoreLogs();
         webClient = new WebClient(BrowserVersion.CHROME);
-
         webClient.getOptions().setThrowExceptionOnScriptError(false);
         webClient.getOptions().setCssEnabled(false);
+        webClient.getOptions().setUseInsecureSSL(true);
+        webClient.getOptions().setRedirectEnabled(true);
+        webClient.getOptions().setJavaScriptEnabled(false);
     }
 
     //create Websiteframe
@@ -81,21 +88,22 @@ public class MP3 {
 
     }
     public void downloadMp3FromServer() throws IOException {
+        //TODO HTMLSelectElement hse = converterPage.get
         HtmlAnchor downloadAnchor = converterPage.getFirstByXPath("//a[@class='btn btn-success btn-large']");
         InputStream reader = null;
         OutputStream os = null;
-        WebResponse response = null;
-        HtmlPage downloadSession;
+       // WebResponse response = null;
+       // HtmlPage downloadSession;
         try {
             reader = downloadAnchor.click().getWebResponse().getContentAsStream();
-            os = new FileOutputStream(this.savepath);
+            os = new FileOutputStream(this.path+"/"+this.name);
 
             byte[] buffer = new byte[8192];
             int read;
             while((read = reader.read(buffer)) != -1){
                 os.write(buffer,0,read);
            }
-            System.out.println("Download done! Please check your path: "+this.savepath);
+            System.out.println("Download done! Please check your path.");
 
         }catch (Exception i){
                 i.printStackTrace();
@@ -124,4 +132,16 @@ public class MP3 {
     public void windowTitle() {
         System.out.println("Window Url: " + this.converterPage.getUrl());
     }
+
+    @Override
+    public void run(){
+        try {
+            createWebsite();
+            processYoutubeLink(this.urlYoutube);
+            downloadMp3FromServer();
+
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        }
 }

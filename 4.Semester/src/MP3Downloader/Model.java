@@ -1,15 +1,13 @@
 package MP3Downloader;
 
+import javafx.beans.InvalidationListener;
+import javafx.collections.ListChangeListener;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.scene.paint.Color;
 import javafx.stage.DirectoryChooser;
-import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Path;
 import java.util.Hashtable;
 
 public class Model {
@@ -17,17 +15,16 @@ public class Model {
     private DirectoryChooser dirChooser;
     private File fileSave;
     private String choosenPath = new String();
-    private MP3 mp3Library;
     private Hashtable<String, String> table;
 
     public Model() throws Exception {
 
         //mp3 initialisierung... eventuell mit Thread um eventuell ladezeiten zu vermeiden
         table = new Hashtable<>();
-        mp3Library = new MP3();
+
     }
 
-    /*TODO:> Author muss implementiert und anstelle von den URLS gemacht werden. bisjetzt aber mal ohne..*/ // attached to add to mp3 list
+   //attached to add to mp3 list
 
     public void setUrlToList(String url, ListView<String> downloadList) {
 
@@ -41,7 +38,7 @@ public class Model {
                 }
 
                 //String author = mp3Library.determineAuthorFrom(url);
-                table.put(url, url);
+            //    table.put(url, url);
                 downloadList.getItems().add(url);
 
             } catch (Exception e) {
@@ -50,14 +47,30 @@ public class Model {
         }
     }
 
-    public void processDownloadFromList(ListView<String> convertList, ListView<String> downloadList) {
+    public void processDownloadFromList(ListView<String> convertList, ListView<String> downloadList){
+    /*
 
-        if (this.choosenPath != null && !this.choosenPath.equals("")) {
-            for (int i = 0; i < convertList.getItems().size(); i++) {
+            for (int i = 0; i <= convertList.getItems().size(); i++) {
+                //if(downloadList.getItems().get(i).equals(convertList.getItems().get(i)) && downloadList.getItems().get(i)!= null){
+                //    return;
+                // }
+                if(downloadList.getItems().get(i) != null)
                 downloadList.getItems().add(convertList.getItems().get(i));
             }
+    */
+        if (this.choosenPath != null && !this.choosenPath.equals("")) {
+
+            for(int i = 0; i< convertList.getItems().size();i++)
+                downloadList.getItems().add(convertList.getItems().get(i));
 
 
+            ThreadGroup g1 = new ThreadGroup("group");
+            int k  = 0;
+            for(String url: downloadList.getItems()){
+                MP3 mp3 = new MP3(url,this.choosenPath,"musik"+k+".mp3");
+               new Thread(g1,mp3).start();
+            }
+            System.out.println("Thread fertig");
         } else {
             savePath();
             processDownloadFromList(convertList, downloadList);
