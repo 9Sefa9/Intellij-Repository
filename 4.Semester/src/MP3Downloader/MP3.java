@@ -15,7 +15,7 @@ import java.util.logging.Level;
 public class MP3 implements Runnable{
     private String urlYoutube,path,name;
     final private WebClient webClient;
-    private HtmlPage converterPage,ytpage;
+    private HtmlPage converterPage;
 
     public MP3(String urlYoutube,String path, String name){
         this.urlYoutube = urlYoutube;

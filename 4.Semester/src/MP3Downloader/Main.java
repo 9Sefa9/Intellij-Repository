@@ -3,11 +3,6 @@ package MP3Downloader;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-import java.util.ArrayList;
-import java.util.Scanner;
-import java.util.Stack;
-
 public class Main extends Application{
     /*
     private static Stack<String> list = new Stack<>();

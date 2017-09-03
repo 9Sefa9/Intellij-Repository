@@ -48,7 +48,7 @@ public class Model {
         }
     }
 
-    public void processDownloadFromList(ListView<String> convertList, ListView<String> downloadList){
+    public synchronized void processDownloadFromList(ListView<String> convertList, ListView<String> downloadList){
     /*
 
             for (int i = 0; i <= convertList.getItems().size(); i++) {
@@ -67,11 +67,23 @@ public class Model {
             }
 
             int k  = 0;
+            File f = null;
             for(String url: this.urllist){
-                MP3 mp3 = new MP3(url,this.choosenPath,"musik"+(k+=1)+".mp3");
-               new Thread(mp3).start();
+
+                    f = new File(this.choosenPath + "/" + "musik" + k + ".mp3");
+
+                    while (f.exists()) {
+                        k++;
+                        f = new File(this.choosenPath + "/" + "musik" + k + ".mp3");
+                    }
+
+                    MP3 mp3 = new MP3(url, this.choosenPath, "musik" + k + ".mp3");
+
+                    Thread t =new Thread(mp3);
+                    t.start();
+                    System.out.println("Start Thread Nr."+t.getId());
             }
-            System.out.print("thread gestartet..");
+
 
                this.urllist = new ArrayList<>();
                 convertList.getItems().remove(0,convertList.getItems().size());
