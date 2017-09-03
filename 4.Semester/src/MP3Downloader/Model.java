@@ -8,6 +8,7 @@ import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Hashtable;
 
 public class Model {
@@ -15,12 +16,12 @@ public class Model {
     private DirectoryChooser dirChooser;
     private File fileSave;
     private String choosenPath = new String();
-    private Hashtable<String, String> table;
+    private ArrayList<String> urllist;
 
     public Model() throws Exception {
 
         //mp3 initialisierung... eventuell mit Thread um eventuell ladezeiten zu vermeiden
-        table = new Hashtable<>();
+        urllist = new ArrayList<>();
 
     }
 
@@ -37,8 +38,8 @@ public class Model {
                     }
                 }
 
-                //String author = mp3Library.determineAuthorFrom(url);
-            //    table.put(url, url);
+
+                this.urllist.add(url);
                 downloadList.getItems().add(url);
 
             } catch (Exception e) {
@@ -60,17 +61,21 @@ public class Model {
     */
         if (this.choosenPath != null && !this.choosenPath.equals("")) {
 
-            for(int i = 0; i< convertList.getItems().size();i++)
+            for(int i = 0; i< convertList.getItems().size();i++) {
+
                 downloadList.getItems().add(convertList.getItems().get(i));
-
-
-            ThreadGroup g1 = new ThreadGroup("group");
-            int k  = 0;
-            for(String url: downloadList.getItems()){
-                MP3 mp3 = new MP3(url,this.choosenPath,"musik"+k+".mp3");
-               new Thread(g1,mp3).start();
             }
-            System.out.println("Thread fertig");
+
+            int k  = 0;
+            for(String url: this.urllist){
+                MP3 mp3 = new MP3(url,this.choosenPath,"musik"+(k+=1)+".mp3");
+               new Thread(mp3).start();
+            }
+            System.out.print("thread gestartet..");
+
+               this.urllist = new ArrayList<>();
+                convertList.getItems().remove(0,convertList.getItems().size());
+
         } else {
             savePath();
             processDownloadFromList(convertList, downloadList);
@@ -100,8 +105,8 @@ public class Model {
         if (fileSave != null) {
             //speichere den Ordner ab
             this.choosenPath = fileSave.getAbsolutePath();
-
         }
+
     } catch (Exception e) {
         e.printStackTrace();
     }

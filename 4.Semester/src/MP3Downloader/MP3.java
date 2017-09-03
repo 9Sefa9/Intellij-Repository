@@ -5,6 +5,7 @@ import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.WebResponse;
 import com.gargoylesoftware.htmlunit.html.*;
 import com.gargoylesoftware.htmlunit.javascript.host.html.HTMLSelectElement;
+import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.logging.LogFactory;
 import org.w3c.dom.html.HTMLOptionElement;
 
@@ -88,14 +89,11 @@ public class MP3 implements Runnable{
 
     }
     public void downloadMp3FromServer() throws IOException {
-        HtmlDivision hd = converterPage.getFirstByXPath("//div[class='alert alert-success']");
-        System.out.println(hd.getF//TODO !!!
 
         HtmlAnchor downloadAnchor = converterPage.getFirstByXPath("//a[@class='btn btn-success btn-large']");
         InputStream reader = null;
         OutputStream os = null;
-       // WebResponse response = null;
-       // HtmlPage downloadSession;
+
         try {
             reader = downloadAnchor.click().getWebResponse().getContentAsStream();
             os = new FileOutputStream(this.path+"/"+this.name);
