@@ -77,7 +77,7 @@ public class Model {
                         f = new File(this.choosenPath + "/" + "musik" + k + ".mp3");
                     }
 
-                    MP3 mp3 = new MP3(url, this.choosenPath, "musik" + k + ".mp3");
+                    MP3 mp3 = new MP3(this,url, this.choosenPath, "musik" + k + ".mp3");
 
                     Thread t =new Thread(mp3);
                     t.start();

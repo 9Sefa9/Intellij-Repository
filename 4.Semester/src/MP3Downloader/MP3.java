@@ -16,11 +16,13 @@ public class MP3 implements Runnable{
     private String urlYoutube,path,name;
     final private WebClient webClient;
     private HtmlPage converterPage;
+    private Model model;
 
-    public MP3(String urlYoutube,String path, String name){
+    public MP3(Model model,String urlYoutube,String path, String name){
         this.urlYoutube = urlYoutube;
         this.name= name;
         this.path = path;
+        this.model = model;
 
         //create browser
         ignoreLogs();
@@ -139,6 +141,7 @@ public class MP3 implements Runnable{
             createWebsite();
             processYoutubeLink(this.urlYoutube);
             downloadMp3FromServer();
+
 
         }catch(Exception e){
             e.printStackTrace();
