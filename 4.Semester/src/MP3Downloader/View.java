@@ -33,7 +33,7 @@ public class View extends BorderPane{
         titleForConvertList.setFont(new Font("Verdana",15));
         midframe.add(titleForConvertList,0,1);
 
-        titleForDownloadList = new Text("       Finished Downloads");
+        titleForDownloadList = new Text("       Downloaded Files");
         titleForDownloadList.setFont(new Font("Verdana",15));
         midframe.add(titleForDownloadList,1,1);
 

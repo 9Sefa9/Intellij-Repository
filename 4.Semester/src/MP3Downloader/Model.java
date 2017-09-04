@@ -1,28 +1,27 @@
 package MP3Downloader;
 
-import javafx.beans.InvalidationListener;
-import javafx.collections.ListChangeListener;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Hashtable;
 
 public class Model {
 
+    private View view;
     private DirectoryChooser dirChooser;
     private File fileSave;
     private String choosenPath = new String();
-    private ArrayList<String> urllist;
+    public ObservableList<String> urllist;
 
-    public Model() throws Exception {
+    public Model(View view) throws Exception {
 
         //mp3 initialisierung... eventuell mit Thread um eventuell ladezeiten zu vermeiden
-        urllist = new ArrayList<>();
-
+        urllist = FXCollections.observableArrayList();
+        this.view = view;
     }
 
    //attached to add to mp3 list
@@ -49,43 +48,23 @@ public class Model {
     }
 
     public synchronized void processDownloadFromList(ListView<String> convertList, ListView<String> downloadList){
-    /*
 
-            for (int i = 0; i <= convertList.getItems().size(); i++) {
-                //if(downloadList.getItems().get(i).equals(convertList.getItems().get(i)) && downloadList.getItems().get(i)!= null){
-                //    return;
-                // }
-                if(downloadList.getItems().get(i) != null)
-                downloadList.getItems().add(convertList.getItems().get(i));
-            }
-    */
         if (this.choosenPath != null && !this.choosenPath.equals("")) {
 
             for(int i = 0; i< convertList.getItems().size();i++) {
-
                 downloadList.getItems().add(convertList.getItems().get(i));
             }
 
-            int k  = 0;
-            File f = null;
-            for(String url: this.urllist){
+            for(String youtubeUrl: this.urllist){
 
-                    f = new File(this.choosenPath + "/" + "musik" + k + ".mp3");
-
-                    while (f.exists()) {
-                        k++;
-                        f = new File(this.choosenPath + "/" + "musik" + k + ".mp3");
-                    }
-
-                    MP3 mp3 = new MP3(this,url, this.choosenPath, "musik" + k + ".mp3");
-
+                    MP3 mp3 = new MP3(this.view,youtubeUrl,this.choosenPath);
                     Thread t =new Thread(mp3);
                     t.start();
-                    System.out.println("Start Thread Nr."+t.getId());
+                System.out.println("Start Thread Nr."+t.getId());
+
             }
 
-
-               this.urllist = new ArrayList<>();
+               this.urllist = FXCollections.observableArrayList();
                 convertList.getItems().remove(0,convertList.getItems().size());
 
         } else {
