@@ -8,6 +8,7 @@ import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
+import java.util.concurrent.CompletableFuture;
 
 public class Model {
 
@@ -51,21 +52,20 @@ public class Model {
 
         if (this.choosenPath != null && !this.choosenPath.equals("")) {
 
-            for(int i = 0; i< convertList.getItems().size();i++) {
-                downloadList.getItems().add(convertList.getItems().get(i));
-            }
-
             for(String youtubeUrl: this.urllist){
 
                     MP3 mp3 = new MP3(this.view,youtubeUrl,this.choosenPath);
                     Thread t =new Thread(mp3);
                     t.start();
-                System.out.println("Start Thread Nr."+t.getId());
 
+                    downloadList.getItems().add("Downloading...");
+                    convertList.getItems().remove(youtubeUrl);
+
+                System.out.println("Start Thread Nr."+t.getId());
             }
 
                this.urllist = FXCollections.observableArrayList();
-                convertList.getItems().remove(0,convertList.getItems().size());
+              //  convertList.getItems().remove(0,convertList.getItems().size());
 
         } else {
             savePath();
@@ -111,6 +111,34 @@ public class Model {
             i.printStackTrace();
         }
 
+    }
+
+
+}
+class innerClass extends Thread{
+
+    private ListView<String> convertList,downloadList;
+    private ThreadGroup group;
+    private ObservableList<String> urllist;
+
+    public innerClass(ListView<String> convertList,ListView<String> downloadList,ObservableList<String> urllist){
+    this.convertList = convertList;
+    this.downloadList = downloadList;
+    this.urllist = urllist;
+    }
+
+    @Override
+    public void run(){
+        while(true) {
+            if (group.activeCount() <= 0) {
+                downloadList.getItems().remove(0, downloadList.getItems().size());
+                for (String youtubeUrl : this.urllist) {
+                    // downloadList.getItems().get(downloadList.getItems().indexOf(youtubeUrl)).replace(youtubeUrl, "Done!");
+                    downloadList.getItems().add("DONE!");
+                }
+                break;
+            }
+        }
     }
 
 }
