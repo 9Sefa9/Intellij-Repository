@@ -8,14 +8,14 @@ import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
-import java.util.concurrent.CompletableFuture;
 
-public class Model {
+public class Model implements Runnable {
 
     private View view;
     private DirectoryChooser dirChooser;
     private File fileSave;
     private String choosenPath = new String();
+    private ListView<String> downloadList;
     public ObservableList<String> urllist;
 
     public Model(View view) throws Exception {
@@ -49,7 +49,7 @@ public class Model {
     }
 
     public synchronized void processDownloadFromList(ListView<String> convertList, ListView<String> downloadList){
-
+        this.downloadList = downloadList;
         if (this.choosenPath != null && !this.choosenPath.equals("")) {
 
             for(String youtubeUrl: this.urllist){
@@ -113,32 +113,9 @@ public class Model {
 
     }
 
-
-}
-class innerClass extends Thread{
-
-    private ListView<String> convertList,downloadList;
-    private ThreadGroup group;
-    private ObservableList<String> urllist;
-
-    public innerClass(ListView<String> convertList,ListView<String> downloadList,ObservableList<String> urllist){
-    this.convertList = convertList;
-    this.downloadList = downloadList;
-    this.urllist = urllist;
-    }
-
     @Override
     public void run(){
-        while(true) {
-            if (group.activeCount() <= 0) {
-                downloadList.getItems().remove(0, downloadList.getItems().size());
-                for (String youtubeUrl : this.urllist) {
-                    // downloadList.getItems().get(downloadList.getItems().indexOf(youtubeUrl)).replace(youtubeUrl, "Done!");
-                    downloadList.getItems().add("DONE!");
-                }
-                break;
-            }
-        }
+
     }
 
 }
