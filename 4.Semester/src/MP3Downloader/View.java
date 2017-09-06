@@ -84,19 +84,11 @@ public class View extends BorderPane{
         rightframe.setMinSize(200,500);
 
         titleText = new Text("Title");
-        rightframe.add(titleText,0,4);
+        rightframe.add(titleText,0,9);
 
         title = new TextField();
         title.setPadding(new Insets(5,20,5,5));
-        rightframe.add(title,0,5);
-
-        intepretText = new Text("Interpret");
-        rightframe.add(intepretText,0,9);
-
-        interpret = new TextField();
-        interpret.setPadding(new Insets(5,20,5,5));
-        rightframe.add(interpret,0,10);
-
+        rightframe.add(title,0,10);
 
         download = new Button("Set Download Path");
         download.setPadding(new Insets(10,10,10,10));

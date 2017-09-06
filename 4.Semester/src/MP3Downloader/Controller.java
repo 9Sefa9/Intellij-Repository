@@ -17,6 +17,12 @@ public class Controller {
         this.view.download.setOnAction(e -> this.model.savePath());
         this.view.addsongs.setOnAction(e -> this.model.processDownloadFromList(this.view.listViewConvertList,this.view.listViewDownloadList));
         this.view.goToPath.setOnAction(e->this.model.openSavepathExplorer());
+        this.view.listViewDownloadList.setOnMouseClicked(event -> {
+            this.view.title.setText(this.view.listViewDownloadList.getSelectionModel().getSelectedItem());
+        });
+        //TODO versuche den Titel zu ändern..  wahrscheinlich dann explorer greifend..
+
+        this.view.listViewDownloadList.getSelectionModel()
         }catch(Exception e){
                 e.printStackTrace();
         }
