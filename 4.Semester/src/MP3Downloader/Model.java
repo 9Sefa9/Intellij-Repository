@@ -1,6 +1,8 @@
 package MP3Downloader;
 
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -8,6 +10,8 @@ import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.concurrent.*;
 
 public class Model implements Runnable {
 
@@ -15,8 +19,10 @@ public class Model implements Runnable {
     private DirectoryChooser dirChooser;
     private File fileSave;
     private String choosenPath = new String();
-    private ListView<String> downloadList;
+    private ListView<String> downloadList,convertList;
     public ObservableList<String> urllist;
+    private ExecutorService exec;
+    private ArrayList<CompletableFuture<String>> temp;
 
     public Model(View view) throws Exception {
 
@@ -50,22 +56,17 @@ public class Model implements Runnable {
 
     public synchronized void processDownloadFromList(ListView<String> convertList, ListView<String> downloadList){
         this.downloadList = downloadList;
+        this.convertList = convertList;
         if (this.choosenPath != null && !this.choosenPath.equals("")) {
 
-            for(String youtubeUrl: this.urllist){
-
-                    MP3 mp3 = new MP3(this.view,youtubeUrl,this.choosenPath);
-                    Thread t =new Thread(mp3);
-                    t.start();
-
-                    downloadList.getItems().add("Downloading...");
-                    convertList.getItems().remove(youtubeUrl);
-
-                System.out.println("Start Thread Nr."+t.getId());
+            for(String url:this.urllist){
+                this.downloadList.getItems().add("Downloading "+url);
+                this.convertList.getItems().remove(url);
             }
 
-               this.urllist = FXCollections.observableArrayList();
-              //  convertList.getItems().remove(0,convertList.getItems().size());
+            new innerProcessClass(this.choosenPath,this.urllist,downloadList,convertList).start();
+            this.urllist = FXCollections.observableArrayList();
+
 
         } else {
             savePath();
@@ -113,9 +114,48 @@ public class Model implements Runnable {
 
     }
 
+
     @Override
-    public void run(){
+    public void run() {
 
     }
+}
+class innerProcessClass extends Thread{
+        private ObservableList<String> urllist;
+        private ListView<String> convertList,downloadList;
+        private String choosenPath;
 
+    public innerProcessClass(String path,ObservableList<String> urllist,ListView<String> downloadList,ListView<String> convertList){
+        this.urllist = urllist;
+        this.convertList = convertList;
+        this.downloadList = downloadList;
+        this.choosenPath = path;
+    }
+    @Override
+    public void run(){
+       ArrayList<CompletableFuture<String>> temp = new ArrayList<>();
+
+       for(String youtubeUrl: this.urllist){
+
+            System.out.println("Thread gestartet!");
+            temp.add(CompletableFuture.supplyAsync(new MP3(youtubeUrl,this.choosenPath)));
+
+        }
+        //musste so hässlig sein, weil er irgendwas mit not fx thread labert...
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                for (int j = 0; j < temp.size(); j++) {
+                    try {
+                        downloadList.getItems().remove(j);
+                        downloadList.getItems().add(""+temp.get(j).get());
+                    }catch(Exception e){
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+
+
+    }
 }

@@ -11,19 +11,18 @@ import org.apache.commons.logging.LogFactory;
 import org.w3c.dom.html.HTMLOptionElement;
 
 import java.io.*;
+import java.util.concurrent.Callable;
+import java.util.function.Supplier;
 import java.util.logging.Level;
 
-public class MP3 implements Runnable{
+public class MP3 implements Supplier<String> {
     private String urlYoutube,path,name;
     private WebClient webClient,webClient2;
     private HtmlPage converterPage,amnesty;
-    private View view;
 
-    public MP3(View view,String urlYoutube,String path){
+    public MP3(String urlYoutube,String path){
         this.urlYoutube = urlYoutube;
         this.path = path;
-        this.view = view;
-
 
         //create browser
         ignoreLogs();
@@ -32,6 +31,14 @@ public class MP3 implements Runnable{
         webClient.getOptions().setCssEnabled(false);
         webClient.getOptions().setUseInsecureSSL(true);
         webClient.getOptions().setJavaScriptEnabled(true);
+
+        try {
+            createWebsite();
+            processYoutubeLink();
+            downloadMp3FromServer();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     //create Websiteframe
@@ -99,13 +106,18 @@ public class MP3 implements Runnable{
                 if(os != null)
                     os.close();
 
-
-
                 }catch(Exception e){
                     e.printStackTrace();
             }
         }
 
+        }
+
+        public String get(){
+        return getTitle();
+        }
+        public String getTitle(){
+            return this.name;
         }
 
     public void ignoreLogs() {
@@ -147,6 +159,8 @@ public class MP3 implements Runnable{
                 }
             }
         }
+
+  /*
     @Override
     public void run(){
         try {
@@ -158,4 +172,5 @@ public class MP3 implements Runnable{
             e.printStackTrace();
         }
     }
+    */
 }
