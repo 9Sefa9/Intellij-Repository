@@ -1,6 +1,7 @@
 package MP3Downloader;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 public class Main extends Application{
@@ -17,5 +18,7 @@ public class Main extends Application{
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
         primaryStage.show();
+
+        primaryStage.setOnCloseRequest(e -> Platform.exit());
     }
 }

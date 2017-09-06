@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.concurrent.*;
 
-public class Model implements Runnable {
+public class Model{
 
     private View view;
     private DirectoryChooser dirChooser;
@@ -114,10 +114,20 @@ public class Model implements Runnable {
 
     }
 
-
-    @Override
-    public void run() {
-
+    public void replaceTitleWith(String defaultTitle,String titleFromView){
+        File oldF,newF;
+        try{
+            oldF = new File(this.choosenPath+"/"+defaultTitle+".mp3");
+            newF =  new File(this.choosenPath+"/"+titleFromView+".mp3");
+            if(oldF.exists()){
+                oldF.renameTo(newF);
+            }
+            else{
+                throw new Exception("Could not change name!");
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }
 class innerProcessClass extends Thread{
