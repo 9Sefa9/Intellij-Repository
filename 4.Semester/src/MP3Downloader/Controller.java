@@ -25,9 +25,7 @@ public class Controller {
             this.view.listViewDownloadList.setOnMouseClicked(event -> {
                 this.view.title.setText(this.view.listViewDownloadList.getSelectionModel().getSelectedItem());
             });
-        //TODO versuche den Titel zu ändern..  wahrscheinlich dann explorer greifend..
-
-        this.view.title.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            this.view.title.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent ke)
             {
@@ -43,6 +41,13 @@ public class Controller {
                 }
             }
         });
+           //TODO: delet ebutton implementieren, dafr sorgen, das sie uas der Festplatte gelscöht wird...
+            this.view.deletesong.setOnAction(e->{
+                if(!this.view.listViewDownloadList.getSelectionModel().getSelectedItem().isEmpty()){
+                    this.view.listViewDownloadList.getItems().remove(this.view.listViewDownloadList.getSelectionModel().getSelectedItem());
+                }
+            });
+
         }catch(Exception e){
                 e.printStackTrace();
         }
