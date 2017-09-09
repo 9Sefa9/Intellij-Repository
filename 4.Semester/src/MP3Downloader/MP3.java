@@ -20,7 +20,7 @@ public class MP3 implements Supplier<String> {
     private WebClient webClient,webClient2;
     private HtmlPage converterPage,amnesty;
 
-    public MP3(String urlYoutube,String path){
+    public  MP3(String urlYoutube,String path){
         this.urlYoutube = urlYoutube;
         this.path = path;
 
@@ -42,7 +42,7 @@ public class MP3 implements Supplier<String> {
     }
 
     //create Websiteframe
-    public void createWebsite() throws Exception {
+    public synchronized void createWebsite() throws Exception {
         converterPage = webClient.getPage("http://convert2mp3.net/");
         windowTitle();
     }
@@ -59,7 +59,7 @@ public class MP3 implements Supplier<String> {
         return s;
     }
     */
-    public void processYoutubeLink() throws IOException, InterruptedException {
+    public synchronized void processYoutubeLink() throws IOException, InterruptedException {
         final HtmlForm form = converterPage.getFirstByXPath("//form[@action='index.php?p=convert']");
         final HtmlTextInput urlField = form.getFirstByXPath("//input[@name='url']");
         final HtmlButton convertButton= form.getFirstByXPath("//button[@type='submit']");
@@ -78,7 +78,7 @@ public class MP3 implements Supplier<String> {
         System.out.println("determine title");
         determineTitle();
     }
-    public void downloadMp3FromServer() throws IOException {
+    public synchronized void downloadMp3FromServer() throws IOException {
 
         HtmlAnchor downloadAnchor = converterPage.getFirstByXPath("//a[@class='btn btn-success btn-large']");
         InputStream reader = null;
@@ -116,7 +116,7 @@ public class MP3 implements Supplier<String> {
         public String get(){
         return getTitle();
         }
-        public String getTitle(){
+        public synchronized String getTitle(){
             return this.name;
         }
 

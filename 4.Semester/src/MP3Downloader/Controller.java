@@ -1,6 +1,5 @@
 package MP3Downloader;
 
-import javafx.collections.ListChangeListener;
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -41,7 +40,6 @@ public class Controller {
                 }
             }
         });
-           //TODO: delet ebutton implementieren, dafr sorgen, das sie uas der Festplatte gelscöht wird...
             this.view.deletesong.setOnAction(e->{
                 if(!this.view.listViewDownloadList.getSelectionModel().getSelectedItem().isEmpty()){
                     this.view.listViewDownloadList.getItems().remove(this.view.listViewDownloadList.getSelectionModel().getSelectedItem());
