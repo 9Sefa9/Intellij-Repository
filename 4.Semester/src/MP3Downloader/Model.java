@@ -148,22 +148,22 @@ class innerProcessClass extends Thread{
 
             System.out.println("Thread gestartet!");
             temp.add(CompletableFuture.supplyAsync(new MP3(youtubeUrl,this.choosenPath)));
-
+           //musste so hässlig sein, weil er irgendwas mit not fx thread labert...
+           Platform.runLater(new Runnable() {
+               @Override
+               public void run() {
+                   for (int j = 0; j < temp.size(); j++) {
+                       try {
+                           downloadList.getItems().remove(j);
+                           downloadList.getItems().add(""+temp.get(j).get());
+                       }catch(Exception e){
+                           e.printStackTrace();
+                       }
+                   }
+               }
+           });
         }
-        //musste so hässlig sein, weil er irgendwas mit not fx thread labert...
-        Platform.runLater(new Runnable() {
-            @Override
-            public void run() {
-                for (int j = 0; j < temp.size(); j++) {
-                    try {
-                        downloadList.getItems().remove(j);
-                        downloadList.getItems().add(""+temp.get(j).get());
-                    }catch(Exception e){
-                        e.printStackTrace();
-                    }
-                }
-            }
-        });
+
 
 
     }
