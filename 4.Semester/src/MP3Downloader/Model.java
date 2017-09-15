@@ -152,14 +152,18 @@ class innerProcessClass extends Thread{
            Platform.runLater(new Runnable() {
                @Override
                public void run() {
-                   for (int j = 0; j < temp.size(); j++) {
+
+                   for(CompletableFuture<String> s:temp){
                        try {
-                           downloadList.getItems().remove(j);
-                           downloadList.getItems().add(""+temp.get(j).get());
-                       }catch(Exception e){
+                           downloadList.getItems().remove(s.get());
+                           downloadList.getItems().add(s.get());
+                       } catch (InterruptedException e) {
+                           e.printStackTrace();
+                       } catch (ExecutionException e) {
                            e.printStackTrace();
                        }
                    }
+
                }
            });
         }
