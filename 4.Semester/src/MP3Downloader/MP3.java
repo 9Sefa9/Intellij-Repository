@@ -53,6 +53,7 @@ public class MP3 implements Supplier<String> {
     }
     */
     public synchronized void processYoutubeLink() throws IOException, InterruptedException {
+        this.name = null;
         final HtmlForm form = converterPage.getFirstByXPath("//form[@action='index.php?p=convert']");
         final HtmlTextInput urlField = form.getFirstByXPath("//input[@name='url']");
         final HtmlButton convertButton= form.getFirstByXPath("//button[@type='submit']");
@@ -69,6 +70,7 @@ public class MP3 implements Supplier<String> {
 
         windowTitle();
         System.out.println("determine title");
+
         determineTitle();
     }
     public synchronized void downloadMp3FromServer() throws IOException {
