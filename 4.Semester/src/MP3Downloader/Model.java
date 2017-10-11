@@ -9,7 +9,6 @@ import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.concurrent.*;
 
 public class Model{
@@ -20,8 +19,6 @@ public class Model{
     private String choosenPath = new String();
     private ListView<String> downloadList,convertList;
     public ObservableList<String> urllist;
-    private ExecutorService exec;
-    private ArrayList<CompletableFuture<String>> temp;
 
     public Model(View view) throws Exception {
 
@@ -142,12 +139,13 @@ class innerProcessClass extends Thread{
     }
     @Override
     public void run(){
-       ArrayList<CompletableFuture<String>> temp = new ArrayList<>();
+       ObservableList<CompletableFuture<String>> temp = FXCollections.observableArrayList();
 
        for(String youtubeUrl: this.urllist){
 
             System.out.println("Thread gestartet!");
             temp.add(CompletableFuture.supplyAsync(new MP3(youtubeUrl,this.choosenPath)));
+
            //musste so hässlig sein, weil er irgendwas mit not fx thread labert...
            Platform.runLater(new Runnable() {
                @Override
@@ -156,7 +154,8 @@ class innerProcessClass extends Thread{
                        try {
                            downloadList.getItems().remove(j);
                            downloadList.getItems().add(""+temp.get(j).get());
-                       }catch(Exception e){
+                           temp.remove(j);
+                       }catch(Exception e) {
                            e.printStackTrace();
                        }
                    }

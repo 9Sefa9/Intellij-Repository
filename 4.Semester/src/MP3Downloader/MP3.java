@@ -2,16 +2,9 @@ package MP3Downloader;
 
 import com.gargoylesoftware.htmlunit.BrowserVersion;
 import com.gargoylesoftware.htmlunit.WebClient;
-import com.gargoylesoftware.htmlunit.WebResponse;
 import com.gargoylesoftware.htmlunit.html.*;
-import com.gargoylesoftware.htmlunit.javascript.host.html.HTMLSelectElement;
-import javafx.beans.InvalidationListener;
-import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.logging.LogFactory;
-import org.w3c.dom.html.HTMLOptionElement;
-
 import java.io.*;
-import java.util.concurrent.Callable;
 import java.util.function.Supplier;
 import java.util.logging.Level;
 
@@ -113,7 +106,7 @@ public class MP3 implements Supplier<String> {
 
         }
 
-        public String get(){
+        public synchronized String get(){
         return getTitle();
         }
         public synchronized String getTitle(){

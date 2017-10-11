@@ -3,6 +3,7 @@ package MP3Downloader;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 public class Main extends Application{
 
@@ -15,6 +16,8 @@ public class Main extends Application{
         controller.link();
 
         primaryStage.setTitle("MP3Downloader v1.0");
+        primaryStage.getIcons().add(new Image("MP3Downloader/Donuts.png"));
+        
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
         primaryStage.show();

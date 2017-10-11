@@ -1,19 +1,18 @@
 package MP3Downloader;
 
 import javafx.geometry.Insets;
-import javafx.geometry.Orientation;
+
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
-import javafx.scene.text.TextAlignment;
 
 public class View extends BorderPane{
     ListView<String> listViewConvertList, listViewDownloadList;
     Button addsongs,deletesong, download;
     GridPane upperframe,downframe,rightframe,midframe;
-    TextField title,interpret;
+    TextField title;
     Text titleText;
     Text intepretText;
     Text titleForConvertList,titleForDownloadList;
@@ -118,8 +117,6 @@ public class View extends BorderPane{
         setBottom(downframe);
         setTop(upperframe);
         setCenter(midframe);
-      //  setCenter(listViewDownloadList);
-      //  setLeft(listViewConvertList);
 
     }
 }
