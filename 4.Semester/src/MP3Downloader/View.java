@@ -8,6 +8,8 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 
+import java.util.Optional;
+
 public class View extends BorderPane{
     ListView<String> listViewConvertList, listViewDownloadList;
     Button addsongs,deletesong, download;
@@ -20,13 +22,20 @@ public class View extends BorderPane{
     Button paste,convert;
     Text tutorial;
     Button goToPath;
+    ProgressBar bar;
     Alert dialog;
     public View(){
-
-        dialog = new Alert(Alert.AlertType.INFORMATION);
-        dialog.setTitle("Check for Updates");
-        dialog.setHeaderText("...Updating");
-        dialog.showAndWait();
+        //Progressbar, Update Check:+
+        bar = new ProgressBar();
+        bar.setMinHeight(100);
+        bar.setMinWidth(500);
+        dialog = new Alert(Alert.AlertType.NONE);
+        dialog.setWidth(500);
+        dialog.setHeight(450);
+        dialog.setTitle("Update...");
+        dialog.getDialogPane().contentProperty().set(bar);
+        ButtonType buttonTypeCancel = new ButtonType("Cancel update", ButtonBar.ButtonData.CANCEL_CLOSE);
+        dialog.getButtonTypes().setAll(buttonTypeCancel);
 
         setMaxSize(1024,1024);
 

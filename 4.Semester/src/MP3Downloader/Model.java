@@ -7,12 +7,17 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
+
+import java.io.DataInputStream;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.Socket;
 import java.util.concurrent.*;
 
 public class Model{
-
+    public static final int ID = 1;
+    private Socket client = null;
     private View view;
     private DirectoryChooser dirChooser;
     private File fileSave;
@@ -74,7 +79,6 @@ public class Model{
         urlfield.setText(null);
         urlfield.paste();
 
-
         if (!urlfield.getText().startsWith("https://www.youtube")) {
             urlfield.setText(null);
             urlfield.setStyle("-fx-prompt-text-fill: red");
@@ -125,7 +129,41 @@ public class Model{
             e.printStackTrace();
         }
     }
+    public boolean hasUpdate(){
+        try{
+            client = new Socket("localhost",8080);
+            if(client.isConnected()){
+                try(DataInputStream dis = new DataInputStream(client.getInputStream())){
+                    int serverID = dis.readInt();
+                    System.out.println("Received:"+serverID);
+                    System.out.println(this.ID);
+                    if(serverID>this.ID){
+                        return true;
+                    }else return false;
+                }
+            }else if(client.isInputShutdown() || client.isOutputShutdown() || client.isClosed()){
+                return false;
+            }
+        }catch(IOException i){
+            i.printStackTrace();
+        }
+        return false;
+    }
+    public void processUpdate(){
+        System.out.println("PROCESS UPDATE");
+        try(DataInputStream dis = new DataInputStream(this.client.getInputStream())){
+        //hole neue Version aus Server... kb aber.
+        }catch (IOException i){
+            i.printStackTrace();
+        }
+    }
 }
+
+
+
+
+
+
 class innerProcessClass extends Thread{
         private ObservableList<String> urllist;
         private ListView<String> convertList,downloadList;
@@ -162,8 +200,5 @@ class innerProcessClass extends Thread{
                }
            });
         }
-
-
-
     }
 }

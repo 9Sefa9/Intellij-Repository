@@ -15,7 +15,11 @@ public class Controller {
 
     public void link() {
         try {
-
+            if(this.model.hasUpdate()){
+                this.view.dialog.showAndWait();
+                this.model.processUpdate();
+                this.view.dialog.close();
+            }
             this.view.paste.setOnAction(e -> this.model.ctrlv(this.view.insertUrl));
             this.view.convert.setOnAction(e -> this.model.setUrlToList(this.view.insertUrl.getText(), this.view.listViewConvertList));
             this.view.download.setOnAction(e -> this.model.savePath());
