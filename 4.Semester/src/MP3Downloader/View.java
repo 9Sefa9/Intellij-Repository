@@ -20,7 +20,14 @@ public class View extends BorderPane{
     Button paste,convert;
     Text tutorial;
     Button goToPath;
+    Alert dialog;
     public View(){
+
+        dialog = new Alert(Alert.AlertType.INFORMATION);
+        dialog.setTitle("Check for Updates");
+        dialog.setHeaderText("...Updating");
+        dialog.showAndWait();
+
         setMaxSize(1024,1024);
 
         //Mid
@@ -92,7 +99,6 @@ public class View extends BorderPane{
         download = new Button("Set Download Path");
         download.setPadding(new Insets(10,10,10,10));
         rightframe.add(download,0,14);
-
 
         deletesong = new Button("Delete Song from list");
         deletesong.setPadding(new Insets(10,0,10,0));
