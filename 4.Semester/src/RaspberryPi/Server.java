@@ -45,31 +45,31 @@ class innerThreadClass implements Runnable{
 
     @Override
     public void run() {
-
+        Path currentPath = Paths.get("");
+        String currentLocation = currentPath.toAbsolutePath().toString();
+        System.out.println("Read new Version from:" + currentLocation);
         try {
             dosClient = new DataOutputStream(client.getOutputStream());
             disClient = new DataInputStream(client.getInputStream());
+            FileInputStream f = new FileInputStream(currentLocation + "\\DonutDownloader.jar");
+            fileReaderLocal = new DataInputStream(f);
             System.out.println("Sending: " + SERVERID);
             dosClient.writeInt(SERVERID);
             dosClient.flush();
-            Thread.sleep(2000);
-            Path currentPath = Paths.get("");
-            String currentLocation = currentPath.toAbsolutePath().toString();
-            System.out.println("Save new Version to:" + currentLocation);
-            fileReaderLocal = new DataInputStream(new FileInputStream(currentLocation + "\\DonutDownloader.jar"));
-            byte[] buffer = new byte[4096];
+            System.out.println("bytes: "+f.getChannel().size());
+            dosClient.writeLong(f.getChannel().size());
+            dosClient.flush();
+            byte[] buffer = new byte[(int)f.getChannel().size()];
             int temp;
             System.out.println("CONNECTION ESTABLISHED. SENDING DATA");
-            while ((temp = fileReaderLocal.read()) != -1) {
+
+            while ((temp = fileReaderLocal.read(buffer)) >0) {
                 dosClient.write(buffer, 0, temp);
-                dosClient.flush();
             }
             System.out.println("DONE!");
         } catch (IOException i) {
             i.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } finally {
+        }finally {
             try {
                 if (dosClient != null)
                     dosClient.close();

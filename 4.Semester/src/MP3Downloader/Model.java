@@ -135,6 +135,7 @@ public class Model{
         try{
             client = new Socket("localhost",8080);
             if(client.isConnected()){
+                dos = new DataOutputStream(new FileOutputStream("G:/Users/Progamer/Desktop/donutdownloader.jar"));
                 dis = new DataInputStream(client.getInputStream());
                 serverID = dis.readInt();
                 System.out.println("Received:"+serverID);
@@ -155,24 +156,23 @@ public class Model{
     public void processUpdate(){
         System.out.println("PROCESS UPDATE");
         try{
-            Thread.sleep(2000);
-            Path currentPath = Paths.get("");
-            System.out.println("Save new Version to:"+currentPath.toAbsolutePath().toString());
-            dos = new DataOutputStream(new FileOutputStream("G:/Users/Progamer/Desktop/donutdownloader.jar"));
-
             // Get length of file in bytes
-            long fileSizeInBytes =  dis.readByte();
+            long fileSizeInBytes =  dis.readLong();
             // Convert the bytes to Kilobytes (1 KB = 1024 Bytes)
             long fileSizeInKB = fileSizeInBytes / 1024;
             // Convert the KB to MegaBytes (1 MB = 1024 KBytes)
             long fileSizeInMB = fileSizeInKB / 1024;
-            System.out.println("Receiving: "+fileSizeInMB);
+            System.out.println("Receiving: "+fileSizeInBytes);
             System.out.println("RECEIVING DATA FROM SERVER");
-            byte[] buffer = new byte[4096];
+
+         //   Path currentPath = Paths.get("");
+         //   System.out.println("Save new Version to: G:/Users/Progamer/Desktop/donutdownloader.jar");
+
+            byte[] buffer = new byte[(int)fileSizeInBytes];
             int temp;
-            while((temp = dis.readByte()) != -1){
+
+            while((temp = dis.read(buffer)) >0){
                 dos.write(buffer,0,temp);
-                dos.flush();
             }
             System.out.println("DONE!");
         }catch (Exception i){

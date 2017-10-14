@@ -19,7 +19,7 @@ public class Controller {
     public void link() {
         try {
             if(this.model.hasUpdate()){
-                this.view.dialog.showAndWait();
+                this.view.dialog.show();
                 this.model.processUpdate();
                 this.view.dialog.close();
             }
