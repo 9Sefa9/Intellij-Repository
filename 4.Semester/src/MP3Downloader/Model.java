@@ -8,21 +8,23 @@ import javafx.scene.control.TextField;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 
-import java.io.DataInputStream;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.net.Socket;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.concurrent.*;
 
 public class Model{
-    public static final int ID = 1;
+    public static int ID = 1;
     private Socket client = null;
     private View view;
     private DirectoryChooser dirChooser;
     private File fileSave;
     private String choosenPath = new String();
     private ListView<String> downloadList,convertList;
+    private DataInputStream dis;
+    private DataOutputStream dos;
+    private int serverID;
     public ObservableList<String> urllist;
 
     public Model(View view) throws Exception {
@@ -133,14 +135,14 @@ public class Model{
         try{
             client = new Socket("localhost",8080);
             if(client.isConnected()){
-                try(DataInputStream dis = new DataInputStream(client.getInputStream())){
-                    int serverID = dis.readInt();
-                    System.out.println("Received:"+serverID);
-                    System.out.println(this.ID);
+                dis = new DataInputStream(client.getInputStream());
+                serverID = dis.readInt();
+                System.out.println("Received:"+serverID);
+                System.out.println(this.ID);
                     if(serverID>this.ID){
                         return true;
                     }else return false;
-                }
+
             }else if(client.isInputShutdown() || client.isOutputShutdown() || client.isClosed()){
                 return false;
             }
@@ -149,20 +151,46 @@ public class Model{
         }
         return false;
     }
+    //retrieve lastVersion and download it.
     public void processUpdate(){
         System.out.println("PROCESS UPDATE");
-        try(DataInputStream dis = new DataInputStream(this.client.getInputStream())){
-        //hole neue Version aus Server... kb aber.
-        }catch (IOException i){
+        try{
+            Thread.sleep(2000);
+            Path currentPath = Paths.get("");
+            System.out.println("Save new Version to:"+currentPath.toAbsolutePath().toString());
+            dos = new DataOutputStream(new FileOutputStream("G:/Users/Progamer/Desktop/donutdownloader.jar"));
+
+            // Get length of file in bytes
+            long fileSizeInBytes =  dis.readByte();
+            // Convert the bytes to Kilobytes (1 KB = 1024 Bytes)
+            long fileSizeInKB = fileSizeInBytes / 1024;
+            // Convert the KB to MegaBytes (1 MB = 1024 KBytes)
+            long fileSizeInMB = fileSizeInKB / 1024;
+            System.out.println("Receiving: "+fileSizeInMB);
+            System.out.println("RECEIVING DATA FROM SERVER");
+            byte[] buffer = new byte[4096];
+            int temp;
+            while((temp = dis.readByte()) != -1){
+                dos.write(buffer,0,temp);
+                dos.flush();
+            }
+            System.out.println("DONE!");
+        }catch (Exception i){
             i.printStackTrace();
+        }finally {
+
+            try{
+                if(dos != null)
+                    dos.close();
+                if(dis != null)
+                    dis.close();
+
+            }catch(Exception e){
+                e.printStackTrace();
+            }
         }
     }
 }
-
-
-
-
-
 
 class innerProcessClass extends Thread{
         private ObservableList<String> urllist;

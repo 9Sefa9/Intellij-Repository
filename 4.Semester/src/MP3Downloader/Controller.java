@@ -4,6 +4,9 @@ import javafx.event.EventHandler;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 
+import java.io.IOException;
+import java.net.ConnectException;
+
 public class Controller {
     Model model;
     View view;
@@ -50,10 +53,9 @@ public class Controller {
                 }
             });
 
-        }catch(Exception e){
-                e.printStackTrace();
+        }catch(Exception i) {
+            i.printStackTrace();
         }
-
     }
 }
 
