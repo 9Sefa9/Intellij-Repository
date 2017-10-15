@@ -16,7 +16,7 @@ public class Main extends Application{
         
         controller.link();
 
-        primaryStage.setTitle("MP3Downloader v1."+model.ID);
+        primaryStage.setTitle("DonutDownloader v1."+model.ID);
         primaryStage.getIcons().add(new Image("MP3Downloader/Donuts.png"));
         
         primaryStage.setScene(scene);

@@ -15,14 +15,30 @@ public class Controller {
         this.view = v;
         this.model = m;
     }
-
+    public Model getModel(){
+        return this.model;
+    }
+    public View getView(){
+        return this.view;
+    }
     public void link() {
         try {
-            if(this.model.hasUpdate()){
-                this.view.dialog.show();
-                this.model.processUpdate();
-                this.view.dialog.close();
-            }
+            //UPDATE
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        if (getModel().hasUpdate()) {
+                            getView().dialog.show();
+                            getModel().processUpdate();
+                            getView().dialog.close();
+                        }
+                    }catch(Exception e){
+                        e.printStackTrace();
+                    }
+                }
+            }).start();
+
             this.view.paste.setOnAction(e -> this.model.ctrlv(this.view.insertUrl));
             this.view.convert.setOnAction(e -> this.model.setUrlToList(this.view.insertUrl.getText(), this.view.listViewConvertList));
             this.view.download.setOnAction(e -> this.model.savePath());
