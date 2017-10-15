@@ -53,17 +53,21 @@ class innerThreadClass implements Runnable{
             disClient = new DataInputStream(client.getInputStream());
             FileInputStream f = new FileInputStream(currentLocation + "\\DonutDownloader.jar");
             fileReaderLocal = new DataInputStream(f);
+
             System.out.println("Sending: " + SERVERID);
+
             dosClient.writeInt(SERVERID);
             dosClient.flush();
+
             System.out.println("bytes: "+f.getChannel().size());
+
             dosClient.writeLong(f.getChannel().size());
             dosClient.flush();
             byte[] buffer = new byte[(int)f.getChannel().size()];
             int temp;
             System.out.println("CONNECTION ESTABLISHED. SENDING DATA");
 
-            while ((temp = fileReaderLocal.read(buffer)) >0) {
+            while ((temp = fileReaderLocal.read(buffer)) != 0) {
                 dosClient.write(buffer, 0, temp);
             }
             System.out.println("DONE!");

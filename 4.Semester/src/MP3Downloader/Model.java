@@ -15,7 +15,7 @@ import java.nio.file.Paths;
 import java.util.concurrent.*;
 
 public class Model{
-    public static int ID = 1;
+    public static int ID = 2;
     private Socket client = null;
     private View view;
     private DirectoryChooser dirChooser;
@@ -135,14 +135,16 @@ public class Model{
         try{
             client = new Socket("localhost",8080);
             if(client.isConnected()){
-                dos = new DataOutputStream(new FileOutputStream("G:/Users/Progamer/Desktop/donutdownloader.jar"));
+                dos = new DataOutputStream(new FileOutputStream("G:/Users/Progamer/Desktop/donutdownloader2.jar"));
                 dis = new DataInputStream(client.getInputStream());
                 serverID = dis.readInt();
                 System.out.println("Received:"+serverID);
                 System.out.println(this.ID);
                     if(serverID>this.ID){
                         return true;
-                    }else return false;
+                    }else {
+                        return false;
+                    }
 
             }else if(client.isInputShutdown() || client.isOutputShutdown() || client.isClosed()){
                 return false;
@@ -162,7 +164,7 @@ public class Model{
             long fileSizeInKB = fileSizeInBytes / 1024;
             // Convert the KB to MegaBytes (1 MB = 1024 KBytes)
             long fileSizeInMB = fileSizeInKB / 1024;
-            System.out.println("Receiving: "+fileSizeInBytes);
+            System.out.println("Receiving: "+fileSizeInMB);
             System.out.println("RECEIVING DATA FROM SERVER");
 
          //   Path currentPath = Paths.get("");
@@ -171,7 +173,7 @@ public class Model{
             byte[] buffer = new byte[(int)fileSizeInBytes];
             int temp;
 
-            while((temp = dis.read(buffer)) >0){
+            while((temp = dis.read(buffer)) != -1){
                 dos.write(buffer,0,temp);
             }
             System.out.println("DONE!");

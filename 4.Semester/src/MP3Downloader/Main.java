@@ -3,8 +3,6 @@ package MP3Downloader;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Dialog;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 public class Main extends Application{
@@ -15,9 +13,7 @@ public class Main extends Application{
         Scene scene = new Scene(view);
         Model model = new Model(view);
         Controller controller = new Controller(view,model);
-
-
-
+        
         controller.link();
 
         primaryStage.setTitle("MP3Downloader v1.0");
