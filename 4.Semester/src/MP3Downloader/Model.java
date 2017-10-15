@@ -185,6 +185,12 @@ public class Model{
                 dosFromLocal.write(buffer,0,temp);
             }
             System.out.println("DONE!");
+            //Exit the Current program and kill every running Thread.
+            final ExecutorService exec = Executors.newCachedThreadPool();
+            exec.shutdown();
+            System.out.println("Background threads exited");
+            Platform.exit();
+
         }catch (Exception i){
             i.printStackTrace();
         }finally {

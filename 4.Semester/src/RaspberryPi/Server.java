@@ -11,7 +11,7 @@ public class Server{
     private Socket client;
     private ServerSocket server;
     private InetAddress address;
-    public final int SERVERID = 1;
+    public final int SERVERID = 0;
 
     public static void main(String[] args) throws IOException {
         Server r = new Server();
