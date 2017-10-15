@@ -15,15 +15,15 @@ import java.nio.file.Paths;
 import java.util.concurrent.*;
 
 public class Model{
-    public static int ID = 2;
+    public static int ID = 1;
     private Socket client = null;
     private View view;
     private DirectoryChooser dirChooser;
     private File fileSave;
     private String choosenPath = new String();
     private ListView<String> downloadList,convertList;
-    private DataInputStream dis;
-    private DataOutputStream dos;
+    private DataInputStream disFromServer, disFromLocal;
+    private DataOutputStream dosFromServer,dosFromLocal;
     private int serverID;
     public ObservableList<String> urllist;
 
@@ -131,25 +131,36 @@ public class Model{
             e.printStackTrace();
         }
     }
-    public boolean hasUpdate(){
+    //check if it has Updates. if yes, the if condition in Controller will be active.
+    public boolean hasUpdate() throws IOException{
         try{
-            client = new Socket("localhost",8080);
+            client = new Socket("rudralovesparo.ddns.net",23);
             if(client.isConnected()){
-                dos = new DataOutputStream(new FileOutputStream("G:/Users/Progamer/Desktop/donutdownloader2.jar"));
-                dis = new DataInputStream(client.getInputStream());
-                serverID = dis.readInt();
-                System.out.println("Received:"+serverID);
-                System.out.println(this.ID);
+                dosFromServer = new DataOutputStream(client.getOutputStream());
+                disFromServer = new DataInputStream(client.getInputStream());
+                serverID = disFromServer.readInt();
+                System.out.println("CURRENT ID:"+this.ID);
+                System.out.println("RECEIVING ID:"+serverID);
                     if(serverID>this.ID){
+                        Path currentPath = Paths.get("");
+                        String currentLocation = currentPath.toAbsolutePath().toString()+"\\DonutDownloaderV1."+this.serverID+".jar";
+                        dosFromLocal = new DataOutputStream(new FileOutputStream(currentLocation));
+                        dosFromServer.writeBoolean(true);
+                        dosFromServer.flush();
                         return true;
                     }else {
+                        dosFromServer.writeBoolean(false);
+                        dosFromServer.flush();
                         return false;
                     }
 
             }else if(client.isInputShutdown() || client.isOutputShutdown() || client.isClosed()){
+                dosFromServer.writeBoolean(false);
+                dosFromServer.flush();
                 return false;
             }
         }catch(IOException i){
+            System.out.println("NO CONNECTION FOUND !");
             i.printStackTrace();
         }
         return false;
@@ -158,23 +169,20 @@ public class Model{
     public void processUpdate(){
         System.out.println("PROCESS UPDATE");
         try{
-            // Get length of file in bytes
-            long fileSizeInBytes =  dis.readLong();
+            // Get length of the FIle
+            long fileSizeInBytes =  disFromServer.readLong();
             // Convert the bytes to Kilobytes (1 KB = 1024 Bytes)
             long fileSizeInKB = fileSizeInBytes / 1024;
             // Convert the KB to MegaBytes (1 MB = 1024 KBytes)
             long fileSizeInMB = fileSizeInKB / 1024;
-            System.out.println("Receiving: "+fileSizeInMB);
-            System.out.println("RECEIVING DATA FROM SERVER");
 
-         //   Path currentPath = Paths.get("");
-         //   System.out.println("Save new Version to: G:/Users/Progamer/Desktop/donutdownloader.jar");
+            System.out.println("RECEIVING "+fileSizeInMB+" MB DATA FROM SERVER");
 
-            byte[] buffer = new byte[(int)fileSizeInBytes];
+            byte[] buffer = new byte[(int)fileSizeInBytes+8192];
             int temp;
 
-            while((temp = dis.read(buffer)) != -1){
-                dos.write(buffer,0,temp);
+            while((temp = disFromServer.read(buffer)) != -1){
+                dosFromLocal.write(buffer,0,temp);
             }
             System.out.println("DONE!");
         }catch (Exception i){
@@ -182,10 +190,10 @@ public class Model{
         }finally {
 
             try{
-                if(dos != null)
-                    dos.close();
-                if(dis != null)
-                    dis.close();
+                if(dosFromLocal != null)
+                    dosFromLocal.close();
+                if(dosFromLocal!= null)
+                    dosFromLocal.close();
 
             }catch(Exception e){
                 e.printStackTrace();

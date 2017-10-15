@@ -11,7 +11,8 @@ public class Server{
     private Socket client;
     private ServerSocket server;
     private InetAddress address;
-    public final int SERVERID = 2;
+    public final int SERVERID = 1;
+
     public static void main(String[] args) throws IOException {
         Server r = new Server();
         r.Server();
@@ -47,32 +48,43 @@ class innerThreadClass implements Runnable{
     public void run() {
         Path currentPath = Paths.get("");
         String currentLocation = currentPath.toAbsolutePath().toString();
-        System.out.println("Read new Version from:" + currentLocation);
+        System.out.println("READ NEW VERSION FROM::" + currentLocation);
         try {
+            //Streams
             dosClient = new DataOutputStream(client.getOutputStream());
             disClient = new DataInputStream(client.getInputStream());
             FileInputStream f = new FileInputStream(currentLocation + "\\DonutDownloader.jar");
             fileReaderLocal = new DataInputStream(f);
 
-            System.out.println("Sending: " + SERVERID);
+            //Client Data
+            System.out.println("InetAddress: "+client.getInetAddress());
+            System.out.println("Port: "+client.getLocalPort());
+            System.out.println("RemoteSocketAddress: "+client.getRemoteSocketAddress());
 
+            //Process
+            System.out.println("SENDING:: " + SERVERID);
             dosClient.writeInt(SERVERID);
             dosClient.flush();
 
-            System.out.println("bytes: "+f.getChannel().size());
+            boolean isUpdateable = disClient.readBoolean();
+            if(isUpdateable) {
 
-            dosClient.writeLong(f.getChannel().size());
-            dosClient.flush();
-            byte[] buffer = new byte[(int)f.getChannel().size()];
-            int temp;
-            System.out.println("CONNECTION ESTABLISHED. SENDING DATA");
+                System.out.println("MB-SIZE: " + f.getChannel().size()/(1024*1024));
 
-            while ((temp = fileReaderLocal.read(buffer)) != 0) {
-                dosClient.write(buffer, 0, temp);
+                dosClient.writeLong(f.getChannel().size());
+                dosClient.flush();
+                byte[] buffer = new byte[(int) f.getChannel().size()+8192];
+                int temp;
+                System.out.println("CONNECTION ESTABLISHED. SENDING DATA");
+
+                while ((temp = fileReaderLocal.read(buffer)) != -1) {
+                    dosClient.write(buffer, 0, temp);
+                }
+                System.out.println("DONE!");
+                System.out.println("====================================================\n\n");
             }
-            System.out.println("DONE!");
         } catch (IOException i) {
-            i.printStackTrace();
+            System.out.println("INUT OUTPUT PROBLEM!");
         }finally {
             try {
                 if (dosClient != null)
