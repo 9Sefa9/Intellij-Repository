@@ -36,7 +36,7 @@ public class View extends BorderPane{
         dialog.getDialogPane().contentProperty().set(bar);
         ButtonType buttonTypeCancel = new ButtonType("Cancel update", ButtonBar.ButtonData.CANCEL_CLOSE);
         dialog.getButtonTypes().setAll(buttonTypeCancel);
-
+        dialog.show();
         setMaxSize(1024,1024);
 
         //Mid

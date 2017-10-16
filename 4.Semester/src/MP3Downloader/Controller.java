@@ -1,5 +1,6 @@
 package MP3Downloader;
 
+import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -24,20 +25,7 @@ public class Controller {
     public void link() {
         try {
             //UPDATE
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        if (getModel().hasUpdate()) {
-                            getView().dialog.show();
-                            getModel().processUpdate();
-                            getView().dialog.close();
-                        }
-                    }catch(Exception e){
-                        e.printStackTrace();
-                    }
-                }
-            }).start();
+            new UpdaterClass(getModel(),getView());
 
             this.view.paste.setOnAction(e -> this.model.ctrlv(this.view.insertUrl));
             this.view.convert.setOnAction(e -> this.model.setUrlToList(this.view.insertUrl.getText(), this.view.listViewConvertList));
@@ -68,10 +56,29 @@ public class Controller {
                     this.view.listViewDownloadList.getItems().remove(this.view.listViewDownloadList.getSelectionModel().getSelectedItem());
                 }
             });
-
         }catch(Exception i) {
             i.printStackTrace();
         }
+    }
+}
+class UpdaterClass extends Thread{
+    Model model;
+    View view;
+    public UpdaterClass(Model model, View view){
+        this.view = view;
+        this.model = model;
+        run();
+    }
+    public void run(){
+                try {
+                    if (this.model.hasUpdate()) {
+                        this.view.dialog.show();
+                        this.model.processUpdate();
+                        this.view.dialog.close();
+                    }
+                }catch(Exception e){
+                    e.printStackTrace();
+                }
     }
 }
 

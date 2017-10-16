@@ -15,7 +15,7 @@ import java.nio.file.Paths;
 import java.util.concurrent.*;
 
 public class Model{
-    public static int ID = 1;
+    public static int ID = 2;
     private Socket client = null;
     private View view;
     private DirectoryChooser dirChooser;
@@ -188,7 +188,8 @@ public class Model{
             //Exit the Current program and kill every running Thread.
             final ExecutorService exec = Executors.newCachedThreadPool();
             exec.shutdown();
-            System.out.println("Background threads exited");
+            System.out.println("Background threads and dialog exited");
+
             Platform.exit();
 
         }catch (Exception i){
