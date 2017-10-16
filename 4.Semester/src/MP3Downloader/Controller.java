@@ -75,7 +75,7 @@ class UpdaterClass extends Thread{
                         this.view.dialog.show();
                         this.model.processUpdate();
                         this.view.dialog.close();
-                    }
+                    }else this.view.dialog.close();
                 }catch(Exception e){
                     e.printStackTrace();
                 }

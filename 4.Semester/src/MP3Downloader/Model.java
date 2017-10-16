@@ -15,7 +15,7 @@ import java.nio.file.Paths;
 import java.util.concurrent.*;
 
 public class Model{
-    public static int ID = 2;
+    public static int ID = 5;
     private Socket client = null;
     private View view;
     private DirectoryChooser dirChooser;
