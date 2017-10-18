@@ -1,6 +1,7 @@
 package MP3Downloader;
 
 import javafx.application.Platform;
+import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -74,8 +75,8 @@ class UpdaterClass extends Thread{
                     if (this.model.hasUpdate()) {
                         this.view.dialog.show();
                         this.model.processUpdate();
-                        this.view.dialog.close();
-                    }else this.view.dialog.close();
+                       // this.view.dialog.getDialogPane().lookupButton(this.view.buttonTypeCancel);
+                    }//else //this.view.dialog.close();
                 }catch(Exception e){
                     e.printStackTrace();
                 }

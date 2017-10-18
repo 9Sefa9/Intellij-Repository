@@ -24,6 +24,7 @@ public class View extends BorderPane{
     Button goToPath;
     ProgressBar bar;
     Alert dialog;
+    ButtonType buttonTypeCancel;
     public View(){
         //Progressbar, Update Check:+
         bar = new ProgressBar();
@@ -33,8 +34,10 @@ public class View extends BorderPane{
         dialog.setWidth(500);
         dialog.setHeight(450);
         dialog.setTitle("Update...");
+        dialog.setContentText("Please do not Close. it is done automatically!");
         dialog.getDialogPane().contentProperty().set(bar);
-        ButtonType buttonTypeCancel = new ButtonType("Cancel update", ButtonBar.ButtonData.CANCEL_CLOSE);
+        buttonTypeCancel = new ButtonType("", ButtonBar.ButtonData.CANCEL_CLOSE);
+        dialog.getDialogPane().lookupButton(buttonTypeCancel);
         dialog.getButtonTypes().setAll(buttonTypeCancel);
         dialog.show();
         setMaxSize(1024,1024);

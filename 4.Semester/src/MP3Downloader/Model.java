@@ -9,13 +9,15 @@ import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 
 import java.io.*;
+import java.net.InetSocketAddress;
 import java.net.Socket;
+import java.net.SocketTimeoutException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.concurrent.*;
 
 public class Model{
-    public static int ID = 5;
+    public static int ID = 6;
     private Socket client = null;
     private View view;
     private DirectoryChooser dirChooser;
@@ -134,7 +136,10 @@ public class Model{
     //check if it has Updates. if yes, the if condition in Controller will be active.
     public boolean hasUpdate() throws IOException{
         try{
-            client = new Socket("rudralovesparo.ddns.net",23);
+
+            client = new Socket();
+            client.connect(new InetSocketAddress("rudralovesparo.ddns.net",23),3000);
+
             if(client.isConnected()){
                 dosFromServer = new DataOutputStream(client.getOutputStream());
                 disFromServer = new DataInputStream(client.getInputStream());
@@ -158,9 +163,12 @@ public class Model{
                 dosFromServer.writeBoolean(false);
                 dosFromServer.flush();
                 return false;
-            }
+            }else return false;
+        }catch(SocketTimeoutException s){
+            System.out.println("CONNECTION TIMEOUT!");
+            this.view.dialog.close();
         }catch(IOException i){
-            System.out.println("NO CONNECTION FOUND !");
+            System.out.println("NO CONNECTION FOUND!");
             i.printStackTrace();
         }
         return false;
