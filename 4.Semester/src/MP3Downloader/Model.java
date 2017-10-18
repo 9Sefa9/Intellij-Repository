@@ -166,9 +166,15 @@ public class Model{
             }else return false;
         }catch(SocketTimeoutException s){
             System.out.println("CONNECTION TIMEOUT!");
-            this.view.dialog.close();
+            if(this.view.dialog.isShowing())
+            Platform.runLater(() -> this.view.dialog.close());
+
         }catch(IOException i){
             System.out.println("NO CONNECTION FOUND!");
+
+            if(this.view.dialog.isShowing())
+                Platform.runLater(() -> this.view.dialog.close());
+
             i.printStackTrace();
         }
         return false;
