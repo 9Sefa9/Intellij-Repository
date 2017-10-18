@@ -7,6 +7,7 @@ import javafx.event.EventType;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.ConnectException;
 
@@ -76,8 +77,19 @@ class UpdaterClass extends Thread{
                     if (this.model.hasUpdate()) {
                         this.view.dialog.show();
                         this.model.processUpdate();
+
+                    }else{
+                        /*
+                        //remove previous versions
+                        for(int i = 1; i<=this.model.serverID;i++) {
+                            File previousVersion = new File(this.model.currentPath.toAbsolutePath().toString() + "\\DonutDownloaderV1." + (this.model.ID - i) + ".jar");
+                            System.out.println(this.model.ID);
+                            if (previousVersion.exists())
+                                previousVersion.delete();
+                        }
+                        */
                         Platform.runLater(() -> this.view.dialog.close());
-                    }else Platform.runLater(() -> this.view.dialog.close());
+                    }
                 }catch(Exception e){
                     e.printStackTrace();
                 }

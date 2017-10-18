@@ -17,21 +17,24 @@ import java.nio.file.Paths;
 import java.util.concurrent.*;
 
 public class Model{
-    public static int ID = 6;
-    private Socket client = null;
-    private View view;
-    private DirectoryChooser dirChooser;
-    private File fileSave;
-    private String choosenPath = new String();
-    private ListView<String> downloadList,convertList;
-    private DataInputStream disFromServer, disFromLocal;
-    private DataOutputStream dosFromServer,dosFromLocal;
-    private int serverID;
+    public static int ID = 8;
+    public  Socket client = null;
+    public  View view;
+    public  DirectoryChooser dirChooser;
+    public File fileSave;
+    public  String choosenPath = new String();
+    public ListView<String> downloadList,convertList;
+    public DataInputStream disFromServer;
+    public DataOutputStream dosFromServer,dosFromLocal;
+    public Path currentPath;
+    public int serverID;
+    public String currentLocation;
+
     public ObservableList<String> urllist;
 
     public Model(View view) throws Exception {
 
-        //mp3 initialisierung... eventuell mit Thread um eventuell ladezeiten zu vermeiden
+        //mp3 initialisierung
         urllist = FXCollections.observableArrayList();
         this.view = view;
     }
@@ -134,9 +137,8 @@ public class Model{
         }
     }
     //check if it has Updates. if yes, the if condition in Controller will be active.
-    public boolean hasUpdate() throws IOException{
+    public boolean hasUpdate() throws IOException,ExecutionException,InterruptedException{
         try{
-
             client = new Socket();
             client.connect(new InetSocketAddress("rudralovesparo.ddns.net",23),3000);
 
@@ -147,8 +149,8 @@ public class Model{
                 System.out.println("CURRENT ID:"+this.ID);
                 System.out.println("RECEIVING ID:"+serverID);
                     if(serverID>this.ID){
-                        Path currentPath = Paths.get("");
-                        String currentLocation = currentPath.toAbsolutePath().toString()+"\\DonutDownloaderV1."+this.serverID+".jar";
+                        currentPath = Paths.get("");
+                        currentLocation = currentPath.toAbsolutePath().toString()+"\\DonutDownloaderV1."+this.serverID+".jar";
                         dosFromLocal = new DataOutputStream(new FileOutputStream(currentLocation));
                         dosFromServer.writeBoolean(true);
                         dosFromServer.flush();
@@ -177,10 +179,13 @@ public class Model{
 
             i.printStackTrace();
         }
+
         return false;
     }
     //retrieve lastVersion and download it.
     public void processUpdate(){
+        new UpdateClass(this.disFromServer,this.dosFromLocal).start();
+      /*
         System.out.println("PROCESS UPDATE");
         try{
             // Get length of the FIle
@@ -216,10 +221,11 @@ public class Model{
                 if(dosFromLocal!= null)
                     dosFromLocal.close();
 
+                Thread.sleep(1000);
             }catch(Exception e){
                 e.printStackTrace();
             }
-        }
+        }*/
     }
 }
 
@@ -258,6 +264,59 @@ class innerProcessClass extends Thread{
                    }
                }
            });
+        }
+    }
+}
+class UpdateClass extends Thread{
+
+    private DataOutputStream dosFromLocal;
+    private DataInputStream disFromServer;
+    public UpdateClass(DataInputStream disServer,DataOutputStream dosLocal){
+        this.disFromServer= disServer;
+        this.dosFromLocal = dosLocal;
+    }
+
+    @Override
+    public void run(){
+        System.out.println("PROCESS UPDATE");
+        try{
+            // Get length of the FIle
+            long fileSizeInBytes =  disFromServer.readLong();
+            // Convert the bytes to Kilobytes (1 KB = 1024 Bytes)
+            long fileSizeInKB = fileSizeInBytes / 1024;
+            // Convert the KB to MegaBytes (1 MB = 1024 KBytes)
+            long fileSizeInMB = fileSizeInKB / 1024;
+
+            System.out.println("RECEIVING "+fileSizeInMB+" MB DATA FROM SERVER");
+
+            byte[] buffer = new byte[(int)fileSizeInBytes+8192];
+            int temp;
+
+            while((temp = disFromServer.read(buffer)) != -1){
+                dosFromLocal.write(buffer,0,temp);
+            }
+            System.out.println("DONE!\n\n");
+            //Exit the Current program and kill every running Thread.
+            final ExecutorService exec = Executors.newCachedThreadPool();
+            exec.shutdown();
+            System.out.println("Background threads and dialog exited");
+
+            Platform.exit();
+
+        }catch (Exception i){
+            i.printStackTrace();
+        }finally {
+
+            try{
+                if(dosFromLocal != null)
+                    dosFromLocal.close();
+                if(dosFromLocal!= null)
+                    dosFromLocal.close();
+
+                Thread.sleep(1000);
+            }catch(Exception e){
+                e.printStackTrace();
+            }
         }
     }
 }
