@@ -8,10 +8,12 @@ public class Composite implements Component {
     List<Component> comp = new ArrayList<>();
     @Override
     public void request(){
-        for(int i = 0; i<=imax; i++){
-            Component c = comp.get(i);
-            c.request();
-        }
+        for(Component c: comp)
+           c.request();
+
+    }
+    public void add(Component c){
+        this.comp.add(c);
     }
 
 }
