@@ -17,7 +17,7 @@ import java.nio.file.Paths;
 import java.util.concurrent.*;
 
 public class Model{
-    public static int ID = 8;
+    public static int ID = 9;
     public  Socket client = null;
     public  View view;
     public  DirectoryChooser dirChooser;
@@ -299,11 +299,12 @@ class UpdateClass extends Thread{
             //Exit the Current program and kill every running Thread.
             final ExecutorService exec = Executors.newCachedThreadPool();
             exec.shutdown();
-            System.out.println("Background threads and dialog exited");
+            System.out.println("BACKGROUND TASKS WERE EXECUTED");
 
             Platform.exit();
 
         }catch (Exception i){
+            System.out.println("PROCESS UPDATE FAILED");
             i.printStackTrace();
         }finally {
 
