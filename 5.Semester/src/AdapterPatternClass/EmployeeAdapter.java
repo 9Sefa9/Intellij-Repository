@@ -1,17 +1,20 @@
 package AdapterPatternClass;
 
 
-public class EmployeeAdapter extends AdapterPatternClass.Employee implements AdapterPatternClass.MyEmployeeInterface {
+public class EmployeeAdapter extends Employee implements MyEmployeeInterface {
 
-    String fullName;
+    String firstName,lastName;
+
     public EmployeeAdapter(String firstName, String lastName){
-        this.firstName = super.getFirstName();
-        this.lastName = super.getLastName();
+        super(firstName,lastName);
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
+
     @Override
     public String getFullName(){
 
-        return this.fullName;
+        return this.firstName+this.lastName;
     }
 
 }

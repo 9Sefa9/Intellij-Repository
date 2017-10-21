@@ -1,8 +1,9 @@
 package Tests;
 
 public class Hund extends Saeugetier {
-    public Hund(){
-        super();
+    String test;
+    public Hund(String ts){
+        super(ts);
     }
 
 }

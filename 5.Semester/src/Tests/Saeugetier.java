@@ -5,7 +5,5 @@ public class Saeugetier {
     public Saeugetier(String tiername){
         this.tiername = tiername;
     }
-    public Saeugetier(){
 
-    }
 }
