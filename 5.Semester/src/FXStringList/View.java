@@ -1,3 +1,5 @@
+package FXStringList;
+
 import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -45,24 +47,24 @@ public class View extends BorderPane {
 		// Hier die Lösung mit Lamdba Ausdrücken, es entfällt eine neue Klasse
 		// "MyCustomCell"
 		buttonText.set("Enter Hallo");
-//		list.setCellFactory(c -> {
-//
-//			ListCell<String> cell = new ListCell<String>() {
-//				@Override
-//				protected void updateItem(String myObject, boolean b) {
-//					super.updateItem(myObject, myObject == null || b);
-//					if (myObject != null) {
-//						setText("Element: " + myObject + "...");
-//					} else {
-//						// wichtig da sonst der text stehen bleibt!
-//						setText("");
-//					}
-//				}
-//
-//			};
-//			return cell;
-//
-//		});
+		list.setCellFactory(c -> {
+
+			ListCell<String> cell = new ListCell<String>() {
+				@Override
+				protected void updateItem(String myObject, boolean b) {
+					super.updateItem(myObject, myObject == null || b);
+					if (myObject != null) {
+						setText("Element: " + myObject + "...");
+					} else {
+						// wichtig da sonst der text stehen bleibt!
+						setText("");
+					}
+				}
+
+			};
+			return cell;
+
+		});
 	}
 
 	public void addEventHandler(EventHandler<ActionEvent> eventHandler) {

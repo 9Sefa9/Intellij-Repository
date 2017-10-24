@@ -1,4 +1,4 @@
-
+package FXStringList;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -28,8 +28,7 @@ public class MainClass extends Application {
 		//Lösung durch die Implemementierung des Interfaces durch den Controller
 		ControllerImplementsInterface controllerImplementsInterface = new ControllerImplementsInterface();
 		controllerImplementsInterface.link(model, view);
-		
-		// JavaFX new
+
 		Scene scene  = new Scene(view);
 		primaryStage.setScene(scene);
 		primaryStage.show();

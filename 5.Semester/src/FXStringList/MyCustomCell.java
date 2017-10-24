@@ -1,3 +1,5 @@
+package FXStringList;
+
 import javafx.scene.control.ListCell;
 
 public class MyCustomCell extends ListCell<String> {

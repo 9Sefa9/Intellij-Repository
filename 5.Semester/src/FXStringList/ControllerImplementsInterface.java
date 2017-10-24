@@ -1,5 +1,7 @@
+package FXStringList;
+
+
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.event.EventHandler;
 
 public class ControllerImplementsInterface implements EventHandler<ActionEvent> {
