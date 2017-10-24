@@ -27,21 +27,14 @@ public class View extends BorderPane{
     Alert dialog;
     ButtonType buttonTypeCancel;
     public View(){
-        //Progressbar, Update Check:+
-       // bar = new ProgressBar();
-        //        bar.setMinHeight(100);
-        //    bar.setMinWidth(500);
+
         dialog = new Alert(Alert.AlertType.WARNING);
         dialog.setHeaderText(null);
         dialog.setWidth(500);
         dialog.setHeight(450);
         dialog.setTitle("Update...");
         dialog.setContentText("Please do not Close. it is done automatically!");
-      //  dialog.getDialogPane().contentProperty().set(bar);
-     //   buttonTypeCancel = new ButtonType("", ButtonBar.ButtonData.CANCEL_CLOSE);
-     //   dialog.getDialogPane().lookupButton(buttonTypeCancel);
-        //dialog.getDialogPane().lookupButton(buttonTypeCancel);
-       // dialog.getButtonTypes().setAll(buttonTypeCancel);
+
         Stage stage = (Stage) dialog.getDialogPane().getScene().getWindow();
         stage.setAlwaysOnTop(true);
         dialog.show();

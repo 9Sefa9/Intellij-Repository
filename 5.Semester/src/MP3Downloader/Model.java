@@ -185,47 +185,6 @@ public class Model{
     //retrieve lastVersion and download it.
     public void processUpdate(){
         new UpdateClass(this.disFromServer,this.dosFromLocal).start();
-      /*
-        System.out.println("PROCESS UPDATE");
-        try{
-            // Get length of the FIle
-            long fileSizeInBytes =  disFromServer.readLong();
-            // Convert the bytes to Kilobytes (1 KB = 1024 Bytes)
-            long fileSizeInKB = fileSizeInBytes / 1024;
-            // Convert the KB to MegaBytes (1 MB = 1024 KBytes)
-            long fileSizeInMB = fileSizeInKB / 1024;
-
-            System.out.println("RECEIVING "+fileSizeInMB+" MB DATA FROM SERVER");
-
-            byte[] buffer = new byte[(int)fileSizeInBytes+8192];
-            int temp;
-
-            while((temp = disFromServer.read(buffer)) != -1){
-                dosFromLocal.write(buffer,0,temp);
-            }
-            System.out.println("DONE!");
-            //Exit the Current program and kill every running Thread.
-            final ExecutorService exec = Executors.newCachedThreadPool();
-            exec.shutdown();
-            System.out.println("Background threads and dialog exited");
-
-            Platform.exit();
-
-        }catch (Exception i){
-            i.printStackTrace();
-        }finally {
-
-            try{
-                if(dosFromLocal != null)
-                    dosFromLocal.close();
-                if(dosFromLocal!= null)
-                    dosFromLocal.close();
-
-                Thread.sleep(1000);
-            }catch(Exception e){
-                e.printStackTrace();
-            }
-        }*/
     }
 }
 
@@ -233,6 +192,7 @@ class innerProcessClass extends Thread{
         private ObservableList<String> urllist;
         private ListView<String> convertList,downloadList;
         private String choosenPath;
+
 
     public innerProcessClass(String path,ObservableList<String> urllist,ListView<String> downloadList,ListView<String> convertList){
         this.urllist = urllist;

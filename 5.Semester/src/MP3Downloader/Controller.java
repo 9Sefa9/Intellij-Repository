@@ -1,6 +1,7 @@
 package MP3Downloader;
 
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.event.EventType;
@@ -38,6 +39,7 @@ public class Controller {
             this.view.listViewDownloadList.setOnMouseClicked(event -> {
                 this.view.title.setText(this.view.listViewDownloadList.getSelectionModel().getSelectedItem());
             });
+
             this.view.title.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent ke)
