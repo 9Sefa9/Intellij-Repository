@@ -7,7 +7,7 @@ public class OneMillionArray {
         for(int i = 0; i<mil.length;i++){
             mil[i] = mil.length-i;
         }
-        Sortable s= new Bubblesort();
+        Sortable s= new Midsort();
         long past = System.currentTimeMillis();
         s.sort(mil);
         long present = (System.currentTimeMillis() - past) / 1000;
