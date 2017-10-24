@@ -39,19 +39,7 @@ public class MP3 implements Supplier<String> {
         converterPage = webClient.getPage("http://convert2mp3.net/");
         windowTitle();
     }
-    /*
-    public String determineAuthorFrom(String ytblink) throws Exception{
-        createWebsite();
-        final HtmlForm form = converterPage.getFirstByXPath("//form[@action='index.php?p=convert']");
-        final HtmlTextInput urlField = form.getFirstByXPath("//input[@name='url']");
-        final HtmlButton convertButton= form.getFirstByXPath("//button[@type='submit']");
-        urlField.setText(ytblink);
-        converterPage = convertButton.click();
-        String s = converterPage.getFirstChild().getLocalName();
-        System.out.println(s);
-        return s;
-    }
-    */
+
     public synchronized void processYoutubeLink() throws IOException, InterruptedException {
         this.name = null;
         final HtmlForm form = converterPage.getFirstByXPath("//form[@action='index.php?p=convert']");
@@ -154,18 +142,4 @@ public class MP3 implements Supplier<String> {
                 }
             }
         }
-
-  /*
-    @Override
-    public void run(){
-        try {
-            createWebsite();
-            processYoutubeLink();
-            downloadMp3FromServer();
-
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-    }
-    */
 }
