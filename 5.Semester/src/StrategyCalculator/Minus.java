@@ -1,3 +1,5 @@
+package StrategyCalculator;
+
 /**
  * Created by hegemann on 17.10.17.
  */

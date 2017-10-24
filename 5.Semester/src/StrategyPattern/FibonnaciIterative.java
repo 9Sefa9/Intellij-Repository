@@ -1,3 +1,5 @@
+package StrategyPattern;
+
 //Concrete strategy which implements the interface FibonnaciBaseStrat
 public class FibonnaciIterative implements FibonnaciBaseStrat {
 

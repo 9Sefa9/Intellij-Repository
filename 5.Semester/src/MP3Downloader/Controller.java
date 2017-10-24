@@ -31,6 +31,7 @@ public class Controller {
             //UPDATE
             new UpdaterClass(getModel(),getView());
 
+
             this.view.paste.setOnAction(e -> this.model.ctrlv(this.view.insertUrl));
             this.view.convert.setOnAction(e -> this.model.setUrlToList(this.view.insertUrl.getText(), this.view.listViewConvertList));
             this.view.download.setOnAction(e -> this.model.savePath());
