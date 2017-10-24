@@ -1,3 +1,4 @@
+package StrategyPatternBasis;
 
 public class StratA implements BaseStrat{
 

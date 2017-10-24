@@ -1,3 +1,5 @@
+package StringList;
+
 import java.util.ArrayList;
 import java.util.Observable;
 

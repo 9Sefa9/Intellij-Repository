@@ -1,3 +1,4 @@
+package GeheimnisPrinzip;
 
 public class Main {
 

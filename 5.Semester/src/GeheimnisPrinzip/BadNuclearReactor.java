@@ -1,3 +1,4 @@
+package GeheimnisPrinzip;
 
 public final class BadNuclearReactor {
 	

@@ -1,3 +1,4 @@
+package GeheimnisPrinzip;
 
 // no final -> sub classing possible
 public class BadNuclearReactor2 {

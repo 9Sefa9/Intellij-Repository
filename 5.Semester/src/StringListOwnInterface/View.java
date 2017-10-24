@@ -1,8 +1,12 @@
+package StringListOwnInterface;
+
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionListener;
+import java.util.Observable;
+import java.util.Observer;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
@@ -78,4 +82,8 @@ public class View extends JFrame implements Observer {
 		return inputPane.getText();
 	}
 
+	@Override
+	public void update(Observable o, Object arg) {
+
+	}
 }

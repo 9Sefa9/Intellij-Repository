@@ -1,3 +1,4 @@
+package StrategyPatternBasis;
 
 public interface BaseStrat {
 

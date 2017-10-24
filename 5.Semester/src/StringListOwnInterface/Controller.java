@@ -1,3 +1,5 @@
+package StringListOwnInterface;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -21,7 +23,7 @@ public class Controller implements ActionListener{
 	
 	public void link(Model m, View v){
 		this.model = m;
-		this.model.registerObserver(v);
+		this.model.registerObserver((Observer) v);
 		
 		this.view = v;
 		view.addActionListener(this);

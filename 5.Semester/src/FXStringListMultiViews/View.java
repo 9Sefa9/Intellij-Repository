@@ -1,3 +1,5 @@
+package FXStringListMultiViews;
+
 import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -34,7 +36,7 @@ public class View extends BorderPane {
 					if (myObject != null) {
 						setText("..." + myObject + "...");
 					} else {
-						// wichtig da sonst der Text beim Löschen auch wirklich
+						// wichtig da sonst der Text beim Lï¿½schen auch wirklich
 						// entfernt wird!
 						setText("");
 					}

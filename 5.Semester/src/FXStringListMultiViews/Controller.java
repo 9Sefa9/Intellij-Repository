@@ -1,3 +1,5 @@
+package FXStringListMultiViews;
+
 public class Controller {
 
 	public void link(Model model, View view) {

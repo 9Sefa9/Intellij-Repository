@@ -1,3 +1,5 @@
+package FXStringListMultiViews;
+
 import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;

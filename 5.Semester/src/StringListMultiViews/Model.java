@@ -1,3 +1,5 @@
+package StringListMultiViews;
+
 import java.util.ArrayList;
 import java.util.Observable;
 

@@ -1,3 +1,5 @@
+package FXStringListMultiViews;
+
 public class ControllerDelete {
 
 	public void link(Model model, ViewDelete view) {

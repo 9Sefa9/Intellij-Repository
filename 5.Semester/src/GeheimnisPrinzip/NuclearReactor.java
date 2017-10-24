@@ -1,3 +1,5 @@
+package GeheimnisPrinzip;
+
 // final class -> no subclass possible
 public final class NuclearReactor {
 	
