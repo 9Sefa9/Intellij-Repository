@@ -13,7 +13,7 @@ import javafx.util.Callback;
 
 public class View extends BorderPane {
 
-	private SimpleStringProperty buttonText = new SimpleStringProperty("Enter");
+	private SimpleStringProperty buttonText = new SimpleStringProperty("");
 	private Button button = new Button();
 	private TextField input = new TextField();
 

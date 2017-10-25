@@ -15,7 +15,6 @@ public class ControllerImplementsInterface implements EventHandler<ActionEvent> 
 		view.getList().setItems(model.getStrings());
 		view.addEventHandler(this);
 	}
-
 	@Override
 	public void handle(ActionEvent event) {
 		model.addString(view.getInputPaneText());
