@@ -3,10 +3,7 @@ package FXStringList;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.util.Callback;
@@ -14,13 +11,31 @@ import javafx.util.Callback;
 public class View extends BorderPane {
 
 	private SimpleStringProperty buttonText = new SimpleStringProperty("");
+
+	public String getButtonText() {
+		return buttonText.get();
+	}
+
+	public SimpleStringProperty buttonTextProperty() {
+		return buttonText;
+	}
+
+	public Button getButton() {
+		return button;
+	}
+
+	public TextField getInput() {
+		return input;
+	}
+
 	private Button button = new Button();
 	private TextField input = new TextField();
-
+    private ComboBox<String> combo = new ComboBox<>();
 	private ListView<String> list = new ListView<String>();
 
 	public View() {
 		HBox box = new HBox(input, button);
+		setTop(combo);
 		setCenter(list);
 		setBottom(box);
 
@@ -79,4 +94,11 @@ public class View extends BorderPane {
 		return input.getText();
 	}
 
+	public ComboBox<String> getCombo() {
+		return combo;
+	}
+
+	public void setCombo(ComboBox<String> combo) {
+		this.combo = combo;
+	}
 }

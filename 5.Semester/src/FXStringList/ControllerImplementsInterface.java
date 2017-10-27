@@ -1,6 +1,9 @@
 package FXStringList;
 
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.ListChangeListener;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
@@ -13,7 +16,7 @@ public class ControllerImplementsInterface implements EventHandler<ActionEvent> 
 		this.model = model;
 		this.view = view;
 		view.getList().setItems(model.getStrings());
-		view.addEventHandler(this);
+
 	}
 	@Override
 	public void handle(ActionEvent event) {
