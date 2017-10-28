@@ -25,18 +25,15 @@ public class View extends BorderPane{
     Button paste,convert;
     Text tutorial;
     Button goToPath;
-    ProgressBar bar;
     Alert dialog;
-    ButtonType buttonTypeCancel;
     public View(){
-
-        dialog = new Alert(Alert.AlertType.WARNING);
+        //update
+        dialog = new Alert(Alert.AlertType.INFORMATION);
         dialog.setHeaderText(null);
         dialog.setWidth(500);
         dialog.setHeight(450);
         dialog.setTitle("Update...");
         dialog.setContentText("Please do not Close. it is done automatically!");
-
         Stage stage = (Stage) dialog.getDialogPane().getScene().getWindow();
         stage.setAlwaysOnTop(true);
         dialog.show();
@@ -45,26 +42,26 @@ public class View extends BorderPane{
         //Mid
         midframe = new GridPane();
         midframe.setVgap(30);
-        midframe.setHgap(30);
+        midframe.setHgap(20);
 
         titleForConvertList = new Text("        MP3 Download List");
         titleForConvertList.setFont(new Font("Verdana",15));
-        midframe.add(titleForConvertList,0,1);
+        midframe.add(titleForConvertList,1,1);
 
         titleForDownloadList = new Text("       Downloaded Files");
         titleForDownloadList.setFont(new Font("Verdana",15));
-        midframe.add(titleForDownloadList,1,1);
+        midframe.add(titleForDownloadList,2,1);
 
         listViewConvertList = new ListView<>();
         listViewConvertList.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         listViewConvertList.setPrefHeight(500);
         listViewConvertList.setStyle("-fx-font: 14px Verdana");
-        midframe.add(listViewConvertList,0,2);
+        midframe.add(listViewConvertList,1,2);
 
         listViewDownloadList = new ListView<>();
         listViewDownloadList.setPrefHeight(500);
         listViewDownloadList.setStyle("-fx-font: 14px Verdana");
-        midframe.add(listViewDownloadList,1,2);
+        midframe.add(listViewDownloadList,2,2);
 
 
         //downframe
