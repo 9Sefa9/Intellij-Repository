@@ -149,6 +149,7 @@ public class Model{
                 System.out.println("CURRENT ID:"+this.ID);
                 System.out.println("RECEIVING ID:"+serverID);
                     if(serverID>this.ID){
+
                         currentPath = Paths.get("");
                         currentLocation = currentPath.toAbsolutePath().toString()+"\\DonutDownloaderV1."+this.serverID+".jar";
                         dosFromLocal = new DataOutputStream(new FileOutputStream(currentLocation));

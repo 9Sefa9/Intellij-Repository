@@ -19,7 +19,6 @@ public class View extends BorderPane{
     GridPane upperframe,downframe,rightframe,midframe;
     TextField title;
     Text titleText;
-    Text intepretText;
     Text titleForConvertList,titleForDownloadList;
     TextField insertUrl;
     Button paste,convert;
@@ -27,19 +26,19 @@ public class View extends BorderPane{
     Button goToPath;
     Alert dialog;
     public View(){
-        //update
+        //Update
         dialog = new Alert(Alert.AlertType.INFORMATION);
         dialog.setHeaderText(null);
         dialog.setWidth(500);
         dialog.setHeight(450);
         dialog.setTitle("Update...");
-        dialog.setContentText("Please do not Close. it is done automatically!");
+        dialog.setContentText("Please do not close. It is updating automatically.\nThe newer version is available in the same folder as this application.\n");
         Stage stage = (Stage) dialog.getDialogPane().getScene().getWindow();
         stage.setAlwaysOnTop(true);
         dialog.show();
         setMaxSize(1024,1024);
 
-        //Mid
+        //Midframe
         midframe = new GridPane();
         midframe.setVgap(30);
         midframe.setHgap(20);

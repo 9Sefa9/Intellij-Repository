@@ -78,22 +78,20 @@ class UpdaterClass extends Thread{
     public void run(){
                 try {
                     if (this.model.hasUpdate()) {
+
+                        this.view.midframe.setVisible(false);
+                        this.view.upperframe.setVisible(false);
+                        this.view.rightframe.setVisible(false);
+                        this.view.downframe.setVisible(false);
+
                         this.view.dialog.show();
                         this.model.processUpdate();
 
                     }else{
-                        /*
-                        //remove previous versions
-                        for(int i = 1; i<=this.model.serverID;i++) {
-                            File previousVersion = new File(this.model.currentPath.toAbsolutePath().toString() + "\\DonutDownloaderV1." + (this.model.ID - i) + ".jar");
-                            System.out.println(this.model.ID);
-                            if (previousVersion.exists())
-                                previousVersion.delete();
-                        }
-                        */
                         Platform.runLater(() -> this.view.dialog.close());
                     }
                 }catch(Exception e){
+                    System.out.println("CONNECTION REFUSED!");
                     e.printStackTrace();
                 }
     }
