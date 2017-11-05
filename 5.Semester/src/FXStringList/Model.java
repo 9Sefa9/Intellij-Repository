@@ -7,8 +7,7 @@ public class Model {
 
 	// Beobachtbarer Datencontainer, der bei Ändeurngen die Beobachter
 	// informiert.
-	private ObservableList<String> strings = FXCollections
-			.observableArrayList();
+	private ObservableList<String> strings = FXCollections.observableArrayList();
 
 	public void addString(String s) {
 		strings.add(s);

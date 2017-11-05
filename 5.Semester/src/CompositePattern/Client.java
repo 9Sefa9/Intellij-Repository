@@ -13,6 +13,12 @@ public class Client {
         c1.add(l3);
 
         c1.request();
+        c1.test();
+        System.out.println();
+        //Eigentlich ist es so:
+        Component comp1 = new Composite();
+        comp1.add(l1);
+        comp1.request();
 
         // im grunde ist es das Hinzufügen von kindern aus dem Interface zu einer Sammlung(Composite)
         //der Composite hat die nötigen implementierungen.
