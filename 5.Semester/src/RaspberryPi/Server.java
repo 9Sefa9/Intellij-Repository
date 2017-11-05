@@ -7,7 +7,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-//TODO: selbst identifikation des Programms!
+
 public class Server{
     private Socket client;
     private ServerSocket server;

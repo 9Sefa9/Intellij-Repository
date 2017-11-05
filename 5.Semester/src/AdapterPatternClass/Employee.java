@@ -1,5 +1,5 @@
 package AdapterPatternClass;
-
+//Diese Klasse soll adaptiert werden.
 public class Employee {
 
     private String firstName;

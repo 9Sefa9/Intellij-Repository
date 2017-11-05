@@ -13,8 +13,11 @@ public class EmployeeAdapter extends Employee implements MyEmployeeInterface {
 
     @Override
     public String getFullName(){
-
-        return this.firstName+this.lastName;
+        return this.firstName+" "+this.lastName;
+    }
+    @Override
+    public String toString(){
+        return getFullName();
     }
 
 }

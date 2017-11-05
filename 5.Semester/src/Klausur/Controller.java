@@ -1,5 +1,4 @@
 package Klausur;
-//TODO setItems verstehe ich nicht ganz, wieso wird der aufgerufen ?
 public class Controller {
     Model model;
     View view;

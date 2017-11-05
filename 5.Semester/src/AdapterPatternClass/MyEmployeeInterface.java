@@ -2,5 +2,5 @@ package AdapterPatternClass;
 
 public interface MyEmployeeInterface {
     //should return the combination of first name and last name
-    public String getFullName();
+     String getFullName();
 }
