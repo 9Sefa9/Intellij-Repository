@@ -5,10 +5,10 @@
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/../../META-INF/MANIFEST.MF" />
       </element>
-      <element id="module-output" name="4.Semester" />
+      <element id="module-output" name="5.Semester" />
       <element id="extracted-dir" path="$KOTLIN_BUNDLED$/lib/kotlin-runtime.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$KOTLIN_BUNDLED$/lib/kotlin-reflect.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/../../../Downloads/htmlunit-2.27-OSGi.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/5.Semester/src/htmlunit-2.27-OSGi.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

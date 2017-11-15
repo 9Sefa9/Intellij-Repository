@@ -48,7 +48,7 @@ public class Clientx {
 	                TargetDataLine.class, audioFormat);
 
 			//Select Available Hardware Devices for the micro
-	        Mixer mixer = AudioSystem.getMixer(mixerInfo[6]);
+	        Mixer mixer = AudioSystem.getMixer(mixerInfo[3]);
 
 	        targetDataLine = (TargetDataLine) mixer.getLine(dataLineInfo);
 

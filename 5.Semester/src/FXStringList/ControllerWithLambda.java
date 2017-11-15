@@ -2,6 +2,10 @@ package FXStringList;
 
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ListChangeListener;
+import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.event.EventHandler;
+import javafx.event.EventType;
 
 public class ControllerWithLambda {
 
@@ -15,6 +19,13 @@ public class ControllerWithLambda {
 		//kann hier elegant mit Lambda-Ausdrüken gearbeitet werden.
 		view.addEventHandler(f -> {
 			model.addString(view.getInputPaneText());
+		});
+
+		view.button.addEventHandler(ActionEvent.ACTION, new EventHandler<ActionEvent>(){
+			@Override
+			public void handle(ActionEvent event){
+
+			}
 		});
 	}
 
