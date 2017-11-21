@@ -2,7 +2,7 @@ package SerializingStrategies;
 
 import java.io.IOException;
 
-public interface SerializableStrategy {
+public interface SerializableStrategy<T> {
 
 
     /*
@@ -18,12 +18,12 @@ public interface SerializableStrategy {
     /*
       Write a song
      */
-    void writeObject(Object s) throws IOException;
+    void writeObject(T s) throws IOException;
 
     /*
      Read a song
      */
-    Object readObject() throws IOException, ClassNotFoundException;
+    T readObject() throws IOException, ClassNotFoundException;
 
     /*
      Finish writing/reading by closing all Streams
