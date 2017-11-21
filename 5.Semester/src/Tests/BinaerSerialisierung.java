@@ -57,7 +57,7 @@ public class BinaerSerialisierung implements Serializable {
         }
     }
     public void xstream(){
-       // try(XStream xStream = new XStream(new DomDriver())){
+       // try(XStreamSerializing xStream = new XStreamSerializing(new DomDriver())){
 
      //   }
     }
