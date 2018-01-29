@@ -11,7 +11,7 @@ import java.io.*;
 //
 public class BinarySerializing<T> implements SerializableStrategy,Serializable{
 
-    private static final int serialVersionUID = 232323;
+   private static final long serialVersionUID = 232323L;
 
     ObjectOutputStream oos;
     ObjectInputStream ois;

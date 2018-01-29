@@ -1,4 +1,6 @@
-package SerializingStrategies;
+package DatabankStrategies;
+
+import SerializingStrategies.SerializableStrategy;
 
 import java.io.IOException;
 

@@ -17,7 +17,7 @@ public class Controller implements ActionListener {
      */
     public void actionPerformed(ActionEvent arg0) {
         model.addString(view.getInputPaneText());
-
+        System.out.println("actionPerformed in controller");
     }
 
     public void link(Model m, View v){
@@ -28,6 +28,7 @@ public class Controller implements ActionListener {
 
         //Linkt action listener
         this.view = v;
+        System.out.println("added action listener to contorller himslef");
         view.addActionListener(this);
 
     }

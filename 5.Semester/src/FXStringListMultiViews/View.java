@@ -49,6 +49,7 @@ public class View extends BorderPane {
 	}
 
 	public void addEventHandler(EventHandler<ActionEvent> eventHandler) {
+		System.out.println("view addEventHandler");
 		button.addEventHandler(ActionEvent.ACTION, eventHandler);
 	}
 
