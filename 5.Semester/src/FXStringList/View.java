@@ -28,7 +28,7 @@ public class View extends BorderPane {
 		return input;
 	}
 
-	private Button button = new Button();
+	public Button button = new Button();
 	private TextField input = new TextField();
     private ComboBox<String> combo = new ComboBox<>();
 	private ListView<String> list = new ListView<String>();

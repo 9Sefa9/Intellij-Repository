@@ -20,6 +20,7 @@ public class ControllerImplementsInterface implements EventHandler<ActionEvent> 
 	}
 	@Override
 	public void handle(ActionEvent event) {
+		System.out.println("pressed");
 		model.addString(view.getInputPaneText());
 	}
 }

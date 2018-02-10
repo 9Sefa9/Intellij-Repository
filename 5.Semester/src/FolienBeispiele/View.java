@@ -68,7 +68,9 @@ public class View extends JFrame implements Observer{
      * @param a The ActionListener
      */
     public void addActionListener(ActionListener a){
+        System.out.println("addedActionListener in View");
         inputButton.addActionListener(a);
+
     }
 
     /**

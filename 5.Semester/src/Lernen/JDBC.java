@@ -11,7 +11,7 @@ public class JDBC {
     Connection con;
     Statement st;
     ResultSet rs;
-    RowSetFactory rsf;
+
     public void treiberLaden(){
         try{
             Class.forName("org.postgresql.Driver");
@@ -72,16 +72,6 @@ public class JDBC {
             //result set
             rs = st.executeQuery("SELECT * FROM hakanTabelle");
           System.out.print(rs.getFloat(5));
-
-
-          //RowSetFactory
-            rsf = RowSetProvider.newFactory();
-            CachedRowSet crs = (CachedRowSet) rsf.createCachedRowSet();
-
-           // crs.setCommand();
-            crs.setFloat(2,3);
-            crs.execute();
-
 
         }catch(SQLException e){
             e.printStackTrace();
