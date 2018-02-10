@@ -32,7 +32,7 @@ public class JDBC2 {
                 ps.setString(2,"Name");
                 ps.setString(3,"Wohnort");
                 ps.setString(4,"Sefa");
-                ps.setString(5,"Leverkusen")
+                ps.setString(5,"Leverkusen");
                 ps.executeUpdate();
 //--------------------------------------------------------------------------------------------------
 
