@@ -3,7 +3,7 @@ package CompositePattern;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Composite extends Component {
+public class Composite implements Component {
     int imax = 50;
     List<Component> comp = new ArrayList<>();
     @Override

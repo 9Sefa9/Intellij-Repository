@@ -7,7 +7,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-public class Class {
+public class Class<C> {
     public static void main(String[]args) throws InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
 
         java.lang.Class<Mergesort> c1 = Mergesort.class;

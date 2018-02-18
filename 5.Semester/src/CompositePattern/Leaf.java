@@ -1,7 +1,7 @@
 package CompositePattern;
 
 
-public class Leaf extends Component {
+public class Leaf implements Component {
 
     @Override
     public void request(){
