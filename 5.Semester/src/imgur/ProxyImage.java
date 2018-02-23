@@ -1,6 +1,16 @@
 package imgur;
 
 public class ProxyImage implements Subject {
+    @Override
+    public void createImg() {
+
+    }
+
+    @Override
+    public void createBarcode() {
+
+    }
+    /*
     RealImage realImage;
     public ProxyImage(String path, int width, int height){
       realImage = new RealImage(path,width,height);
@@ -12,4 +22,5 @@ public class ProxyImage implements Subject {
     public void createBarcode(){
         realImage.createBarcode();
     }
+    */
 }

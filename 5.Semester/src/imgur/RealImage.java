@@ -1,5 +1,5 @@
 package imgur;
-
+/*
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.WriterException;
 import com.google.zxing.client.j2se.MatrixToImageWriter;
@@ -72,3 +72,4 @@ public class RealImage implements Subject {
         }
     }
 }
+*/
