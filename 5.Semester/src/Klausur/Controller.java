@@ -1,13 +1,16 @@
 package Klausur;
-public class Controller {
-    Model model;
-    View view;
-    public void link(Model model, View view){
-        this.model = model;
-        this.view = view;
-        view.getList().setItems(model.list);
-        view.addEventHandler(event-> {
-            model.list.add(view.getInputText());
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class Controller{
+    public void link(Model model,View view){
+        view.getList().setItems(model.getNumbers());
+
+        view.addEventHandler(e->{
+            model.getNumbers().add(view.getInputText());
         });
+
     }
+
 }

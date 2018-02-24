@@ -7,8 +7,14 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+
+import javax.swing.*;
+import java.awt.event.ActionListener;
+import java.util.Observable;
+import java.util.Observer;
+
 //bereits gegeben
-public class View extends BorderPane {
+public class View extends BorderPane implements Observer{
     private Button button = new Button();
     private TextField input = new TextField();
     private ListView<Integer> list = new ListView<Integer>();
@@ -22,9 +28,16 @@ public class View extends BorderPane {
         button.addEventHandler(ActionEvent.ACTION,event);
     }
     public ListView<Integer> getList(){
+
         return this.list;
     }
     public int getInputText(){
+
         return Integer.parseInt(input.getText());
+    }
+
+    @Override
+    public void update(Observable o, Object arg) {
+        list.getItems().add((int)arg);
     }
 }
