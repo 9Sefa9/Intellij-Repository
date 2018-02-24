@@ -8,7 +8,7 @@ public class ByteStream {
 
     public static void main(String[] a) throws IOException{
        // new Streams.ByteStream().readFromFile();
-        new ByteStream().copyFile("G:/users/Progamer/Desktop/Bilder/..jpg","G:/users/Progamer/Desktop/Bilder/aaa.jpg");
+        new ByteStream().copyFile("G:/users/Progamer/Desktop/gitbefehle.pdf","G:/users/Progamer/Desktop/aaa.pdf");
     }
     public void copyFile(String from, String to)throws IOException{
         BufferedInputStream bis = new BufferedInputStream((new FileInputStream(from)));
@@ -24,6 +24,7 @@ public class ByteStream {
         bis.read(buffer,0,numbytes);
 
         bos.write(buffer);
+        bos.flush();
 
     }
     public void readFromFile() throws IOException{
