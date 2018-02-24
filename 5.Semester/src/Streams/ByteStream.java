@@ -1,47 +1,82 @@
 package Streams;
 
 import java.io.*;
+import java.util.ArrayList;
 
-public class ByteStream {
-    // byte array declared
-    private byte[] buf = new byte[848029];
+public class ByteStream implements Serializable {
+
+    private ArrayList<String> test = new ArrayList<>();
 
     public static void main(String[] a) throws IOException{
        // new Streams.ByteStream().readFromFile();
-        new ByteStream().copyFile("G:/users/Progamer/Desktop/gitbefehle.pdf","G:/users/Progamer/Desktop/aaa.pdf");
+        System.out.println(new ByteStream().deepCopySerializing().toString());
+        System.out.println(new ByteStream().deepCopyFile().toString());
     }
-    public void copyFile(String from, String to)throws IOException{
-        BufferedInputStream bis = new BufferedInputStream((new FileInputStream(from)));
-        BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(to));
+    public ByteStream deepCopySerializing(){
+        byte[] byteArray = null;
+        try(ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            ObjectOutputStream oos = new ObjectOutputStream(baos)){
 
-        //how much is the byte of the File ?
-        int numbytes = bis.available();
+            //serialize
+            oos.writeObject(new ByteStream());
+            oos.flush();
+            byteArray = baos.toByteArray();
 
-        //create array till that byte
-        byte[] buffer = new byte[numbytes];
+            System.out.println("Write done.");
 
-        //store every byte in the buffer(byte array), start at given offset, maximum number of bytes to read.
-        bis.read(buffer,0,numbytes);
-
-        bos.write(buffer);
-        bos.flush();
-
-    }
-    public void readFromFile() throws IOException{
-        BufferedInputStream bis = new BufferedInputStream(new FileInputStream("G:/Users/Progamer/Desktop/Bilder/..jpg"));
-
-        // read number of bytes available
-        int numByte = bis.available();
-        System.out.println(numByte);
-
-        // read byte into buf , starts at offset 0, buf.length bytes to read
-        int read = 0;
-        while ((read = bis.read(buf)) != -1)
-        bis.read(buf, 0, buf.length);
-
-        // for each byte in buf
-        for (byte b : buf) {
-            System.out.println((char)b+": " + b);
+        }catch(IOException e){
+            e.printStackTrace();
         }
+
+            //deserialize
+            Object temp = null;
+        try(ByteArrayInputStream bais = new ByteArrayInputStream(byteArray);
+            ObjectInputStream ois = new ObjectInputStream(bais)){
+            temp =(ByteStream)ois.readObject();
+            System.out.println("Read done.");
+            return (ByteStream) temp;
+        }catch (ClassNotFoundException|IOException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+    public ArrayList<String> deepCopy(){
+      ArrayList<String> copy = new ArrayList<>();
+      for(int i = 0; i<test.size();i++){
+          copy.add(test.get(i));
+      }
+      return copy;
+
+    }
+    public void shallowCopy(){
+        ArrayList<String> fake = new ArrayList<>();
+        this.test = fake;
+    }
+    public ByteStream deepCopyFile(){
+        try(FileOutputStream fos = new FileOutputStream("tmpObj");
+        ObjectOutputStream oos = new ObjectOutputStream(fos)){
+
+            oos.writeObject(new ByteStream());
+            oos.flush();
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+        try(FileInputStream fis = new FileInputStream("tmpObj");
+            ObjectInputStream ois = new ObjectInputStream(fis)){
+
+            Object newObj = null;
+            newObj = (ByteStream) ois.readObject();
+            return (ByteStream)newObj;
+        }catch(IOException e){
+            e.printStackTrace();
+        }catch(ClassNotFoundException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+    @Override
+    public String toString() {
+        return "JESS";
     }
 }
