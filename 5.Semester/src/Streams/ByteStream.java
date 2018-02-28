@@ -20,7 +20,6 @@ public class ByteStream implements Serializable {
             //serialize
             oos.writeObject(new ByteStream());
             oos.flush();
-            byteArray = baos.toByteArray();
 
             System.out.println("Write done.");
 

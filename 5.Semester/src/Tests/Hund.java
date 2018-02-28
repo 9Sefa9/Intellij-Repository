@@ -1,9 +1,32 @@
 package Tests;
 
-public class Hund extends Saeugetier {
-    String test;
-    public Hund(String ts){
-        super(ts);
+import org.apache.openjpa.persistence.Persistent;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.io.Serializable;
+@Entity
+@Table(name = "Hund")
+
+public class Hund implements Serializable{
+
+    private String test="Hund";
+    public Hund(){
+
     }
 
+    @Column(name = "test")
+    public String getTest(){
+        return this.test;
+    }
+
+    public void setTest(String test){
+        this.test = test;
+    }
+
+    @Override
+    public String toString() {
+        return this.test;
+    }
 }
