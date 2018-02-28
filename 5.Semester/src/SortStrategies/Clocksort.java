@@ -2,6 +2,7 @@ package SortStrategies;
 
 import org.apache.commons.lang3.ArrayUtils;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -62,17 +63,34 @@ public class Clocksort implements Sortable{
                 second -=1;
             }
 
-            second%=a.length;
-            first%=a.length;
 
             if(less(firstValue,secondValue)){
-                this.subList.add(firstValue);
-                a= ArrayUtils.remove(a,first);
+                    this.subList.add(firstValue);
+                    a = ArrayUtils.remove(a, first);
+
+                while(this.subList.size()-1>2) {
+                    if(less(firstValue, this.subList.get(this.subList.indexOf(firstValue)-1))) {
+                        Comparable<Integer> tmp = this.subList.get(this.subList.indexOf(firstValue)-1);
+                        this.subList.remove(this.subList.get(this.subList.indexOf(firstValue)-1));
+                        this.subList.add(tmp);
+                    }
+                }
+
             }else {
-                this.subList.add(secondValue);
-                a= ArrayUtils.remove(a,second);
+                    this.subList.add(secondValue);
+                    a = ArrayUtils.remove(a, second);
+               while(this.subList.size()-1>2){
+                   if(less(secondValue, this.subList.get(this.subList.indexOf(secondValue)-1))) {
+                       Comparable<Integer> tmp = this.subList.get(this.subList.indexOf(secondValue)-1);
+                       this.subList.remove(this.subList.get(this.subList.indexOf(secondValue)-1));
+                       this.subList.add(tmp);
+                   }
+               }
             }
 
+
+            second%=a.length;
+            first%=a.length;
 
         }
      for(Comparable i: this.subList){
