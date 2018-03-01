@@ -11,30 +11,35 @@ import java.util.List;
 import java.util.Map;
 
 public class OpenJPA {
-    public static void main(String[] arts){
+    public static void main(String[] arts) {
         EntityManagerFactory enManFac = getWithoutConfig();
         EntityManager em = enManFac.createEntityManager();
         EntityTransaction et = em.getTransaction();
-
+        insertSong(enManFac,new Hund());
         et.begin();
         em.persist(new Hund());
         et.commit();
 
         et.begin();
-        for(Object i : em.createQuery("SELECT x from Hund x").getResultList()){
-            Hund h = (Hund)i;
-            System.out.println(h.getTest());
-        }
+      //  for (Object i : em.createQuery("SELECT x from Hund x").getResultList()) {
+      //      Hund h = (Hund) i;
+      //      System.out.println(h.getTest());
+      //  }
         et.commit();
         enManFac.close();
-
-
+    }
+    public static void insertSong(EntityManagerFactory emf, Hund hund ){
+        EntityManager EM = emf.createEntityManager();
+        EntityTransaction transaction = EM.getTransaction();
+        transaction.begin();
+        EM.persist(hund);
+        transaction.commit();
     }
     public static EntityManagerFactory getWithoutConfig() {
 
         Map<String, String> map = new HashMap<String, String>();
 
-        map.put("openjpa.ConnectionURL","jdbc:sqlite:pizza.db");
+        map.put("openjpa.ConnectionURL","jdbc:sqlite:G:/Users/Progamer/Desktop/hund.db");
         map.put("openjpa.ConnectionDriverName", "org.sqlite.JDBC");
         map.put("openjpa.RuntimeUnenhancedClasses", "supported");
         map.put("openjpa.jdbc.SynchronizeMappings", "false");

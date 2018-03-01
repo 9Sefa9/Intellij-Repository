@@ -5,7 +5,7 @@ import com.sun.scenario.effect.Merge;
 import java.util.concurrent.Callable;
 import java.util.function.Supplier;
 
-public class Mergesort implements Sortable {
+public class Mergesort extends Thread implements Sortable,Callable<Comparable[]>,Supplier<Comparable[]> {
 
     private Comparable[] array;
     public Mergesort(Comparable[] array){
@@ -38,7 +38,7 @@ public class Mergesort implements Sortable {
     }
     public  void sort(Comparable[] a)
     {
-       // this.array = a;
+        this.array = a;
         Comparable[] aux = new Comparable[a.length];
         sort(a, aux, 0, a.length - 1);
     }
@@ -56,4 +56,18 @@ public class Mergesort implements Sortable {
        }
    }
 
+    @Override
+    public Comparable[] call() throws Exception {
+        return this.array;
+    }
+
+    @Override
+    public Comparable[] get() {
+        return this.array;
+    }
+
+    @Override
+    public void run(){
+
+    }
 }

@@ -11,6 +11,7 @@ import java.io.Serializable;
 
 public class Hund implements Serializable{
 
+
     private String test="Hund";
     public Hund(){
 

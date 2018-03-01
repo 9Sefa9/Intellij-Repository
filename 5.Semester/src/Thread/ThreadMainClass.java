@@ -6,53 +6,39 @@ import java.util.concurrent.*;
 
 //Kapitel: Threads
 public class ThreadMainClass {
-    public static void main(String[] ar) {
-        ThreadGroup group = new ThreadGroup("Group1");
-        Thread t = new Thread(group, new ThreadImplements());
-        t.start();
-
-        Thread te = new Thread(group, new ThreadExtends());
-        te.start();
-
-        try {
-            while (group.activeCount() > 0) {
-                System.out.println("Warte:");
-                Thread.sleep(500);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public static void main(String[] ar) throws ExecutionException, InterruptedException {
+       Callable();
+       completableFuture();
     }
-    public synchronized static void  future1(){
+    public synchronized static void  Callable() throws ExecutionException, InterruptedException {
         Comparable[] array = new Comparable[1000];
         for(int i = 0;i<array.length;i++)
             array[i] =(int)Math.round(Math.random() * (100000 - 0)+0);
 
         ExecutorService exec = Executors.newCachedThreadPool();
-        Future<Comparable[]>[] f = new Future[1];
+        Future<Comparable[]> f2 = exec.submit((Callable<Comparable[]>)new Mergesort(array));
 
-      //  f[0] = exec.submit(new Mergesort(array));
-        for(int i = 0;i<f.length; i++){
-            try {
-                System.out.println(f[i].get());
-            }catch(Exception e){
-                e.printStackTrace();
-            }
+        Comparable[] newArr = f2.get();
+
+        for(int i = 0; i<newArr.length;i++){
+            System.out.println(newArr[i]);
         }
-
         exec.shutdown();
     }
-    public void completableFuture(){
+    public  static  void completableFuture() throws ExecutionException, InterruptedException {
         Comparable[] array = new Comparable[1000];
+        for (int i = 0; i < array.length; i++)
+            array[i] = (int) Math.round(Math.random() * (100000 - 0) + 0);
+
+        //with ArrayList
         ArrayList<CompletableFuture<Comparable[]>> ccc = new ArrayList<>();
-        for(int i = 0;i<array.length;i++)
-            array[i] =(int)Math.round(Math.random() * (100000 - 0)+0);
+        ccc.add(CompletableFuture.supplyAsync(new Mergesort(array)));
 
-        Mergesort s = new Mergesort(array);
-        // ccc.add(CompletableFuture.supplyAsync(s));
+        //without ArrayList
+        CompletableFuture<Comparable[]> ccc2 =/*unnötig zu initialisieren aber egal..*/ new CompletableFuture<>();
+        ccc2 = CompletableFuture.supplyAsync(new Mergesort(array));
+        Comparable[] newList = ccc2.get();
+        System.out.println("*+++++++++++++++++++++++++"+newList[newList.length - 1]);
 
-        for(int i = 0; i<ccc.size();i++){
-            System.out.println(ccc.get(i));
-        }
     }
 }
