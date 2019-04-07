@@ -11,7 +11,7 @@ import java.io.Serializable;
 
 public class Hund implements Serializable{
 
-
+    private static final long serialVersionUID = 701L;
     private String test="Hund";
     public Hund(){
 

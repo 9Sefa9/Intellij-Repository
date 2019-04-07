@@ -16,7 +16,7 @@ public class BinSer {
         try(FileInputStream fis = new FileInputStream("tmp");
         ObjectInputStream ois = new ObjectInputStream(fis)){
 
-            Object tmp = null;
+            Hund tmp = null;
 
             tmp = (Hund)ois.readObject();
 

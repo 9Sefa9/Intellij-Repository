@@ -31,7 +31,7 @@ public class JavaFXVorlage extends Application {
         Scene scene = new Scene(parent);
         parent.getChildren().add(label);
 
-        //erstellt einen Button
+        //erstellt einen ButtonLearningn
         Button button = new Button();
         button.setText("Ein Knopf");
 
@@ -52,7 +52,7 @@ public class JavaFXVorlage extends Application {
         textarea.setText("TextArea");
         parent.getChildren().add(textarea);
 
-        //erstellt einen AlterBox ( sollte aber an einen Button gebunden sein!!)
+        //erstellt einen AlterBox ( sollte aber an einen ButtonLearningn gebunden sein!!)
        // AlertBox.display("ein Title","ein Message");
         button.setOnAction(action -> AlertBox.display("Ein Title","Ein Message"));
 

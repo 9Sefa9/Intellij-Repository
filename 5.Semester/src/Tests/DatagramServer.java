@@ -15,25 +15,19 @@ public class DatagramServer {
     public DatagramServer(){
 
         try(DatagramSocket socket = new DatagramSocket(3121)){
-            while(true) {
-                byte[] buffer = new byte[5];
-                DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
+            //receive
+            byte[] buffer = "Konoyaro!".getBytes();
+            DatagramPacket packet = new DatagramPacket(buffer,buffer.length);
+            socket.receive(packet);
+            byte[] data = packet.getData();
+            System.out.println(new String(data));
 
-                try {
-                    socket.receive(packet);
-                }catch (IOException e){
-                    e.printStackTrace();
-                }
-
-                InetAddress address = packet.getAddress();
-                byte[] incomingPacket = packet.getData();
-                int port = packet.getPort();
-
-                System.out.println("Client sagt: "+(new String(incomingPacket)));
-                DatagramPacket clientPacket = new DatagramPacket("Mugiwara!".getBytes(),"Mugiwara!".getBytes().length,address,port);
-
-                socket.send(clientPacket);
-            }
+            //send
+            byte[] buffer2 = "Konoyaro2!".getBytes();
+            InetAddress ia = InetAddress.getByName("localhost");
+            int port = 3122;
+            DatagramPacket send = new DatagramPacket(buffer2,buffer2.length,ia,port);
+            socket.send(send);
         }catch (IOException e){
             e.printStackTrace();
         }

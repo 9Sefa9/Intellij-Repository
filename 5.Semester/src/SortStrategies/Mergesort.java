@@ -1,20 +1,15 @@
 package SortStrategies;
 
-import com.sun.scenario.effect.Merge;
 
-import java.util.concurrent.Callable;
-import java.util.function.Supplier;
-
-public class Mergesort extends Thread implements Sortable,Callable<Comparable[]>,Supplier<Comparable[]> {
+public class Mergesort{
 
     private Comparable[] array;
+
     public Mergesort(Comparable[] array){
         this.array = array;
         sort(this.array);
     }
-    public Mergesort(){
 
-    }
     public void merge(Comparable[] a, Comparable[] aux,
                               int lo, int mid, int hi)
     {
@@ -46,28 +41,9 @@ public class Mergesort extends Thread implements Sortable,Callable<Comparable[]>
         return a.compareTo(b)<0;
     }
 
-    @Override
-    public void exch(Comparable[] a, int i, int j) {
-
-    }
    public void printArray(){
        for(Comparable i: this.array){
            System.out.println(i);
        }
    }
-
-    @Override
-    public Comparable[] call() throws Exception {
-        return this.array;
-    }
-
-    @Override
-    public Comparable[] get() {
-        return this.array;
-    }
-
-    @Override
-    public void run(){
-
-    }
 }

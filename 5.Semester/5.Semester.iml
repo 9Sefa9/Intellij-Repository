@@ -11,5 +11,26 @@
     <orderEntry type="library" name="htmlunit-2.27-OSGi" level="project" />
     <orderEntry type="library" name="core-3.3.2" level="project" />
     <orderEntry type="library" name="javase-3.3.2" level="project" />
+    <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../../../Downloads/openjpa-all-2.0.0-M3.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../../../Downloads/openjpa-1.2.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="openjpa-1.2.1" level="project" />
+    <orderEntry type="library" name="openjpa-all-2.1.1" level="project" />
   </component>
 </module>
