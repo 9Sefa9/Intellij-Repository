@@ -1,6 +1,6 @@
 package Tests;
 
-import org.apache.openjpa.persistence.Persistent;
+//import org.apache.openjpa.persistence.Persistent;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

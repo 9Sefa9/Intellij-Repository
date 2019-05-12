@@ -1,6 +1,6 @@
 package Tests;
 
-import org.apache.openjpa.persistence.OpenJPAPersistence;
+//import org.apache.openjpa.persistence.OpenJPAPersistence;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -59,7 +59,7 @@ public class OpenJPA {
             map.put("openjpa.MetaDataFactory", "jpa(Types=" + buf.toString()+ ")");
         }
 
-        return OpenJPAPersistence.getEntityManagerFactory(map);
-
+        //return OpenJPAPersistence.getEntityManagerFactory(map);
+        return null;
     }
 }
