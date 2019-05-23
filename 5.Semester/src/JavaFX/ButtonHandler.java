@@ -19,7 +19,7 @@ public class ButtonHandler extends Application{
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        primaryStage.setTitle("Button Behaviour");
+        primaryStage.setTitle("ButtonLearningn Behaviour");
 
         StackPane layout = new StackPane();
 

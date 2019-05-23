@@ -33,7 +33,7 @@ public class FensterVorlage extends Application{
         Scene scene = new Scene(parent);
         parent.getChildren().add(label);
 
-        //erstellt einen Button
+        //erstellt einen ButtonLearningn
         Button button = new Button();
         button.setText("Ein Knopf");
         parent.getChildren().add(button);

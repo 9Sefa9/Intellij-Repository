@@ -6,13 +6,15 @@ import java.io.*;
 public class XMLSer {
     public static void main(String[] args) throws IntrospectionException {
 
-        BeanInfo info = Introspector.getBeanInfo(Hund.class);
-        PropertyDescriptor []descriptor = info.getPropertyDescriptors();
+       BeanInfo test = Introspector.getBeanInfo(Hund.class);
+       PropertyDescriptor[] test2 = test.getPropertyDescriptors();
 
-        for(PropertyDescriptor i : descriptor){
-            if(i.getName().equals("test"))
-                i.setValue("transient",true);
-        }
+       for(int i = 0 ; i<test2.length;i++){
+           PropertyDescriptor test3 = test2[i];
+           if(test3.getName().equals("test")){
+               test3.setValue("transient",true);
+           }
+       }
         try(FileOutputStream fos = new FileOutputStream("tmp.xml");
             XMLEncoder oos = new XMLEncoder(fos)){
 

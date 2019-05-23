@@ -14,6 +14,7 @@ public class DatagramClient {
     }
     public DatagramClient(){
         try(DatagramSocket socket = new DatagramSocket(3122)){
+            //send
             byte[] buffer = new String("Konoyaro!").getBytes();
 
             InetAddress ia = InetAddress.getByName("localhost");
@@ -22,6 +23,7 @@ public class DatagramClient {
 
             socket.send(packet);
 
+            //receive
             DatagramPacket serverPacket = new DatagramPacket(new byte[1024],1024);
             try{
                 socket.receive(serverPacket);
@@ -29,7 +31,9 @@ public class DatagramClient {
                 e.printStackTrace();
             }
             byte[] serverBytes = serverPacket.getData();
-            System.out.println("Server sagt: "+new String(serverBytes));
+            int port = serverPacket.getPort();
+            InetAddress i = serverPacket.getAddress();
+            System.out.println("Server sagt: "+new String(serverBytes)+i+port);
         }catch (IOException e){
             e.printStackTrace();
         }

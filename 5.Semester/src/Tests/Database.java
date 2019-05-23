@@ -14,7 +14,7 @@ public class Database {
             ps.setInt(2,10);
             ps.executeUpdate();
 
-            PreparedStatement pstmnt = con.prepareStatement("SELESELECT * FROM testArea WHERE test = 10");
+            PreparedStatement pstmnt = con.prepareStatement("SELECT * FROM testArea WHERE test = 10");
             ResultSet rs = pstmnt.executeQuery();
             while(rs.next()){
                 System.out.println(rs.getInt("test"));
