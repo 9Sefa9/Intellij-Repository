@@ -2,26 +2,46 @@ package Stist;
 
 import java.util.ArrayList;
 
-public class Stist<T> extends ArrayList<T> {
+class Node<T>{
+    protected ArrayList<T> nodeList = new ArrayList<>();
+}
+public class Stist<T> extends ArrayList<Node<T>> {
 
-    T item;
-    public Stist(T item){
-        this.item = item;
-    }
-    public Stist(){
-
-    }
     private void push(T item){
         try{
-            Stist stist = new Stist(item);
-            ArrayList<Stist> newList = new ArrayList<>();
-            newList.add(item);
-            add(new Stist(newList));
+            Node<T> node = new Node<T>();
+            node.nodeList.add(item);
+            add(node);
         }catch (NullPointerException n){
             n.printStackTrace();
         }
     }
-    private T pull(){
-        return get(0);
+    private Node<T> pull(){
+        Node<T> tmp = get(size()-1);
+        remove(get(size()-1));
+        return tmp;
+    }
+
+    @Override
+    public String toString() {
+
+        for(int i = 0; i<size(); i++){
+            if(!get(i).nodeList.isEmpty()){
+                for(int j = 0; j<get(i).nodeList.size();j++){
+                    System.out.println(get(i).nodeList.get(j));
+                }
+            }
+        }
+
+
+        return "";
+    }
+
+    public static void main(String[] args){
+        Stist<Integer> s = new Stist<Integer>();
+        s.push(1);
+        s.push(2);
+        s.push(3);
+        System.out.println(s);
     }
 }
