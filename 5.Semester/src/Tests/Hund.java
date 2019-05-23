@@ -1,15 +1,6 @@
 package Tests;
 
-import org.apache.openjpa.persistence.Persistent;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import java.io.Serializable;
-@Entity
-@Table(name = "Hund")
-
-public class Hund implements Serializable{
+public class Hund{
 
 
     private String test="Hund";
@@ -17,7 +8,7 @@ public class Hund implements Serializable{
 
     }
 
-    @Column(name = "test")
+
     public String getTest(){
         return this.test;
     }

@@ -1,14 +1,14 @@
 package AdapterPatternClass;
 
 
-public class EmployeeAdapter extends Employee implements MyEmployeeInterface {
-
+public class EmployeeAdapter implements MyEmployeeInterface {
+    Employee e;
     String firstName,lastName;
 
-    public EmployeeAdapter(String firstName, String lastName){
-        super(firstName,lastName);
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public EmployeeAdapter(){
+
+        this.firstName = e.getFirstName();
+        this.lastName = e.getLastName();
     }
 
     @Override

@@ -1,17 +1,7 @@
 package Tests;
 
-import org.apache.openjpa.persistence.OpenJPAPersistence;
-
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 public class OpenJPA {
-    public static void main(String[] arts) {
+    /*public static void main(String[] arts) {
         EntityManagerFactory enManFac = getWithoutConfig();
         EntityManager em = enManFac.createEntityManager();
         EntityTransaction et = em.getTransaction();
@@ -20,12 +10,18 @@ public class OpenJPA {
         em.persist(new Hund());
         et.commit();
 
+
+
         et.begin();
       //  for (Object i : em.createQuery("SELECT x from Hund x").getResultList()) {
       //      Hund h = (Hund) i;
       //      System.out.println(h.getTest());
       //  }
         et.commit();
+
+
+
+
         enManFac.close();
     }
     public static void insertSong(EntityManagerFactory emf, Hund hund ){
@@ -62,4 +58,5 @@ public class OpenJPA {
         return OpenJPAPersistence.getEntityManagerFactory(map);
 
     }
+    */
 }
