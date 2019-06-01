@@ -60,7 +60,21 @@ public class Encoder {
             }
 
     }
-    private Pair findSmallestPair() throws Exception {
+    private Pair findSmallestPairBackwards(){
+        int infinity = Integer.MAX_VALUE;
+        Pair result = null;
+        for(int i = this.huffmanAlphabet.size()-1; i>=0;i--){
+            if(this.huffmanAlphabet.get(i).i<=infinity && !this.huffmanAlphabet.get(i).visited ){
+                infinity =this.huffmanAlphabet.get(i).i;
+                result = this.huffmanAlphabet.get(i);
+            }
+        }
+
+        if(result==null) return null;
+
+        return result;
+    }
+   /* private Pair findSmallestPair() throws Exception {
         int infinity = Integer.MAX_VALUE;
         Pair result = null;
         for(Pair pair:this.huffmanAlphabet){
@@ -73,15 +87,15 @@ public class Encoder {
         if(result==null) return null;
 
         return result;
-    }
+    }*/
     private void traverseOperation(){
         try {
             while (true) {
-                Pair firstHuffmanAlphabet = findSmallestPair();
+                Pair firstHuffmanAlphabet = findSmallestPairBackwards();
                 if(firstHuffmanAlphabet != null){
                     firstHuffmanAlphabet.visited = true;
                 }
-                Pair secondHuffmanAlphabet = findSmallestPair();
+                Pair secondHuffmanAlphabet = findSmallestPairBackwards();
 
                 if(secondHuffmanAlphabet != null){
                     secondHuffmanAlphabet.visited = true;
@@ -90,8 +104,14 @@ public class Encoder {
                 if(firstHuffmanAlphabet == null || secondHuffmanAlphabet == null){
                     break;
                 }
-                firstHuffmanAlphabet.bit = 1;
-                secondHuffmanAlphabet.bit = 0;
+                if(this.huffmanAlphabet.indexOf(firstHuffmanAlphabet) >= this.huffmanAlphabet.indexOf(secondHuffmanAlphabet)){
+                    firstHuffmanAlphabet.bit = 0;
+                    secondHuffmanAlphabet.bit = 1;
+                }else{
+                    firstHuffmanAlphabet.bit = 1;
+                    secondHuffmanAlphabet.bit = 0;
+                }
+
 
                 int newI = firstHuffmanAlphabet.i + secondHuffmanAlphabet.i;
 
@@ -112,11 +132,11 @@ public class Encoder {
 
             StringBuilder finalCode = new StringBuilder();
             for(Pair p:this.huffmanAlphabet){
-                if(p.visited) {
-                    while(p.parent != null) {
-                        //TODO FAST FERTIG !!
+                if(p.visited && p.mergedString.length()==1) {
+                    Pair parent= p.parent;
+                    while(parent!= null) {
                         finalCode.insert(0,p.parent.bit);
-
+                        parent = parent.parent;
                     }
                 }
             }

@@ -1,6 +1,7 @@
 package Stist;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 class Node<T>{
     protected ArrayList<T> nodeList = new ArrayList<>();
@@ -15,6 +16,16 @@ public class Stist<T> extends ArrayList<Node<T>> {
         }catch (NullPointerException n){
             n.printStackTrace();
         }
+    }
+    private void push(T[] items){
+        try{
+            Node<T> node = new Node<T>();
+            node.nodeList.addAll(Arrays.asList(items));
+            add(node);
+        }catch (NullPointerException n){
+            n.printStackTrace();
+        }
+
     }
     private Node<T> pull(){
         Node<T> tmp = get(size()-1);
@@ -39,9 +50,9 @@ public class Stist<T> extends ArrayList<Node<T>> {
 
     public static void main(String[] args){
         Stist<Integer> s = new Stist<Integer>();
-        s.push(1);
-        s.push(2);
-        s.push(3);
+        s.push(new Integer[]{3,2,1,0});
+        s.push(new Integer[]{3,2,1,0});
+        s.push(new Integer[]{3,2,1,0});
         System.out.println(s);
     }
 }
