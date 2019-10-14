@@ -11,16 +11,19 @@ import java.net.Socket;
 public class TcpServer extends Thread{
     ServerSocket socket;
     Socket client;
+
     public static void main(String[] args){
-            new TcpServer();
+        TcpServer service = new TcpServer();
     }
     public TcpServer(){
 
         try{
-
             socket = new ServerSocket(3121);
-            client = socket.accept();
-            start();
+            while(true) {
+
+                client = socket.accept();
+                this.start();
+            }
         }catch (IOException i){
             i.printStackTrace();
         }
@@ -29,21 +32,25 @@ public class TcpServer extends Thread{
     public void run() {
         DataInputStream br=null;
         try{
-            System.out.println("process");
-                br = new DataInputStream(this.client.getInputStream());
 
-                String tmp = br.readUTF();
-               System.out.println(tmp);
+                br = new DataInputStream(this.client.getInputStream());
+                while(true) {
+                    if(br.available()>0) {
+                        String tmp = br.readUTF();
+                        System.out.println(tmp);
+                    }
+                }
 
 
         }catch (IOException i){
             i.printStackTrace();
         }finally {
-            try{
-                if(br!=null)
+            if(br!= null){
+                try {
                     br.close();
-            }catch (Exception e){
-                e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
