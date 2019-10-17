@@ -60,7 +60,7 @@ public class TcpServer extends Thread{
                 }
 
             }catch (IOException ex){
-                LOGGER.log( Level.SEVERE, ex.toString(), ex );
+                LOGGER.log( Level.INFO, ex.toString(), "Closed" );
             }
             /*finally {
                 if(br!= null){
