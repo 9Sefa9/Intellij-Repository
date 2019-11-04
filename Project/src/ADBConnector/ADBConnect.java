@@ -8,8 +8,8 @@ public class ADBConnect {
     public static void main(String[] args) throws Exception {
         ADBConnect adb = new ADBConnect();
         adb.killServer();
-        adb.connect(5555,"192.168.178.122");
-        adb.push("C:/Users/Sefa/Desktop/test.docx","/sdcard/");
+        adb.connect(5555,"192.168.43.22");
+        //adb.push("C:/Users/Sefa/Desktop/test.docx","/sdcard/");
     }
     //port 5555 192.168.178.122
     private void connect(int port, String androidIP){

@@ -8,7 +8,7 @@ public class ClientTCP {
     Socket socket;
     public void runClient(){
         try{
-            socket = new Socket("213.202.229.142",25);
+            socket = new Socket("localhost",25);
 
             try(DataOutputStream dos = new DataOutputStream(socket.getOutputStream())){
             dos.writeUTF("i");

@@ -3,11 +3,11 @@ import SortStrategies.*;
 
 public class OneMillionArray {
     public static void main(String[] a){
-        Comparable[] mil = new Comparable[10];
+        Comparable[] mil = new Comparable[100];
         for(int i = 0; i<mil.length;i++){
             mil[i] = mil.length-i;
         }
-        //Sortable s= new Clocksort();
+        Sortable s= new Insertionsort();
         long past = System.currentTimeMillis();
        // s.sort(mil);
         long present = (System.currentTimeMillis() - past) / 1000;
