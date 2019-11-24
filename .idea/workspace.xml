@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ArtifactsWorkspaceSettings">
-    <artifacts-to-build>
-      <artifact name="4.Semester:jar" />
-    </artifacts-to-build>
-  </component>
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="e7ccd73f-d4cb-4a73-a286-db25cef6a558" name="Default" comment="-">
 <<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/Project/src/Terraria/Client.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Project/src/Terraria/Main.java" afterDir="false" />
+=======
+    <list default="true" id="7b20a639-ed55-429b-941e-31e51b230a36" name="Default" comment="-">
+>>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/4_Semester_jar.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/src/ADBConnector/ADBConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/ADBConnector/ADBConnect.java" afterDir="false" />
@@ -26,6 +26,12 @@
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+>>>>>>> Stashed changes
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +39,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+<<<<<<< Updated upstream
     <SUITE FILE_PATH="coverage/Intellij_Repository$Server.coverage" NAME="Server Coverage Results" MODIFIED="1492876767265" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Networking.*</FILTER>
     </SUITE>
@@ -144,6 +151,23 @@
             <state relative-caret-position="144">
               <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
 >>>>>>> d12784ef7f60633b1800e75a56e0c7e08b3d3c5d
+=======
+    <SUITE FILE_PATH="coverage/Intellij_Repository$Main.coverage" NAME="Main Coverage Results" MODIFIED="1519475463086" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Algorithms.*</FILTER>
+    </SUITE>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/5.Semester/src/Stist/Stist.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+              <folding>
+                <element signature="e#127#128#0" expanded="true" />
+                <element signature="e#159#160#0" expanded="true" />
+              </folding>
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
@@ -153,24 +177,22 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>temp</find>
-      <find>conv</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+<<<<<<< Updated upstream
     <option name="SET_USER_NAME_GLOBALLY" value="false" />
+=======
+>>>>>>> Stashed changes
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
         <option value="$PROJECT_DIR$/5.Semester/src/Tests/RMIContainer.java" />
@@ -245,6 +267,41 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1912" />
     <option name="y" value="-8" />
+=======
+        <option value="$PROJECT_DIR$/5.Semester/src/Algorithms/Main.java" />
+        <option value="$PROJECT_DIR$/5.Semester/src/Streams/ByteStream.java" />
+        <option value="$PROJECT_DIR$/5.Semester/src/Lernen/ThreadClassA.java" />
+        <option value="$PROJECT_DIR$/5.Semester/src/Lernen/ThreadClassB.java" />
+        <option value="$PROJECT_DIR$/5.Semester/src/Lernen/ThreadMain.java" />
+        <option value="$PROJECT_DIR$/5.Semester/src/Tests/Saeugetier.java" />
+        <option value="$PROJECT_DIR$/5.Semester/src/Tests/BinSer.java" />
+        <option value="$PROJECT_DIR$/tmp.xml" />
+        <option value="$PROJECT_DIR$/5.Semester/src/Tests/XMLSer.java" />
+        <option value="$PROJECT_DIR$/5.Semester/src/Tests/NumberFormattingTut.java" />
+        <option value="$PROJECT_DIR$/5.Semester/src/Tests/EinInterface.java" />
+        <option value="$PROJECT_DIR$/5.Semester/src/Tests/Database.java" />
+        <option value="$PROJECT_DIR$/5.Semester/src/Tests/RMIServer.java" />
+        <option value="$PROJECT_DIR$/5.Semester/src/Tests/RMIClient.java" />
+        <option value="$PROJECT_DIR$/5.Semester/src/Klausur/Controller.java" />
+        <option value="$PROJECT_DIR$/5.Semester/src/Klausur/Model.java" />
+        <option value="$PROJECT_DIR$/5.Semester/src/AdapterPatternClass/EmployeeAdapter.java" />
+        <option value="$PROJECT_DIR$/5.Semester/src/AdapterPatternClass/EmployeeMain.java" />
+        <option value="$PROJECT_DIR$/5.Semester/src/Klausur/View.java" />
+        <option value="$PROJECT_DIR$/5.Semester/src/Tests/Hund.java" />
+        <option value="$PROJECT_DIR$/5.Semester/src/Tests/OpenJPA.java" />
+        <option value="$PROJECT_DIR$/Selenium/src/Main.java" />
+        <option value="$PROJECT_DIR$/5.Semester/src/Java8Features/MethodReference.java" />
+        <option value="$PROJECT_DIR$/5.Semester/src/SortStrategies/Clocksort.java" />
+        <option value="$PROJECT_DIR$/5.Semester/src/MoodleConnector/Container.java" />
+        <option value="$PROJECT_DIR$/5.Semester/src/Algorithms/OneMillionArray.java" />
+        <option value="$PROJECT_DIR$/Test/src/Java8Features/MethodReference.java" />
+        <option value="$PROJECT_DIR$/5.Semester/src/Stist/Stist.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="445" />
+>>>>>>> Stashed changes
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -253,11 +310,16 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
       <pane id="PackagesPane" />
       <pane id="Scope" />
 =======
 >>>>>>> d12784ef7f60633b1800e75a56e0c7e08b3d3c5d
+=======
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+>>>>>>> Stashed changes
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -281,6 +343,7 @@
               <item name="Intellij-Repository" type="b2602c69:ProjectViewProjectNode" />
               <item name="Project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+<<<<<<< Updated upstream
               <item name="Terraria" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -294,11 +357,46 @@
 =======
 >>>>>>> d12784ef7f60633b1800e75a56e0c7e08b3d3c5d
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+=======
+              <item name="Algorithms" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Intellij-Repository" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Intellij-Repository" type="462c0819:PsiDirectoryNode" />
+              <item name="Selenium" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Intellij-Repository" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Intellij-Repository" type="462c0819:PsiDirectoryNode" />
+              <item name="Test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Intellij-Repository" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Intellij-Repository" type="462c0819:PsiDirectoryNode" />
+              <item name="Test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Intellij-Repository" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Intellij-Repository" type="462c0819:PsiDirectoryNode" />
+              <item name="Test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Java8Features" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Intellij-Repository" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Intellij-Repository" type="462c0819:PsiDirectoryNode" />
+              <item name="Test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Java8Features" type="462c0819:PsiDirectoryNode" />
+              <item name="MethodReference.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+>>>>>>> Stashed changes
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
       <pane id="PackagesPane" />
@@ -343,6 +441,27 @@
       <recent name="G:\Users\Progamer\Desktop\GitRepositories\Intellij-Repository\lib" />
       <recent name="G:\Users\Progamer\Desktop\GitRepositories\Intellij-Repository\5.Semester\src" />
       <recent name="C:\Users\Sefa\Desktop\GitRepositories\Intellij-Repository\5.Semester\src" />
+=======
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554983659359" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Sefa\Desktop\GitRepositories\Intellij-Repository\Test\src" />
+      <recent name="C:\Users\Sefa\Desktop\GitRepositories\Intellij-Repository\Test" />
+      <recent name="C:\Users\Sefa\Desktop\GitRepositories\Intellij-Repository\Selenium\seleniumLib" />
+>>>>>>> Stashed changes
     </key>
   </component>
   <component name="RunDashboard">
@@ -357,16 +476,21 @@
       </list>
     </option>
   </component>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
   <component name="RunManager" selected="Application.Client">
 =======
   <component name="RunManager" selected="Application.Main">
 >>>>>>> d12784ef7f60633b1800e75a56e0c7e08b3d3c5d
+=======
+  <component name="RunManager">
+>>>>>>> Stashed changes
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+<<<<<<< Updated upstream
     </configuration>
     <configuration name="ADBConnect" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
@@ -436,12 +560,23 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Network.*" />
+=======
+    </configuration>
+    <configuration name="MethodReference" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Java8Features.MethodReference" />
+      <module name="Intellij-Repository" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Java8Features.*" />
+>>>>>>> Stashed changes
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+<<<<<<< Updated upstream
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
@@ -479,6 +614,11 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+=======
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+>>>>>>> Stashed changes
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -490,6 +630,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< Updated upstream
     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
       <option name="filePath" />
       <option name="vmParameters" />
@@ -524,6 +665,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+=======
+>>>>>>> Stashed changes
     <configuration default="true" type="TestNG">
       <option name="TEST_OBJECT" value="CLASS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -542,6 +685,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< Updated upstream
     <list>
       <item itemvalue="Application.ADBConnect" />
 <<<<<<< HEAD
@@ -566,18 +710,28 @@
         <item itemvalue="Application.main" />
 >>>>>>> d12784ef7f60633b1800e75a56e0c7e08b3d3c5d
         <item itemvalue="Application.ADBConnect" />
+=======
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MethodReference" />
+>>>>>>> Stashed changes
       </list>
     </recent_temporary>
   </component>
   <component name="SvnConfiguration">
+<<<<<<< Updated upstream
     <configuration />
+=======
+    <configuration>C:\Users\Sefa\AppData\Roaming\Subversion</configuration>
+>>>>>>> Stashed changes
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e7ccd73f-d4cb-4a73-a286-db25cef6a558" name="Default" comment="" />
-      <created>1490789804559</created>
+      <changelist id="7b20a639-ed55-429b-941e-31e51b230a36" name="Default" comment="" />
+      <created>1519387101136</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< Updated upstream
       <updated>1490789804559</updated>
       <workItem from="1500793039563" duration="1680000" />
       <workItem from="1500890552233" duration="5209000" />
@@ -1144,12 +1298,109 @@
       <window_info anchor="right" id="Palette&#9;" order="10" />
       <window_info anchor="right" id="Bean Validation" order="11" />
       <window_info anchor="right" id="Maven" order="12" />
+=======
+      <updated>1519387101136</updated>
+      <workItem from="1519387106433" duration="404000" />
+      <workItem from="1519391003013" duration="1517000" />
+      <workItem from="1519411052092" duration="2181000" />
+      <workItem from="1519469870839" duration="11663000" />
+      <workItem from="1519505237873" duration="340000" />
+      <workItem from="1519821535244" duration="2291000" />
+      <workItem from="1519828099526" duration="8985000" />
+      <workItem from="1519906920905" duration="133000" />
+      <workItem from="1519988499383" duration="5898000" />
+      <workItem from="1520190824745" duration="405000" />
+      <workItem from="1520194048856" duration="275000" />
+      <workItem from="1520420178860" duration="690000" />
+      <workItem from="1520421015512" duration="332000" />
+      <workItem from="1543068296677" duration="962000" />
+      <workItem from="1543168170623" duration="22000" />
+      <workItem from="1554806224832" duration="671000" />
+      <workItem from="1554906926680" duration="365000" />
+      <workItem from="1554982062503" duration="1580000" />
+      <workItem from="1555851993381" duration="241000" />
+      <workItem from="1555852446220" duration="160000" />
+      <workItem from="1558605078637" duration="351000" />
+      <workItem from="1558615440560" duration="604000" />
+      <workItem from="1558622114151" duration="271000" />
+    </task>
+    <task id="LOCAL-00001" summary="-">
+      <created>1519387502039</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1519387502039</updated>
+    </task>
+    <task id="LOCAL-00002" summary="-">
+      <created>1519505312348</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1519505312348</updated>
+    </task>
+    <task id="LOCAL-00003" summary="-">
+      <created>1519836386074</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1519836386074</updated>
+    </task>
+    <task id="LOCAL-00004" summary="-">
+      <created>1558622149242</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1558622149242</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="40341000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2567132" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Image Layers" order="6" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32972974" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.4010811" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.42474917" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="7" side_tool="true" visible="true" weight="0.32901832" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32864866" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" sideWeight="0.49506348" weight="0.24972972" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24972972" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven Projects" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Theme Preview" order="7" />
+      <window_info anchor="right" id="Coverage" order="8" sideWeight="0.5049365" side_tool="true" weight="0.24972972" />
+      <window_info anchor="right" id="Bean Validation" order="9" />
+      <window_info anchor="right" id="Palette&#9;" order="10" />
+      <window_info anchor="right" id="Maven" order="11" />
+>>>>>>> Stashed changes
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
+<<<<<<< Updated upstream
     <MESSAGE value="Es wurde versucht, client Server beziehung zu verstehen." />
     <MESSAGE value="Server.java was changed, not succesfull.!" />
     <MESSAGE value="deleted client and server. changed package to MoodleConnector" />
@@ -1174,12 +1425,15 @@
     <MESSAGE value="wieder gelernt" />
     <MESSAGE value="FAST FERTIG!" />
     <MESSAGE value="Jo ! selenium klappt cool." />
+=======
+>>>>>>> Stashed changes
     <MESSAGE value="-" />
     <option name="LAST_COMMIT_MESSAGE" value="-" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
+<<<<<<< Updated upstream
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/5.Semester/src/imgur/createImg.java</url>
           <line>6</line>
@@ -1239,6 +1493,15 @@
           <line>8</line>
           <properties />
           <option name="timeStamp" value="192" />
+=======
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/5.Semester/src/Streams/ByteStream.java</url>
+          <line>42</line>
+          <properties class="Streams.ByteStream" method="deepCopy">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="8" />
+>>>>>>> Stashed changes
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -1248,6 +1511,7 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
     <entry file="file://$PROJECT_DIR$/5.Semester/src/Lernen/ThreadClassB.java" />
@@ -1536,6 +1800,336 @@
         <state relative-caret-position="144">
           <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
 >>>>>>> d12784ef7f60633b1800e75a56e0c7e08b3d3c5d
+=======
+    <entry file="jar://$PROJECT_DIR$/out/production/5.Semester/htmlunit-2.27-OSGi.jar!/org/apache/commons/lang3/ArrayUtils.class" />
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/SortStrategies/Midsort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="51" selection-start-line="51" selection-end-line="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/SortStrategies/Sortable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/SortStrategies/Mergesort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/Streams/StreamUebung.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/Thread/ThreadExtends.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/Thread/ThreadImplements.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/WaitNotify/ClassB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/Streams/ByteStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+          <folding>
+            <element signature="method#deepCopySerializing#0;class#ByteStream#0" />
+            <element signature="method#deepCopy#0;class#ByteStream#0" />
+            <element signature="method#shallowCopy#0;class#ByteStream#0" />
+            <element signature="method#deepCopyFile#0;class#ByteStream#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/Lernen/ThreadClassB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/Lernen/ThreadClassA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="669">
+          <caret line="26" column="36" lean-forward="true" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/Lernen/ThreadMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="28" column="37" lean-forward="true" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/Tests/Saeugetier.java" />
+    <entry file="file://$PROJECT_DIR$/tmp.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="29" lean-forward="true" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/Tests/GOTOZweierLogarithmus.java" />
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/Tests/MainLamdaClass.java" />
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/Tests/NumberFormattingTut.java" />
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/Tests/LamdaExpression.java" />
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/Tests/EinInterface.java" />
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/Tests/Database.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/Tests/HashtableTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/Tests/BinSer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/src.zip!/java/rmi/Remote.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="653">
+          <caret line="49" column="17" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/RMI/RMIInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/Tests/RMIContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="14" column="28" lean-forward="true" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/Tests/RMIServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/Tests/RMIClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="18" column="42" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/Klausur/Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/Klausur/main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/AdapterPatternClass.MyEmployeeInterface">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>AdapterPatternClass.MyEmployeeInterface</OriginalElement>
+          <nodes>
+            <node x="0.0" y="0.0">AdapterPatternClass.MyEmployeeInterface</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="-371.0" y="-147.0" />
+          <SelectedNodes>
+            <node>AdapterPatternClass.MyEmployeeInterface</node>
+          </SelectedNodes>
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/AdapterPatternClass.EmployeeMain">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>AdapterPatternClass.EmployeeMain</OriginalElement>
+          <nodes>
+            <node x="" y="">AdapterPatternClass.EmployeeMain</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="95.0" y="24.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/AdapterPatternClass/EmployeeAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/AdapterPatternClass/MyEmployeeInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" column="26" lean-forward="true" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/Thread/ThreadMainClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="40" column="22" lean-forward="true" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/AdapterPatternClass/EmployeeMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/AdapterPatternClass/Employee.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/Tests/XMLSer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/Tests/Hund.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/Tests/Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/Klausur/View.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="29" column="62" selection-start-line="29" selection-start-column="62" selection-end-line="29" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/Klausur/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/Tests/OpenJPA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Selenium/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" column="77" selection-start-line="11" selection-start-column="77" selection-end-line="11" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/MethodReference.java" />
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/MoodleConnector/Analysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="27" column="17" lean-forward="true" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/SortStrategies/Clocksort.java" />
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/MoodleConnector/Container.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/Algorithms/Main.java" />
+    <entry file="file://$PROJECT_DIR$/Test/src/Java8Features/MethodReference.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/Algorithms/OneMillionArray.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/Stist/Stist.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+          <folding>
+            <element signature="e#127#128#0" expanded="true" />
+            <element signature="e#159#160#0" expanded="true" />
+          </folding>
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
@@ -1545,7 +2139,10 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+<<<<<<< Updated upstream
           <last-edited>5.Semester:jar</last-edited>
+=======
+>>>>>>> Stashed changes
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1592,7 +2189,23 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
+<<<<<<< Updated upstream
           <last-edited>Project</last-edited>
+=======
+          <last-edited>Intellij-Repository</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+>>>>>>> Stashed changes
           <splitter-proportions>
             <option name="proportions">
               <list>
