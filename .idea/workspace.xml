@@ -7,6 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7ccd73f-d4cb-4a73-a286-db25cef6a558" name="Default" comment="-">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/Project/src/Terraria/Client.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Project/src/Terraria/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/4_Semester_jar.xml" beforeDir="false" />
@@ -18,6 +19,9 @@
       <change beforePath="$PROJECT_DIR$/Project/src/ADBConnector/ADBConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/ADBConnector/ADBConnect.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/src/Algorithms/OneMillionArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/Algorithms/OneMillionArray.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/src/Network/ClientTCP.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/Network/ClientTCP.java" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> d12784ef7f60633b1800e75a56e0c7e08b3d3c5d
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -85,6 +89,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Project/src/Terraria/Main.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -132,6 +137,13 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="192">
               <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+=======
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Project/src/BatterySaveFinder/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+>>>>>>> d12784ef7f60633b1800e75a56e0c7e08b3d3c5d
             </state>
           </provider>
         </entry>
@@ -154,10 +166,15 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SET_USER_NAME_GLOBALLY" value="false" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/5.Semester/src/Tests/RMIContainer.java" />
+>>>>>>> d12784ef7f60633b1800e75a56e0c7e08b3d3c5d
         <option value="$PROJECT_DIR$/5.Semester/src/Tests/RMIServer.java" />
         <option value="$PROJECT_DIR$/5.Semester/src/Tests/MVCMain.java" />
         <option value="$PROJECT_DIR$/5.Semester/src/Tests/Model.java" />
@@ -204,11 +221,18 @@
         <option value="$PROJECT_DIR$/Project/src/Selenium/Main.java" />
         <option value="$PROJECT_DIR$/Project/src/ADBConnector/FindUSB.java" />
         <option value="$PROJECT_DIR$/Project/src/ADBConnector/ADBConnect.java" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/Project/src/Terrarria.java" />
         <option value="$PROJECT_DIR$/Project/src/Network/ClientTCP.java" />
         <option value="$PROJECT_DIR$/Project/src/Terraria/Main.java" />
         <option value="$PROJECT_DIR$/Project/src/Terraria/Client.java" />
         <option value="$PROJECT_DIR$/Project/src/Tests/LinkedListX.java" />
+=======
+        <option value="$PROJECT_DIR$/Project/javax.usb.properties" />
+        <option value="$PROJECT_DIR$/Project/src/usb4java/main.java" />
+        <option value="$PROJECT_DIR$/Project/src/BatterySaveFinder/Kernel32.java" />
+        <option value="$PROJECT_DIR$/Project/src/BatterySaveFinder/Main.java" />
+>>>>>>> d12784ef7f60633b1800e75a56e0c7e08b3d3c5d
       </list>
     </option>
   </component>
@@ -219,18 +243,21 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-19" />
+    <option name="x" value="1912" />
     <option name="y" value="-8" />
-    <option name="width" value="1410" />
-    <option name="height" value="776" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
       <pane id="PackagesPane" />
       <pane id="Scope" />
+=======
+>>>>>>> d12784ef7f60633b1800e75a56e0c7e08b3d3c5d
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -245,6 +272,7 @@
             </path>
             <path>
               <item name="Intellij-Repository" type="b2602c69:ProjectViewProjectNode" />
+<<<<<<< HEAD
               <item name="Project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Network" type="462c0819:PsiDirectoryNode" />
@@ -263,12 +291,19 @@
             </path>
             <path>
               <item name="Intellij-Repository" type="b2602c69:ProjectViewProjectNode" />
+=======
+>>>>>>> d12784ef7f60633b1800e75a56e0c7e08b3d3c5d
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
+=======
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+>>>>>>> d12784ef7f60633b1800e75a56e0c7e08b3d3c5d
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -303,11 +338,11 @@
       <recent name="AdapterPatternClass" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\Users\Progamer\Desktop\GitRepositories\Intellij-Repository\Project\src\usb4java" />
       <recent name="G:\Users\Progamer\Desktop\GitRepositories\Intellij-Repository\" />
       <recent name="G:\Users\Progamer\Desktop\GitRepositories\Intellij-Repository\lib" />
       <recent name="G:\Users\Progamer\Desktop\GitRepositories\Intellij-Repository\5.Semester\src" />
       <recent name="C:\Users\Sefa\Desktop\GitRepositories\Intellij-Repository\5.Semester\src" />
-      <recent name="C:\Users\Sefa\Desktop\GitRepositories\Intellij-Repository\5.Semester\src\StringListOwnInterface" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -322,7 +357,11 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="RunManager" selected="Application.Client">
+=======
+  <component name="RunManager" selected="Application.Main">
+>>>>>>> d12784ef7f60633b1800e75a56e0c7e08b3d3c5d
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -404,12 +443,42 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="BatterySaveFinder.Main" />
+      <module name="Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="BatterySaveFinder.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="C:\Program Files\Java\jdk1.8.0_111\jre" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="ImageCreation.Main" />
       <module name="5.Semester" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="usb4java.main" />
+      <module name="Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="usb4java.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -475,6 +544,7 @@
     </configuration>
     <list>
       <item itemvalue="Application.ADBConnect" />
+<<<<<<< HEAD
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.Client" />
       <item itemvalue="Application.ServerTCP" />
@@ -486,6 +556,15 @@
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.ClientTCP" />
         <item itemvalue="Application.ServerTCP" />
+=======
+      <item itemvalue="Application.main" />
+      <item itemvalue="Application.Main" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.main" />
+>>>>>>> d12784ef7f60633b1800e75a56e0c7e08b3d3c5d
         <item itemvalue="Application.ADBConnect" />
       </list>
     </recent_temporary>
@@ -624,6 +703,7 @@
       <workItem from="1559851991365" duration="22000" />
       <workItem from="1559857619814" duration="3894000" />
       <workItem from="1559949116918" duration="99000" />
+<<<<<<< HEAD
       <workItem from="1559949369866" duration="2704000" />
       <workItem from="1560192871605" duration="3607000" />
       <workItem from="1560336811858" duration="1061000" />
@@ -636,6 +716,14 @@
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
       <updated>1492892238407</updated>
+=======
+      <workItem from="1559949369866" duration="2761000" />
+      <workItem from="1560027531355" duration="1181000" />
+      <workItem from="1560086662188" duration="553000" />
+      <workItem from="1562526062095" duration="121000" />
+      <workItem from="1563116671877" duration="1194000" />
+      <workItem from="1563386335679" duration="9000" />
+>>>>>>> d12784ef7f60633b1800e75a56e0c7e08b3d3c5d
     </task>
     <task id="LOCAL-00009" summary="Server.java was changed, not succesfull.!">
       <created>1493840814226</created>
@@ -967,6 +1055,7 @@
       <updated>1559861573124</updated>
     </task>
     <task id="LOCAL-00056" summary="-">
+<<<<<<< HEAD
       <created>1560196750352</created>
       <option name="number" value="00056" />
       <option name="presentableId" value="LOCAL-00056" />
@@ -978,6 +1067,26 @@
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="293525000" />
+=======
+      <created>1559952136602</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1559952136602</updated>
+    </task>
+    <task id="LOCAL-00057" summary="-">
+      <created>1563118879577</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1563118879577</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="288827000" />
+>>>>>>> d12784ef7f60633b1800e75a56e0c7e08b3d3c5d
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -989,9 +1098,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21911922" />
+=======
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21695095" />
+>>>>>>> d12784ef7f60633b1800e75a56e0c7e08b3d3c5d
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Nl-Palette" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -1001,7 +1116,11 @@
       <window_info id="Image Layers" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3261105" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.48667377" weight="0.20496224" />
+=======
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.48667377" weight="0.29144096" />
+>>>>>>> d12784ef7f60633b1800e75a56e0c7e08b3d3c5d
       <window_info anchor="bottom" id="Debug" order="3" weight="0.35969663" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1129,6 +1248,11 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/Lernen/ThreadClassB.java" />
+    <entry file="file://$PROJECT_DIR$/5.Semester/src/Lernen/ThreadClassA.java" />
+>>>>>>> d12784ef7f60633b1800e75a56e0c7e08b3d3c5d
     <entry file="file://$PROJECT_DIR$/5.Semester/src/Tests/Database.java" />
     <entry file="file://$PROJECT_DIR$/5.Semester/src/Tests/StackWaitNotifyMain.java" />
     <entry file="file://$PROJECT_DIR$/5.Semester/src/Tests/Remover.java" />
@@ -1213,6 +1337,8 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Project/javax.usb.properties" />
+    <entry file="file://$PROJECT_DIR$/Project/src/usb4java/main.java" />
     <entry file="file://$PROJECT_DIR$/Project/src/Selenium/Login.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -1230,8 +1356,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Project/src/Selenium/Messengram.java">
+    <entry file="file://$PROJECT_DIR$/Project/src/Selenium/Initialization.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="96">
           <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
         </state>
@@ -1251,27 +1378,91 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="9" column="102" selection-start-line="9" selection-start-column="102" selection-end-line="9" selection-end-column="102" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Project/src/Selenium/SocialNetwork.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Project/src/Selenium/Initialization.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
+=======
+        <state relative-caret-position="54">
           <caret line="3" column="12" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Project/src/Selenium/IMessengram.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
+        <state relative-caret-position="54">
           <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/jna-4.2.2.jar!/com/sun/jna/win32/StdCallLibrary.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+>>>>>>> d12784ef7f60633b1800e75a56e0c7e08b3d3c5d
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/jna-4.2.2.jar!/com/sun/jna/Structure.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2646">
+          <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Project/src/BatterySaveFinder/Kernel32.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-324">
+          <caret line="51" column="26" selection-start-line="51" selection-start-column="26" selection-end-line="51" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#796#804#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Project/src/ADBConnector/ADBConnect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3187#3188#0" expanded="true" />
+            <element signature="e#3233#3234#0" expanded="true" />
+            <element signature="e#3719#3720#0" expanded="true" />
+            <element signature="e#3748#3749#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Project/src/Selenium/Messengram.java">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="96">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+=======
+        <state relative-caret-position="72">
+          <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+>>>>>>> d12784ef7f60633b1800e75a56e0c7e08b3d3c5d
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Project/src/ADBConnector/FindUSB.java">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="72">
+          <caret line="3" column="12" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="12" />
+=======
+        <state relative-caret-position="162">
+          <caret line="9" column="102" selection-start-line="9" selection-start-column="102" selection-end-line="9" selection-end-column="102" />
+>>>>>>> d12784ef7f60633b1800e75a56e0c7e08b3d3c5d
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Project/src/Selenium/SocialNetwork.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+<<<<<<< HEAD
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+=======
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+>>>>>>> d12784ef7f60633b1800e75a56e0c7e08b3d3c5d
         </state>
       </provider>
     </entry>
@@ -1282,6 +1473,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/Project/src/Terrarria.java" />
     <entry file="file://$PROJECT_DIR$/Project/src/ADBConnector/ADBConnect.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1338,6 +1530,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+=======
+    <entry file="file://$PROJECT_DIR$/Project/src/BatterySaveFinder/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+>>>>>>> d12784ef7f60633b1800e75a56e0c7e08b3d3c5d
         </state>
       </provider>
     </entry>

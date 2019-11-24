@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 Manifest-Version: 1.0
 Main-Class: MP3Downloader.Main
 
+=======
+Manifest-Version: 1.0
+Main-Class: ADBConnector.ADBConnect
+
+>>>>>>> 874706335472f97ac1044ec14d800444bbb49ebb
