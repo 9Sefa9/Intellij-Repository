@@ -7,10 +7,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7ccd73f-d4cb-4a73-a286-db25cef6a558" name="Default" comment="-">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/src/Terraria/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/src/Terraria/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/4_Semester_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intellij-Repository.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Intellij-Repository.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/src/ADBConnector/ADBConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/ADBConnector/ADBConnect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/src/Algorithms/OneMillionArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/Algorithms/OneMillionArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/src/Network/ClientTCP.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/Network/ClientTCP.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -79,10 +86,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Project/src/Selenium/Login.java">
+        <entry file="file://$PROJECT_DIR$/Project/src/Terraria/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="240">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -91,73 +98,40 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Project/src/Selenium/Main.java">
+        <entry file="file://$PROJECT_DIR$/Project/src/Terraria/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Project/src/Selenium/Messengram.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+            <state relative-caret-position="432">
+              <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Project/src/ADBConnector/ADBConnect.java">
+        <entry file="file://$PROJECT_DIR$/Project/src/Tests/LinkedListX.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="432">
-              <caret line="24" column="27" lean-forward="true" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Project/src/ADBConnector/FindUSB.java">
+        <entry file="file://$PROJECT_DIR$/Project/src/Network/ServerTCP.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="102" selection-start-line="9" selection-start-column="102" selection-end-line="9" selection-end-column="102" />
+            <state relative-caret-position="192">
+              <caret line="12" column="70" selection-start-line="12" selection-start-column="70" selection-end-line="12" selection-end-column="77" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Project/src/Selenium/SocialNetwork.java">
+        <entry file="file://$PROJECT_DIR$/Project/src/Network/ClientTCP.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Project/src/Selenium/Initialization.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" column="12" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Project/src/Selenium/IMessengram.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Project/src/Selenium/Register.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" column="69" selection-start-line="4" selection-start-column="69" selection-end-line="4" selection-end-column="69" />
+            <state relative-caret-position="192">
+              <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -184,11 +158,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/5.Semester/src/Klausur/View.java" />
-        <option value="$PROJECT_DIR$/5.Semester/src/SortStrategies/Clocksort.java" />
-        <option value="$PROJECT_DIR$/5.Semester/src/Tests/Datagram.java" />
-        <option value="$PROJECT_DIR$/5.Semester/src/Tests/RMIClient.java" />
-        <option value="$PROJECT_DIR$/5.Semester/src/Tests/RMIContainer.java" />
         <option value="$PROJECT_DIR$/5.Semester/src/Tests/RMIServer.java" />
         <option value="$PROJECT_DIR$/5.Semester/src/Tests/MVCMain.java" />
         <option value="$PROJECT_DIR$/5.Semester/src/Tests/Model.java" />
@@ -235,6 +204,11 @@
         <option value="$PROJECT_DIR$/Project/src/Selenium/Main.java" />
         <option value="$PROJECT_DIR$/Project/src/ADBConnector/FindUSB.java" />
         <option value="$PROJECT_DIR$/Project/src/ADBConnector/ADBConnect.java" />
+        <option value="$PROJECT_DIR$/Project/src/Terrarria.java" />
+        <option value="$PROJECT_DIR$/Project/src/Network/ClientTCP.java" />
+        <option value="$PROJECT_DIR$/Project/src/Terraria/Main.java" />
+        <option value="$PROJECT_DIR$/Project/src/Terraria/Client.java" />
+        <option value="$PROJECT_DIR$/Project/src/Tests/LinkedListX.java" />
       </list>
     </option>
   </component>
@@ -256,6 +230,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -272,13 +247,19 @@
               <item name="Intellij-Repository" type="b2602c69:ProjectViewProjectNode" />
               <item name="Project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ADBConnector" type="462c0819:PsiDirectoryNode" />
+              <item name="Network" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Intellij-Repository" type="b2602c69:ProjectViewProjectNode" />
               <item name="Project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Stist" type="462c0819:PsiDirectoryNode" />
+              <item name="Terraria" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Intellij-Repository" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Tests" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Intellij-Repository" type="b2602c69:ProjectViewProjectNode" />
@@ -288,7 +269,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -300,10 +280,10 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557096182435" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="Sqlite (Xerial)" />
-    <property name="findjar.last.used.dir" value="$PROJECT_DIR$/../../../Downloads" />
+    <property name="findjar.last.used.dir" value="$USER_HOME$/Downloads" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
@@ -342,7 +322,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ADBConnect">
+  <component name="RunManager" selected="Application.Client">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -364,14 +344,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FindUSB" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="ADBConnector.FindUSB" />
+      <option name="MAIN_CLASS_NAME" value="Terraria.Client" />
       <module name="Project" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ADBConnector.*" />
+          <option name="PATTERN" value="Terraria.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -379,14 +359,44 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Login" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="ClientTCP" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="Selenium.Login" />
+      <option name="MAIN_CLASS_NAME" value="Network.ClientTCP" />
       <module name="Project" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Selenium.*" />
+          <option name="PATTERN" value="Network.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="Terraria.Main" />
+      <module name="Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Terraria.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServerTCP" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="Network.ServerTCP" />
+      <module name="Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Network.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -464,15 +474,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.FindUSB" />
-      <item itemvalue="Application.Login" />
       <item itemvalue="Application.ADBConnect" />
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.Client" />
+      <item itemvalue="Application.ServerTCP" />
+      <item itemvalue="Application.ClientTCP" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Client" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.ClientTCP" />
+        <item itemvalue="Application.ServerTCP" />
         <item itemvalue="Application.ADBConnect" />
-        <item itemvalue="Application.FindUSB" />
-        <item itemvalue="Application.Login" />
       </list>
     </recent_temporary>
   </component>
@@ -611,13 +625,10 @@
       <workItem from="1559857619814" duration="3894000" />
       <workItem from="1559949116918" duration="99000" />
       <workItem from="1559949369866" duration="2704000" />
-    </task>
-    <task id="LOCAL-00007" summary="-">
-      <created>1492774916552</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1492774916552</updated>
+      <workItem from="1560192871605" duration="3607000" />
+      <workItem from="1560336811858" duration="1061000" />
+      <workItem from="1560870415058" duration="1653000" />
+      <workItem from="1574258749333" duration="1492000" />
     </task>
     <task id="LOCAL-00008" summary="Es wurde versucht, client Server beziehung zu verstehen.">
       <created>1492892238407</created>
@@ -955,11 +966,18 @@
       <option name="project" value="LOCAL" />
       <updated>1559861573124</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="-">
+      <created>1560196750352</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1560196750356</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="285712000" />
+    <option name="totallyTimeSpent" value="293525000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -971,10 +989,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="true" />
+    <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20628998" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21911922" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Nl-Palette" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -984,7 +1001,7 @@
       <window_info id="Image Layers" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3261105" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.48667377" visible="true" weight="0.29144096" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.48667377" weight="0.20496224" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.35969663" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -992,7 +1009,7 @@
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5133262" side_tool="true" weight="0.47020584" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3277592" />
       <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49785867" weight="0.32502708" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49785867" weight="0.32470334" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="12" weight="0.32936078" />
       <window_info anchor="right" id="Database" order="0" weight="0.21038544" />
@@ -1098,6 +1115,12 @@
           <properties />
           <option name="timeStamp" value="191" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Project/src/Network/ServerTCP.java</url>
+          <line>8</line>
+          <properties />
+          <option name="timeStamp" value="192" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -1106,14 +1129,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/5.Semester/src/Tests/DatagramClient.java" />
-    <entry file="file://$PROJECT_DIR$/5.Semester/src/Tests/DatagramServer.java" />
-    <entry file="file://$PROJECT_DIR$/5.Semester/src/Tests/DeepCopy.java" />
-    <entry file="file://$PROJECT_DIR$/5.Semester/src/Tests/Reflection.java" />
-    <entry file="file://$PROJECT_DIR$/5.Semester/src/Tests/XMLSer.java" />
-    <entry file="file://$PROJECT_DIR$/5.Semester/src/Lernen/ThreadMain.java" />
-    <entry file="file://$PROJECT_DIR$/5.Semester/src/Lernen/ThreadClassB.java" />
-    <entry file="file://$PROJECT_DIR$/5.Semester/src/Lernen/ThreadClassA.java" />
     <entry file="file://$PROJECT_DIR$/5.Semester/src/Tests/Database.java" />
     <entry file="file://$PROJECT_DIR$/5.Semester/src/Tests/StackWaitNotifyMain.java" />
     <entry file="file://$PROJECT_DIR$/5.Semester/src/Tests/Remover.java" />
@@ -1139,23 +1154,8 @@
     <entry file="file://$PROJECT_DIR$/5.Semester/src/Thread/ThreadMainClass.java" />
     <entry file="file://$PROJECT_DIR$/5.Semester/src/Reflection/Class.java" />
     <entry file="file://$PROJECT_DIR$/5.Semester/src/HuffmanCodierung/Decoder.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/lang/Number.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="54" column="22" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/lang/Integer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="892" selection-start-line="892" selection-end-line="892" />
-          <folding>
-            <element signature="e#33919#33920#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/lang/Number.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/lang/Integer.java" />
     <entry file="file://$PROJECT_DIR$/5.Semester/src/HuffmanCodierung/Encoder.java" />
     <entry file="file://$PROJECT_DIR$/5.Semester/src/HuffmanCodierung/Pair.java" />
     <entry file="file://$PROJECT_DIR$/5.Semester/src/imgur/RealImage.java" />
@@ -1215,7 +1215,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Project/src/Selenium/Login.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
+        <state relative-caret-position="192">
           <caret line="16" selection-start-line="16" selection-end-line="16" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1225,57 +1225,119 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Project/src/Selenium/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
+        <state relative-caret-position="120">
           <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Project/src/Selenium/Messengram.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
+        <state relative-caret-position="96">
           <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Project/src/MoodleConnector/Container.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Project/src/ADBConnector/FindUSB.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
+        <state relative-caret-position="216">
           <caret line="9" column="102" selection-start-line="9" selection-start-column="102" selection-end-line="9" selection-end-column="102" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Project/src/Selenium/SocialNetwork.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
+        <state relative-caret-position="96">
           <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Project/src/Selenium/Initialization.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
+        <state relative-caret-position="72">
           <caret line="3" column="12" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Project/src/Selenium/IMessengram.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
+        <state relative-caret-position="72">
           <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Project/src/Selenium/Register.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
+        <state relative-caret-position="96">
           <caret line="4" column="69" selection-start-line="4" selection-start-column="69" selection-end-line="4" selection-end-column="69" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Project/src/Terrarria.java" />
     <entry file="file://$PROJECT_DIR$/Project/src/ADBConnector/ADBConnect.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="39" column="76" selection-start-line="39" selection-start-column="76" selection-end-line="39" selection-end-column="76" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Project/src/Network/ClientUDP.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Project/src/Terraria/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Project/src/Network/ServerTCP.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="12" column="70" selection-start-line="12" selection-start-column="70" selection-end-line="12" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Project/src/Network/ClientTCP.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Project/src/Terraria/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
-          <caret line="24" column="27" lean-forward="true" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
+          <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Project/src/Tests/LinkedListX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>
